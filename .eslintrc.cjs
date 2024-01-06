@@ -8,7 +8,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:astro/recommended',
-    'prettier',
+      'plugin:vue/vue3-essential',
+      'prettier',
   ],
   overrides: [
     {
@@ -34,5 +35,5 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'vue'],
 }
