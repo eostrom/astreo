@@ -1,5 +1,6 @@
 ---
-
+import ArtsContents from '../components/ArtsContents.vue'
+import CodeContents from '../components/CodeContents.vue'
 ---
 
 <html lang="en">
@@ -11,6 +12,24 @@
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <div class="braingrid">
+      <div class="brand">
+        <span class="display arts">Erik&nbsp;</span>
+        <span class="display code">Ostrom</span>
+      </div>
+      <div class="main code display-only">
+        <h1>code</h1>
+        <p>
+          I'm a freelance web developer, architect, and designer. I love to
+          create robust, modern, humane software experiences.
+        </p>
+        <CodeContents />
+      </div><div class="main arts display-only">
+        <h1>arts</h1><p>
+          I'm a composer, improviser, singer, player, and theater maker. I love
+          to create playful, moving, immersive artistic experiences.
+        </p><ArtsContents />
+      </div><div class="footer">© 2019 Erik Ostrom</div>
+    </div>
   </body>
 </html>
