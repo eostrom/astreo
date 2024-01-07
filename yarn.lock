@@ -508,6 +508,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/selector-specificity@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@csstools/selector-specificity@npm:3.0.1"
+  peerDependencies:
+    postcss-selector-parser: ^6.0.13
+  checksum: 4280f494726d5e38de74e28dee2ff74ec86244560dff4edeec3ddff3ac73c774c19535bd1bb70cad77949bfb359cf87e977d0ec3264591e3b7260342a20dd84f
+  languageName: node
+  linkType: hard
+
 "@emmetio/abbreviation@npm:^2.3.3":
   version: 2.3.3
   resolution: "@emmetio/abbreviation@npm:2.3.3"
@@ -742,6 +751,27 @@ __metadata:
   version: 8.56.0
   resolution: "@eslint/js@npm:8.56.0"
   checksum: 60b3a1cf240e2479cec9742424224465dc50e46d781da1b7f5ef240501b2d1202c225bd456207faac4b34a64f4765833345bc4ddffd00395e1db40fa8c426f5a
+  languageName: node
+  linkType: hard
+
+"@fontsource/noto-serif@npm:^5.0.18":
+  version: 5.0.18
+  resolution: "@fontsource/noto-serif@npm:5.0.18"
+  checksum: 1e170d1c789e48f7a2b894614c416f27e906de273d3f9eac7088c433fd7425bc7f7d5b7d38c891cd2073cadfd2c45403d245b7f57d06b40bf4d3cc26e6822377
+  languageName: node
+  linkType: hard
+
+"@fontsource/roboto-mono@npm:^5.0.16":
+  version: 5.0.16
+  resolution: "@fontsource/roboto-mono@npm:5.0.16"
+  checksum: 9a2031f5bc14fab3324a3693d67dc27a098d76e408d70bd4c94121f75ed17d38b21ff51eab2d7ecbe459a59d62b0036aa31a8c4337ab5180b4fd32b7f09db16f
+  languageName: node
+  linkType: hard
+
+"@fontsource/roboto@npm:^5.0.8":
+  version: 5.0.8
+  resolution: "@fontsource/roboto@npm:5.0.8"
+  checksum: da262037305145cc2a3b7f7c00066df72d4aa36d237001d7affce9390d16b3488eadaf0aa43a7ba86b3be8e310e3ae6823fa838365ee0e9a2e98a65e89e9d0f9
   languageName: node
   linkType: hard
 
@@ -1832,6 +1862,9 @@ __metadata:
   dependencies:
     "@astrojs/check": "npm:^0.3.4"
     "@astrojs/vue": "npm:^4.0.7"
+    "@fontsource/noto-serif": "npm:^5.0.18"
+    "@fontsource/roboto": "npm:^5.0.8"
+    "@fontsource/roboto-mono": "npm:^5.0.16"
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
     "@typescript-eslint/parser": "npm:^6.18.0"
     astro: "npm:^4.1.1"
@@ -1839,6 +1872,8 @@ __metadata:
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-astro: "npm:^0.31.0"
     eslint-plugin-vue: "npm:^9.19.2"
+    normalize.css: "npm:^8.0.1"
+    postcss-nesting: "npm:^12.0.2"
     prettier: "npm:^3.1.1"
     prettier-plugin-astro: "npm:^0.12.3"
     typescript: "npm:^5.3.3"
@@ -4712,6 +4747,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"normalize.css@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "normalize.css@npm:8.0.1"
+  checksum: 4ddf56d1af5ca755fa5e692e718316d8758ecb792aa96e1ad206824b5810a043763d681d6f7697d46573515f5e9690038b4c91a95c1997567128815545fb8cd7
+  languageName: node
+  linkType: hard
+
 "npm-run-path@npm:^5.1.0":
   version: 5.2.0
   resolution: "npm-run-path@npm:5.2.0"
@@ -4988,6 +5030,18 @@ __metadata:
   dependencies:
     find-up: "npm:^4.0.0"
   checksum: c56bda7769e04907a88423feb320babaed0711af8c436ce3e56763ab1021ba107c7b0cafb11cde7529f669cfc22bffcaebffb573645cbd63842ea9fb17cd7728
+  languageName: node
+  linkType: hard
+
+"postcss-nesting@npm:^12.0.2":
+  version: 12.0.2
+  resolution: "postcss-nesting@npm:12.0.2"
+  dependencies:
+    "@csstools/selector-specificity": "npm:^3.0.1"
+    postcss-selector-parser: "npm:^6.0.13"
+  peerDependencies:
+    postcss: ^8.4
+  checksum: 9bb69cb5f5a3cd4945f2f427800a620176c924b11f79f819d9076f0c67bfe8cbc04e6a7f7d0224f712b85338d970eed67fa98271e63155b4670aec1285de2750
   languageName: node
   linkType: hard
 

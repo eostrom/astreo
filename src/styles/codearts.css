@@ -1,0 +1,438 @@
+:root {
+  --fs-0: 13px;
+  --lh-0: 25px;
+  --fs-1: 17px;
+  --lh-1: 30px;
+  --fs-2: 22px;
+  --lh-2: 38px;
+  --fs-3: 28px;
+  --lh-3: 46px;
+  --fs-4: 36px;
+  --lh-4: 58px;
+  --fs-5: 45px;
+  --lh-5: 71px;
+  --fs-6: 58px;
+  --lh-6: 90px;
+  --fs-7: 73px;
+  --lh-7: 112px;
+
+  --space-1: 6px;
+  --space-2: 9px;
+  --space-3: 14px;
+  --space-4: 23px;
+  --space-5: 37px;
+  --space-6: 60px;
+
+  --arts-body-font-family: 'Noto Serif', 'Georgia', serif;
+  --arts-display-font-family: 'Noto Serif', 'Georgia', serif;
+  --arts-body-fallback-letter-spacing: 0.6px;
+  --code-body-font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --code-body-word-spacing: 0.1px;
+  --code-display-font-family: 'Roboto Mono', 'Courier New', monospace;
+  --footer-font-family: 'Noto Serif', serif;
+
+  --blue-hue: 225;
+  --pink-hue: 300;
+  /*
+  This "midway" is not mathematically at the midpoint, but at least
+  to my eyes the actual midpoint looked higher-contrast in blue-on-pink
+  than pink-on-blue. If I start using the midway hue elsewhere, I'll
+  reconsider.
+   */
+  --midway-hue: calc((var(--blue-hue) * 2 + var(--pink-hue) * 3) / 5);
+  --near-blue-hue: calc((var(--blue-hue) + var(--midway-hue)) / 2);
+  --near-pink-hue: calc((var(--pink-hue) + var(--midway-hue)) / 2);
+
+  /* split-complementary color scheme */
+  --link-hue: calc(var(--midway-hue) - 180);
+  --link-color: hsl(var(--link-hue), 100%, 55%);
+  --link-tk-color: hsla(var(--link-hue), 100%, 50%, 0.25);
+  --bright-blue: hsl(var(--blue-hue), 90%, 50%);
+  --bright-pink: hsl(var(--pink-hue), 90%, 50%);
+  --soft-blue: hsl(var(--blue-hue), 90%, 75%);
+  --soft-pink: hsl(var(--pink-hue), 90%, 75%);
+  --deep-blue: hsl(var(--blue-hue), 90%, 25%);
+  --deep-pink: hsl(var(--pink-hue), 90%, 25%);
+  --pale-blue: hsl(var(--blue-hue), 75%, 93.75%);
+  --pale-pink: hsl(var(--pink-hue), 75%, 93.75%);
+  --midway-bright-color: hsl(var(--midway-hue), 90%, 50%);
+  --near-bright-blue: hsl(var(--near-blue-hue), 90%, 50%);
+  --near-bright-pink: hsl(var(--near-pink-hue), 90%, 50%);
+  --body-background: hsl(0, 100%, 0%); /* black */
+  --background-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--body-background) center / cover no-repeat fixed;
+  /* translucent layer over overly bright background image */
+  background-image: linear-gradient(#000c, #000c), url('/images/accordion.jpg');
+
+  color: hsl(0, 0%, 100%); /* white */
+  height: 100%;
+  width: 100%;
+  font-size: var(--fs-1);
+  line-height: 1.5;
+}
+
+body {
+  min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6,
+code,
+.display, .main.display-only {
+  font-family: var(--display-font-family);
+  font-style: var(--display-font-style);
+  color: var(--display-color);
+}
+
+hr {
+  border-style: hidden;
+  height: 2em;
+}
+
+.braingrid {
+  min-height: 100vh;
+  display: grid;
+  grid-template: auto 1fr 1fr auto / 5rem 1fr 1fr 5rem;
+}
+
+.brand {
+  grid-area: brand;
+  font-size: var(--fs-7);
+  line-height: var(--fs-7);
+  height: var(--fs-7);
+  padding: 0 0.25rem;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  & .display {
+    background: transparent;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+h1 {
+  font-size: var(--fs-5);
+  line-height: var(--fs-5);
+  padding: calc((var(--lh-5) - var(--fs-5)) / 2) 0;
+}
+
+h1::before { content: '[' }
+h1::after { content: ']' }
+
+h2 {
+  font-size: var(--fs-3);
+  line-height: var(--fs-3);
+  padding: calc((var(--lh-3) - var(--fs-3)) / 2) 0;
+}
+
+h3 {
+  font-size: var(--fs-1);
+  line-height: var(--lh-1);
+  padding: calc((var(--lh-1) - var(--fs-1)) / 2) 0;
+}
+
+p {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+p, ul, ol, figure, iframe {
+  max-width: 60ch;
+}
+
+p img, li img, figure img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0 0 1em;
+}
+
+figcaption {
+  font-style: italic;
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+  &:link:hover { text-decoration: underline; }
+
+  &:link,
+  &:visited {
+    color: var(--link-color);
+  }
+}
+
+a.tk {
+  color: var(--link-tk-color);
+}
+
+.contents {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & > li {
+    padding: 0;
+  }
+}
+
+.contents-header {
+  grid-area: header;
+
+  & .contents {
+    padding: 0 1rem;
+    font-size: var(--fs-0);
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    & > li {
+      padding: 0 1rem;
+    }
+  }
+}
+
+.link-list {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-style: var(--display-font-style);
+  font-size: var(--fs-3);
+  line-height: var(--fs-3);
+
+  & li + li {
+    margin-top: calc(var(--lh-3) - var(--fs-3));
+  }
+}
+
+.side {
+  grid-area: sidebar;
+  position: relative;
+}
+
+a.side {
+  color: var(--display-color);
+}
+
+.side-label {
+  font-size: var(--fs-6);
+  position: absolute;
+  top: 4rem;
+}
+
+.other-side .side-label {
+  top: 8.5rem;
+}
+
+.side.other-side {
+  background: var(--background-color);
+  grid-area: othersidebar;
+  color: var(--far-display-color);
+  filter: blur(3px);
+  overflow-x: hidden;
+  transition: filter 250ms linear, color 250ms linear;
+
+  & .side-label {
+    filter: blur(1px);
+    transition: filter 250ms linear, color 250ms linear;
+  }
+
+  &:hover, &:focus {
+    filter: blur(0);
+    color: var(--near-display-color);
+  }
+
+  & .side-label:hover, & .side-label:focus {
+    filter: blur(0);
+    color: var(--display-color);
+  }
+}
+
+.main {
+  grid-area: main;
+  padding: 1.2rem 1.2rem 2rem;
+  background: var(--background-color);
+  font-family: var(--body-font-family);
+  color: var(--body-color);
+  overflow: scroll;
+}
+
+.main.display-only {
+  font-size: var(--fs-3);
+  line-height: var(--fs-3);
+}
+
+.main.code {
+  text-align: right;
+  padding-left: 12.5%;
+  --display-color: var(--soft-pink);
+  --background-color: var(--deep-blue);
+}
+
+.main.arts {
+  text-align: left;
+  padding-right: 12.5%;
+  letter-spacing: 0.05em;
+  --display-color: var(--soft-blue);
+  --background-color: var(--deep-pink);
+}
+
+.main.code.display-only {
+  --display-color: var(--bright-pink);
+  --background-color: var(--bright-blue);
+}
+
+.main.arts.display-only {
+  --display-color: var(--bright-blue);
+  --background-color: var(--bright-pink);
+}
+
+.main > * {
+  max-width: 100%;
+}
+
+.code {
+  --body-font-family: var(--code-body-font-family);
+  --display-font-family: var(--code-display-font-family);
+  --display-font-style: normal;
+  --body-color: var(--pale-pink);
+  --display-color: var(--bright-pink);
+  --background-color: var(--bright-blue);
+  --near-display-color: var(--near-bright-pink);
+  --far-display-color: var(--midway-bright-color);
+}
+
+.arts {
+  --body-font-family: var(--arts-body-font-family);
+  --display-font-family: var(--arts-display-font-family);
+  --display-font-style: italic;
+  --body-color: var(--pale-blue);
+  --display-color: var(--bright-blue);
+  --background-color: var(--bright-pink);
+  --near-display-color: var(--near-bright-blue);
+  --far-display-color: var(--midway-bright-color);
+}
+
+.body ul, .body ol {
+  padding: 0 0 0 2ch;
+}
+
+.body ul {
+  list-style-type: disc;
+}
+
+.body li {
+  padding: 0.125em 0;
+}
+
+.body li:first-child {
+  padding-top: 0;
+}
+
+.body li:last-child {
+  padding-bottom: 0;
+}
+
+pre.shiki {
+  max-width: 80ch;
+  overflow-x: scroll;
+}
+
+.footnotes {
+  opacity: 0.6;
+}
+
+.footer {
+  grid-area: footer;
+  font-size: var(--fs-2);
+  line-height: var(--fs-2);
+  padding: 1em 1.2rem;
+  font-family: var(--footer-font-family);
+  color: hsla(0, 0%, 100%, 0.4);
+  background: var(--background-color);
+}
+
+.code .footer {
+  text-align: right;
+}
+
+.arts .footer {
+  text-align: left;
+}
+
+pre code {
+  display: block;
+  padding: var(--space-4);
+  overflow-x: scroll;
+}
+
+.show-what p {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.brand,
+.main.display,
+pre code {
+  transition: font-size 250ms, line-height 250ms, height 250ms;
+}
+
+@media (max-width: 640px) {
+  .braingrid {
+    grid-template-columns: 3rem 1fr 1fr 3rem;
+  }
+
+  .brand {
+    font-size: var(--fs-5);
+    line-height: var(--fs-5);
+    height: var(--fs-5);
+  }
+
+  .contents-header .contents > li {
+    padding: 0 0.5rem;
+  }
+
+  h1 {
+    font-size: var(--fs-4);
+    line-height: var(--fs-4);
+    padding: calc((var(--lh-4) - var(--fs-4)) / 2) 0;
+  }
+
+  .main.display {
+    font-size: var(--fs-2);
+    line-height: var(--fs-2);
+  }
+
+  .link-list a {
+    display: block;
+  }
+
+  .side-label {
+    top: 3rem;
+  }
+
+  .other-side .side-label {
+    top: 6.5rem;
+  }
+
+  pre code {
+    font-size: var(--fs-0);
+  }
+}

@@ -7,8 +7,9 @@ import CodeContents from '../components/CodeContents.vue'
 <BaseLayout>
   <div class="braingrid">
     <div class="brand">
-      <span class="display arts">Erik&nbsp;</span>
-      <span class="display code">Ostrom</span>
+      <span class="display arts">Erik&nbsp;</span><span class="display code"
+        >Ostrom</span
+      >
     </div>
     <div class="main code display-only">
       <h1>code</h1>
@@ -29,3 +30,55 @@ import CodeContents from '../components/CodeContents.vue'
     <div class="footer">© 2019, 2024 Erik Ostrom</div>
   </div>
 </BaseLayout>
+
+<style>
+  h1::before,
+  h1::after {
+    content: '';
+  }
+
+  .braingrid {
+    grid-template-areas:
+      'header header header header'
+      'code code arts arts'
+      'code code arts arts'
+      'footer footer footer footer';
+  }
+
+  .brand {
+    grid-area: header;
+  }
+
+  .main.code {
+    grid-area: code;
+    text-align: right;
+    padding-left: 25%;
+  }
+
+  .main.arts {
+    grid-area: arts;
+    padding-right: 25%;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .braingrid {
+      grid-template-areas:
+        'header header header header'
+        'code code code code'
+        'arts arts arts arts'
+        'footer footer footer footer';
+    }
+
+    .main.code {
+      padding-left: 12.5%;
+    }
+
+    .main.arts {
+      padding-right: 12.5%;
+    }
+  }
+</style>
