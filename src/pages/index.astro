@@ -1,35 +1,31 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro'
 import ArtsContents from '../components/ArtsContents.vue'
 import CodeContents from '../components/CodeContents.vue'
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <div class="braingrid">
-      <div class="brand">
-        <span class="display arts">Erik&nbsp;</span>
-        <span class="display code">Ostrom</span>
-      </div>
-      <div class="main code display-only">
-        <h1>code</h1>
-        <p>
-          I'm a freelance web developer, architect, and designer. I love to
-          create robust, modern, humane software experiences.
-        </p>
-        <CodeContents />
-      </div><div class="main arts display-only">
-        <h1>arts</h1><p>
-          I'm a composer, improviser, singer, player, and theater maker. I love
-          to create playful, moving, immersive artistic experiences.
-        </p><ArtsContents />
-      </div><div class="footer">© 2019 Erik Ostrom</div>
+<BaseLayout>
+  <div class="braingrid">
+    <div class="brand">
+      <span class="display arts">Erik&nbsp;</span>
+      <span class="display code">Ostrom</span>
     </div>
-  </body>
-</html>
+    <div class="main code display-only">
+      <h1>code</h1>
+      <p>
+        I'm a freelance web developer, architect, and designer. I love to create
+        robust, modern, humane software experiences.
+      </p>
+      <CodeContents />
+    </div>
+    <div class="main arts display-only">
+      <h1>arts</h1>
+      <p>
+        I'm a composer, improviser, singer, player, and theater maker. I love to
+        create playful, moving, immersive artistic experiences.
+      </p>
+      <ArtsContents />
+    </div>
+    <div class="footer">© 2019, 2024 Erik Ostrom</div>
+  </div>
+</BaseLayout>
