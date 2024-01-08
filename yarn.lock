@@ -1913,6 +1913,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
     "@typescript-eslint/parser": "npm:^6.18.0"
     astro: "npm:^4.1.1"
+    date-fns: "npm:^3.1.0"
     eslint: "npm:^8.56.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-astro: "npm:^0.31.0"
@@ -2513,6 +2514,13 @@ __metadata:
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
   checksum: 80c089d6f7e0c5b2bd83cf0539ab41474198579584fa10d86d0cafe0642202343cbc119e076a0b1aece191989477081415d66c9fefbf3c957fc2fc4b7009f248
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "date-fns@npm:3.1.0"
+  checksum: 60ded37aff397077780bf7b4e545b85041ee97e2acb24ffb99b84dcd8cf64d1c360d1f7bbf7e811840bb8df4f054508fa3dfb438f9e1558ddf5fe7645f4bdbf9
   languageName: node
   linkType: hard
 

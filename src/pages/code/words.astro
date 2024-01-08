@@ -1,0 +1,15 @@
+---
+import {getCollection} from 'astro:content'
+import CodeGrid from '../../layouts/CodeGrid.astro'
+import BlogPostExcerpt from '../../components/BlogPostExcerpt.vue'
+
+const allCodePosts = (
+  await getCollection('code-words', ({data}) => data.status !== 'draft')
+).reverse()
+---
+
+<CodeGrid displayOnly={true}>
+  <h1>words</h1>
+
+  {allCodePosts.map((post) => <BlogPostExcerpt post={post} />)}
+</CodeGrid>
