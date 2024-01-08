@@ -1,0 +1,60 @@
+---
+import CodeContents from '../components/CodeContents.vue'
+import BaseLayout, {Props as BaseLayoutProps} from './BaseLayout.astro'
+
+type Props = BaseLayoutProps & {
+  displayOnly?: boolean
+}
+
+const {displayOnly, title} = Astro.props
+---
+
+<BaseLayout title={title}>
+  <div class="braingrid code">
+    <a class="brand" href="/">
+      <div class="monogram">
+        <span class="display arts">E</span><span class="display code">O</span>
+      </div>
+    </a>
+    <CodeContents class="contents-header display" />
+    <a class="side this-side display code" href="/code/words/">
+      <div class="side-label">code</div>
+    </a>
+    <div class={`main code ${displayOnly ? 'display-only' : ''}`}>
+      <slot />
+    </div>
+    <a class="side other-side display arts" href="/arts/words/">
+      <div class="side-label">arts</div>
+    </a>
+    <div class="footer">© 2019, 2024 Erik Ostrom</div>
+  </div>
+</BaseLayout>
+
+<style>
+  .braingrid {
+    grid-template-areas:
+      'brand header header othersidebar'
+      'sidebar main main othersidebar'
+      'sidebar main main othersidebar'
+      '. footer footer othersidebar';
+  }
+
+  .contents-header {
+    flex-direction: row;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .side-label {
+    transform: rotate(270deg);
+    right: -0.9em;
+  }
+
+  .other-side .side-label {
+    right: -0.7em;
+  }
+</style>

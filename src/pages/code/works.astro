@@ -1,0 +1,111 @@
+---
+import {Image} from 'astro:assets'
+import CodeGrid from '../../layouts/CodeGrid.astro'
+
+import imageDataDashboard from '../../assets/code/work/data-dashboard.png'
+import imageDataWheel from '../../assets/code/work/data-wheel.png'
+import imageNotebook from '../../assets/code/work/notebook.png'
+import imageStudiocal from '../../assets/code/work/studiocal.png'
+import imageOneBrain from '../../assets/code/work/one-brain.png'
+---
+
+<CodeGrid title="code[works]">
+  <h1>works</h1>
+
+  <h2>I work with clients to make things happen on the&nbsp;web.</h2>
+
+  <p>
+    Usually that means creating a web application, but sometimes it's a simple
+    web site, or a desktop app, or just telling them how to do what they need
+    with Google Forms. Not everyone needs the same things. Part of my job is
+    figuring that&nbsp;out.
+  </p>
+
+  <p>
+    I've worked with large corporations, but my typical client is a startup, or
+    a nonprofit, or a solo entrepreneur with a great&nbsp;idea.
+  </p>
+
+  <h2>Sometimes I make things that look like&nbsp;this.</h2>
+
+  <div class="samples">
+    <Image
+      src={imageDataDashboard}
+      class="sample"
+      width="200"
+      height="140"
+      alt="Data visualization!"
+    />
+    <Image
+      src={imageDataWheel}
+      class="sample"
+      width="200"
+      height="140"
+      alt="More data, visualized!"
+    />
+    <Image
+      src={imageNotebook}
+      class="sample"
+      width="200"
+      height="140"
+      alt="An old blog I designed."
+    />
+    <Image
+      src={imageStudiocal}
+      class="sample"
+      width="200"
+      height="140"
+      alt="Time management."
+    />
+    <Image
+      src={imageOneBrain}
+      class="sample"
+      width="200"
+      height="140"
+      alt="I know, right?"
+    />
+  </div>
+
+  <h2>Some things aren't for looking&nbsp;at.</h2>
+
+  <p>
+    Reliable code, efficient performance, and maintainability aren't easy to
+    show on a web page, but they're important&nbsp;too.
+  </p>
+
+  <h2>Let's talk.</h2>
+
+  <p>
+    <a href="mailto:code@erikostrom.com">Email me</a> or visit
+    <a href="/code/links/">my links page.</a>
+  </p>
+</CodeGrid>
+
+<script>
+  export default {
+    metaInfo: {
+      title: 'code[works]',
+    },
+  }
+</script>
+
+<style>
+  .samples {
+    --sample-spacing: 0.5em;
+    --sample-width: 200px;
+    --sample-max-across: 3;
+
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(
+      (var(--sample-width) * var(--sample-max-across)) +
+        (var(--sample-spacing) * (var(--sample-max-across) * 2 + 2))
+    );
+    justify-content: flex-end;
+    margin: 0 calc(0px - var(--sample-spacing));
+  }
+
+  .sample {
+    margin: var(--sample-spacing);
+  }
+</style>
