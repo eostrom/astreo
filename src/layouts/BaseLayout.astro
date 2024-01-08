@@ -4,6 +4,13 @@ import '@fontsource/roboto'
 import '@fontsource/roboto-mono'
 import 'normalize.css'
 import '../styles/codearts.css'
+
+export type Props = {
+  title?: string
+}
+
+const {title} = Astro.props
+const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
 ---
 
 <html lang="en">
@@ -12,7 +19,7 @@ import '../styles/codearts.css'
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>code|arts – Erik Ostrom</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <slot />
