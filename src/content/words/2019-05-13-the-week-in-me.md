@@ -1,7 +1,8 @@
 ---
 title: "the week in me #5"
 date: 2019-05-13T20:45:27-0500
-tags:         
+tags:
+section: both
 ---
 
 I'm sure you noticed I made no post last week, but don't worry, it's

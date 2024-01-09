@@ -3,6 +3,7 @@ title: the feeds I read
 date: 2019-04-10T09:08-0500
 tags: 
 status: published
+section: code
 ---
 My colleague Eric asked me how I keep up on development trends, so I
 made this list of the main RSS feeds I follow (with [Feedly][]/[gReader][]).

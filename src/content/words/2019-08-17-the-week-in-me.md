@@ -2,7 +2,8 @@
 title: "the week in me #8"
 date: 2019-08-17T18:25:27-0500
 tags:         
-image: /images/trio-2019.jpg  
+image: /images/trio-2019.jpg
+section: both
 ---
 Holy cow, it's only been about a week since my last weekly post.
 

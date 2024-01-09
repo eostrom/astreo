@@ -2,7 +2,8 @@
 title: "the year in me"
 date: 2020-01-01T15:25:27-0500
 tags:     
-image: "/images/January car.jpg"  
+image: "/images/January car.jpg"
+section: both
 ---
 
 <figure>

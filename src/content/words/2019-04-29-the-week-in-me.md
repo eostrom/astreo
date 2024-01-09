@@ -1,7 +1,8 @@
 ---
 title: "the week in me #4"
 date: 2019-04-29T20:45:27-0500
-tags: 
+tags:
+section: both
 ---
 
 I applied for a job!

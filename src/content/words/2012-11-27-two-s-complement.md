@@ -5,6 +5,7 @@ tags:
 - math
 - computer science
 - binary
+section: code
 ---
 
 Two's Complement is a way of translating between decimal numbers and

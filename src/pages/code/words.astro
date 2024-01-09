@@ -4,7 +4,11 @@ import CodeGrid from '../../layouts/CodeGrid.astro'
 import BlogPostExcerpt from '../../components/BlogPostExcerpt.vue'
 
 const allCodePosts = (
-  await getCollection('code-words', ({data}) => data.status !== 'draft')
+  await getCollection(
+    'words',
+    ({data}) =>
+      data.status !== 'draft' && ['code', 'both'].includes(data.section),
+  )
 ).reverse()
 ---
 

@@ -1,0 +1,19 @@
+---
+import {getCollection} from 'astro:content'
+import ArtsGrid from '../../layouts/ArtsGrid.astro'
+import BlogPostExcerpt from '../../components/BlogPostExcerpt.vue'
+
+const allArtsPosts = (
+  await getCollection(
+    'words',
+    ({data}) =>
+      data.status !== 'draft' && ['arts', 'both'].includes(data.section),
+  )
+).reverse()
+---
+
+<ArtsGrid displayOnly={true}>
+  <h1>words</h1>
+
+  {allArtsPosts.map((post) => <BlogPostExcerpt post={post} />)}
+</ArtsGrid>

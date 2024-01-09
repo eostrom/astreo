@@ -1,7 +1,8 @@
 ---
 title: "the week in me #2"
 date: 2019-04-14T22:49-0500
-tags: 
+tags:
+section: both
 ---
 A week for moving on, and staying the course.
 

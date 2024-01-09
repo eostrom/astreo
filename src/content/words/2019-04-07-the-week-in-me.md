@@ -1,7 +1,8 @@
 ---
 title: "the week in me"
 date: 2019-04-07T22:49-0500
-tags: 
+tags:
+section: both
 ---
 I'm going to try to post a weekly summary of what I've been doing, making,
 seeing, reading, and thinking about. Let's see how it goes! It's not

@@ -5,6 +5,7 @@ tags:
 - javascript
 - frameworks 
 status: published
+section: code
 ---
 [Svelte] is "a tool for building fast web applications." Here are a few
 thoughts after

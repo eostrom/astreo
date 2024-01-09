@@ -1,7 +1,8 @@
 ---
 title: "the week in me #3"
 date: 2019-04-22T22:27:27-0500
-tags: 
+tags:
+section: both
 ---
 
 It's been a week for almost finishing things. I hate almost finishing

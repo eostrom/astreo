@@ -4,6 +4,7 @@ date: 2012-11-20T02:08-06:00
 tags: 
 - design
 - documentation
+section: code
 ---
 
 [Reg Braithwaite](http://raganwald.posterous.com/dee-cubed):

@@ -5,6 +5,7 @@ tags:
 - ruby
 - tricks
 - loops
+section: code
 ---
 
 ```ruby

@@ -2,7 +2,8 @@
 title: "the week in me #7"
 date: 2019-08-09T17:54:27-0500
 tags:         
-image: /images/peer-gynt-cast.jpg  
+image: /images/peer-gynt-cast.jpg
+section: both
 ---
 
 Ever feel like you're trying to do too many cool things with too many

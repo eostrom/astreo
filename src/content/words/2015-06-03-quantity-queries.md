@@ -4,6 +4,7 @@ date: 2015-06-03T21:35Z
 tags: 
 - css
 - media queries
+section: code
 ---
 I enjoyed [Heydon Pickering]'s well-written explanation of a
 clever technique for media-query-like "breakpoints" for, say,
