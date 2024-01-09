@@ -2,13 +2,13 @@
   <nav>
     <ul class="contents">
       <li>
-        <a href='/code/works/'>works</a>
+        <a href="/code/works/">works</a>
       </li>
       <li>
-        <a href='/code/words/'>words</a>
+        <a href="/code/words/">words</a>
       </li>
       <li>
-        <a href='/code/links/'>links</a>
+        <a href="/code/links/">links</a>
       </li>
     </ul>
   </nav>
