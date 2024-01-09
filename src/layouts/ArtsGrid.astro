@@ -1,0 +1,62 @@
+---
+import ArtsContents from '../components/ArtsContents.vue'
+import BaseLayout, {Props as BaseLayoutProps} from './BaseLayout.astro'
+
+type Props = BaseLayoutProps & {
+  displayOnly?: boolean
+}
+
+const {displayOnly, title} = Astro.props
+---
+
+<BaseLayout title={title}>
+  <div class="braingrid arts">
+    <a class="brand" href="/">
+      <div class="monogram">
+        <span class="display arts">E</span><span class="display code">O</span>
+      </div>
+    </a>
+    <ArtsContents class="contents-header display" />
+    <a class="side this-side display arts" href="/arts/words/">
+      <div class="side-label">arts</div>
+    </a>
+    <div class={`main arts ${displayOnly ? 'display-only' : ''}`}>
+      <slot />
+    </div>
+    <a class="side other-side display code" href="/code/words/">
+      <div class="side-label">code</div>
+    </a>
+    <div class="footer">© 2019, 2024 Erik Ostrom</div>
+  </div>
+</BaseLayout>
+
+<style>
+  .braingrid {
+    grid-template-areas:
+      'othersidebar header header brand'
+      'othersidebar main main sidebar'
+      'othersidebar main main sidebar'
+      'othersidebar footer footer .';
+  }
+
+  .brand {
+    & .monogram {
+      position: relative;
+      margin: 0 -0.1em;
+      right: 0.1em;
+    }
+  }
+
+  .contents-header {
+    flex-direction: row-reverse;
+  }
+
+  .side-label {
+    transform: rotate(90deg);
+    left: -0.7em;
+  }
+
+  .other-side .side-label {
+    left: -0.9em;
+  }
+</style>
