@@ -1,22 +1,22 @@
 ---
 supertitle: Dropbox Express with ECMAScript 6+
-subtitle: "Part 7: Promises."
-title: "Dropbox Express 7: Promises."
+subtitle: 'Part 7: Promises.'
+title: 'Dropbox Express 7: Promises.'
 date: 2015-06-13T23:16Z
-tags: 
-- dropbox
-- node.js
-- es.next
-- promises
-- refactoring
+tags:
+  - dropbox
+  - node.js
+  - es.next
+  - promises
+  - refactoring
 section: code
 ---
 
-*This is how I built a simple server-side JavaScript app on top of the
+_This is how I built a simple server-side JavaScript app on top of the
 Dropbox API, using Express.js, ECMAScript 6 (and one thing I hope will
 be in ES 7), and Zombie.js for testing. It was my first time using any
 of these things (except JavaScript, natch), so there are probably
-better ways to do some of it. [Let me know!][contact]*
+better ways to do some of it. [Let me know!][contact]_
 
 In [part 6], we expanded our use of the Dropbox API, and saw our code
 become more complex. Let's try to simplify it, using ECMAScript 6's
@@ -37,24 +37,25 @@ to a Dropbox API method. Here's a simplified version.
 ```javascript
 client.readdir('/', (error, entries) => {
   if (error) {
-    return res.send(error.response.error);
+    return res.send(error.response.error)
   }
 
-  res.send(`Files found: ${entries.length}`);
-});
+  res.send(`Files found: ${entries.length}`)
+})
 ```
 
 In the Dropbox API, a single callback handles both success and failure.
 With Promises, we separate these into two functions:
 
 ```javascript
-client.readdir('/')
+client
+  .readdir('/')
   .then((entries) => {
-    res.send(`Files found: ${entries.length}`);
+    res.send(`Files found: ${entries.length}`)
   })
   .catch((error) => {
-    return res.send(error.response.error);
-  });
+    return res.send(error.response.error)
+  })
 ```
 
 This code isn't necessarily shorter, but it it's a bit easier to follow:
@@ -68,7 +69,7 @@ We'd like to write our application code in this form, but we can't,
 because the Dropbox API doesn't return Promises. To get around this,
 we can introduce Promises as an intermediary between Dropbox and our
 application code.
- 
+
 Given a function like Dropbox's `readdir`, which takes a path and a
 callback, here's one way to turn it into a promise:
 
@@ -82,8 +83,8 @@ let readdirWrapped = function(path) {
       if (error) {
         return reject(error);
       }
-      
-      // Otherwise, call the `resolve` callback.  
+
+      // Otherwise, call the `resolve` callback.
       resolve([entries, dirstat, filestats]);
     });
 };
@@ -109,7 +110,7 @@ repeated code would obscure the differences between them, and in a
 real app we'd probably want to wrap more than two methods, so it would
 keep getting worse. Instead, we can put the Promise logic in a single
 reusable function, and use ECMAScript 6's [`class`][class] syntax to
-provide a single access point for all our wrapped methods.  Put this
+provide a single access point for all our wrapped methods. Put this
 in a file called `promisebox.js`:
 
 ```javascript
@@ -118,59 +119,59 @@ in a file called `promisebox.js`:
  */
 
 class Promisebox {
-  constructor (client) {
-    this.client = client;
+  constructor(client) {
+    this.client = client
   }
 
-  readdir (path, options) {
-    return this._promise('readdir', path, options);
+  readdir(path, options) {
+    return this._promise('readdir', path, options)
   }
 
-  readFile (path, options) {
-    return this._promise('readFile', path, options);
+  readFile(path, options) {
+    return this._promise('readFile', path, options)
   }
 
-  _promise (method, ...params) {
+  _promise(method, ...params) {
     return new Promise((resolve, reject) => {
       this.client[method](...params, (error, ...results) => {
         if (error) {
           // If there's an error, call `reject` and exit.
-          return reject(error);
+          return reject(error)
         }
-        resolve(results);
-      });
-    });
+        resolve(results)
+      })
+    })
   }
 }
 
-module.exports = Promisebox;
+module.exports = Promisebox
 ```
 
 The `class` keyword doesn't define a class of the sort found in other
 languages like Ruby and Java. It's just syntax for creating a constructor
 and its prototype, like we've always done in JavaScript. Here we define:
 
-  * a constructor that stores a Dropbox API client on the object
-  * a pseudo-private `_promise` method that returns a `Promise` that
-    calls a method on the Dropbox client
-  * `readdir` and `readFile` methods that are named wrappers around
-    `_promise`
+- a constructor that stores a Dropbox API client on the object
+- a pseudo-private `_promise` method that returns a `Promise` that
+  calls a method on the Dropbox client
+- `readdir` and `readFile` methods that are named wrappers around
+  `_promise`
 
 (ES6 classes don't have truly private methods. There are ways to achieve
 the same result, but here, I'm just using a common convention: Don't call
-a method that starts with an underscore from outside the object.) 
+a method that starts with an underscore from outside the object.)
 
 As we discussed earlier, Dropbox's `readdir` method passes three results
 to its callback, but we can only pass one value to `resolve`. We handle
 this using the ES6 [spread operator]. Our callback function has the
 parameters `(error, ...results)`. This means that the first parameter
-is assigned to the local variable `error`, and *all subsequent parameters*
+is assigned to the local variable `error`, and _all subsequent parameters_
 are collected into an array and assigned to `results`.
 
 Similarly, our `_promise` function takes a `method` name and any number of
 `... params`. When it calls `this.client[method](...params)`, each element
- of the `params` array is passed *as a separate parameter* to the underlying
- Dropbox method.
+of the `params` array is passed _as a separate parameter_ to the underlying
+Dropbox method.
 
 ## The app, with promises.
 
@@ -181,51 +182,52 @@ wrap our Dropbox client in a `Promisebox`, and call its methods in sequence
 ```javascript
 const express = require('express'),
   Dropbox = require('dropbox'),
-  Promisebox = require('./promisebox');
+  Promisebox = require('./promisebox')
 
 // Initialize a Dropbox client.
 let client = new Dropbox.Client({
   // Get auth token from `.env` or environment variables.
-  token: process.env.DROPBOX_AUTH_TOKEN
-});
+  token: process.env.DROPBOX_AUTH_TOKEN,
+})
 // Wrap it in a Promisebox.
-client = new Promisebox(client);
+client = new Promisebox(client)
 
 // Create an Express application.
-const app = express();
+const app = express()
 
 // When a browser requests `/`, display the latest file from the
 // Dropbox folder.
 app.get('/', (req, res) => {
   // Ask Dropbox for a promise to list files in the app folder.
-  client.readdir('/')
+  client
+    .readdir('/')
     // When the promise is fulfilled...
     .then(([entries, dirstat, filestats]) => {
       // Return a Dropbox promise to read the contents of the file.
-      return client.readFile(latestPath(filestats));
+      return client.readFile(latestPath(filestats))
     })
     // When the second promise is fulfilled...
     .then(([contents]) => {
       // Display the file contents to the user.
-      res.send(contents);
+      res.send(contents)
     })
     // If something goes wrong...
     .catch((error) => {
       // Display the error message to the user.
-      return res.send(error.response.error);
-    });
-});
+      return res.send(error.response.error)
+    })
+})
 
 const latestPath = (filestats) => {
   // Ignore files without dates in their names.
-  const datedFiles = filestats.filter(e => /^[0-9-]*\.html$/.test(e.name));
+  const datedFiles = filestats.filter((e) => /^[0-9-]*\.html$/.test(e.name))
   // Get the last one.
-  const latest = datedFiles.sort()[datedFiles.length - 1];
+  const latest = datedFiles.sort()[datedFiles.length - 1]
 
-  return latest.path;
-};
+  return latest.path
+}
 
-module.exports = app;
+module.exports = app
 ```
 
 Again, the code is presented in a more sequential way, with the "happy
@@ -234,7 +236,7 @@ note here:
 
 1. If the first promise fails, the `then` callbacks aren't executed,
    and instead control flows to the `catch` callback at the end. That allows
-   us to use a single callback for both failure cases. 
+   us to use a single callback for both failure cases.
 
 2. If the first promise succeeds, its `then` callback returns another
    promise (returned by `client.readFile`). This promise, on success,
@@ -245,7 +247,7 @@ note here:
    `entries`, `dirstat`, and `filestats` into a single array. Here, we
    use ES6's `array destructuring` syntax to automatically assign them
    to distinct variables.
-   
+
 (I've also moved the "search through filestats for the latest entry's
 path" code to a separate function, so we can focus on the asynchronous
 logic in the URL handler.)
@@ -259,6 +261,5 @@ In part 8, we'll use generators to strip away some of the noise.
 [part 4]: /code/words/dropbox-express-4-the-dropbox-api
 [part 6]: /code/words/dropbox-express-6-double-dropbox
 [spread operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator
-
 [array destructuring]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 [class]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class

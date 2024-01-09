@@ -1,5 +1,5 @@
 ---
-title: "the books I read"
+title: 'the books I read'
 date: 2020-01-12T15:13:08-0500
 section: arts
 ---
@@ -13,7 +13,7 @@ teach you how to read it. I had finished a third of it
 before I realized how invested I was, and maybe two thirds before I
 noticed its dark sense of humor. It reminded me of <cite>1984</cite>
 and <cite>Persepolis</cite>, both works about language, totalitarianism,
-and thought control. This one is about Northern Ireland.    
+and thought control. This one is about Northern Ireland.
 
 Joshua Ferris, <cite>[Then We Came to the End][].</cite> This was a reread,
 a little dated now
@@ -21,7 +21,7 @@ but I still love it. A comedic elegy to working in an ad agency around the turn
 of this century, written mostly in second-person plural – so we get to know
 individuals, but always within a "we" judging and speculating. One of my
 all-time favorite final paragraphs, but don't bother skipping to the end –
-it's about the journey. 
+it's about the journey.
 
 Sara Wachter-Boettcher, <cite>[Technically Wrong][].</cite> Best overview I've
 read of technology, ethics, justice, and the trouble with algorithms.
@@ -46,7 +46,7 @@ rhythm and flow of the village than the mystery.
 
 Kenneth Grahame, <cite>[The Wind in the Willows][].</cite> I remembered Mr. Toad
 and his wild ride, via Disney, but did I ever understand how besotted with
-nature this book is? 
+nature this book is?
 
 [Milkman]: https://www.goodreads.com/book/show/36047860-milkman?from_search=true&qid=Y9X8l89FsW&rank=1
 [1947]: https://www.goodreads.com/book/show/34355164-1947?from_search=true&qid=hxJK8KtJDV&rank=1

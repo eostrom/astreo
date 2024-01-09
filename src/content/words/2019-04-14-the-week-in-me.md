@@ -1,9 +1,10 @@
 ---
-title: "the week in me #2"
+title: 'the week in me #2'
 date: 2019-04-14T22:49-0500
 tags:
 section: both
 ---
+
 A week for moving on, and staying the course.
 
 ## code
@@ -25,30 +26,30 @@ And I've been learning and trying new things.
 New to me, anyway. Things like:
 
 - [Gatsby,][gatsby] &ldquo;a tool for building progressive web apps that are
-served as static assets&rdquo; (as per [Jason Lengstorf][lengstorf-quote]).
-The tutorial was fun, and I contributed a few fixes for outdated links,
-because, you know, if something's easy to fix, you should fix it.
+  served as static assets&rdquo; (as per [Jason Lengstorf][lengstorf-quote]).
+  The tutorial was fun, and I contributed a few fixes for outdated links,
+  because, you know, if something's easy to fix, you should fix it.
 - [Firebase][] and how to keep people from using your API key to
-fill your database with spam. The best answer seems to be to allow
-writes [only via serverless functions][firebase-functions]
-that you define, instead of
-allowing direct database access. Fair enough.
+  fill your database with spam. The best answer seems to be to allow
+  writes [only via serverless functions][firebase-functions]
+  that you define, instead of
+  allowing direct database access. Fair enough.
 - [Callum Macrae's][macrae] talk on
-[Accessibility with Vue][vue-accessibility] 
-(or lack thereof) was informative and fun, and applies to
-JavaScript-based user interfaces whether or not they use Vue.
+  [Accessibility with Vue][vue-accessibility]
+  (or lack thereof) was informative and fun, and applies to
+  JavaScript-based user interfaces whether or not they use Vue.
 - I happened upon [CoCreatz][], a coworking and community space in
-St. Paul's nonprofit-saturated [Creative Enterprise Zone][]. It was a
-nice place to spend an afternoon, and with hourly rates as well as
-ongoing memberships, I plan to spend more afternoons there when I
-find myself in St. Paul.       
+  St. Paul's nonprofit-saturated [Creative Enterprise Zone][]. It was a
+  nice place to spend an afternoon, and with hourly rates as well as
+  ongoing memberships, I plan to spend more afternoons there when I
+  find myself in St. Paul.
 - I also wrote about the blogs where I [find new things to learn about.][blogs]
 
-One more thing: [RailsConf][] is *the* conference for
+One more thing: [RailsConf][] is _the_ conference for
 the web technology I've worked with consistently since 2007, and this
 year it's in Minneapolis, an easy bike ride from my home... and today
 I decided not to buy a ticket. I'm feeling weird
-about it. I will be at [Minnebar][], though!  
+about it. I will be at [Minnebar][], though!
 
 ## arts
 
@@ -59,10 +60,10 @@ working on an Oncoming Productions
 web site, so I don't have to keep linking to the Facebook page.
 
 [Bummertown][] – a tragicomic improv show for which I played background
-music last fall – held auditions for our run [this summer at 
+music last fall – held auditions for our run [this summer at
 HUGE][bummertown-run]. As the show's accompanist, I got to watch
 three rounds of auditions, each of them delightful, each in its
-own way. I'm glad deciding who to cast isn't my job. 
+own way. I'm glad deciding who to cast isn't my job.
 
 I wrote a poem this week. I think it was okay!
 
@@ -81,7 +82,7 @@ mistranslated English, so a few days later I went back and bought it.
 gorilla sitting at the patio table outside.](../../src/assets/images/stockholm-bokslukaren-gorilla.jpg)
 
 That child is now over three months old, and this week I finally started
-translating Lena Sjöberg's [<cite>Natten lyser!</cite>][natten-lyser]. 
+translating Lena Sjöberg's [<cite>Natten lyser!</cite>][natten-lyser].
 It's a book about things that light up in the night – from stars to
 streetlights to bioluminescent bugs.
 
@@ -97,8 +98,7 @@ but I've got time – this book is for readers aged 9 to 12.
 [bummertown]: https://www.facebook.com/bummertown/
 [bummertown-run]: https://www.erikostrom.com/arts/shows
 [tin-cat]: https://www.facebook.com/tincatland/
-
-[contact]: https://www.erikostrom.com/code/links 
+[contact]: https://www.erikostrom.com/code/links
 [gatsby]: https://www.gatsbyjs.org
 [lengstorf-quote]: https://twitter.com/erikostrom/status/1117555949831507968
 [firebase]: https://firebase.google.com
@@ -110,8 +110,7 @@ but I've got time – this book is for readers aged 9 to 12.
 [railsconf]: https://railsconf.com
 [minnebar]: https://minnestar.org/minnebar/
 [blogs]: https://www.erikostrom.com/code/words/the-feeds-i-read
-
 [bokslukaren]: http://www.bokslukaren.com
-[natten-lyser]: http://www.lenasjoberg.com/books/natten-lyser/ 
+[natten-lyser]: http://www.lenasjoberg.com/books/natten-lyser/
 [microsoft translator]: https://www.bing.com/translator?ref=TThis&&text=&from=sv&to=en
 [tyda.se]: https://tyda.se

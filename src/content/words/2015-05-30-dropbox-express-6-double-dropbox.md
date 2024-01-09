@@ -1,20 +1,20 @@
 ---
 supertitle: Dropbox Express with ECMAScript 6+
-subtitle: "Part 6: Double boxing."
-title: "Dropbox Express 6: Double Dropbox."
+subtitle: 'Part 6: Double boxing.'
+title: 'Dropbox Express 6: Double Dropbox.'
 date: 2015-05-30T01:51Z
-tags: 
-- dropbox
-- node.js
-- es.next 
+tags:
+  - dropbox
+  - node.js
+  - es.next
 section: code
 ---
 
-*This is how I built a simple server-side JavaScript app on top of the
+_This is how I built a simple server-side JavaScript app on top of the
 Dropbox API, using Express.js, ECMAScript 6 (and one thing I hope will
 be in ES 7), and Zombie.js for testing. It was my first time using any
 of these things (except JavaScript, natch), so there are probably
-better ways to do some of it. [Let me know!][contact]*
+better ways to do some of it. [Let me know!][contact]_
 
 In [part 5], we set up separate environments for development and
 testing. Our app is working fine, but it isn't very interesting.
@@ -31,16 +31,16 @@ my journal.)
 First, copy a couple of HTML files to the Dropbox folder for your
 test app. Here are the files:
 
-* <code>[2015-05-30.html]</code>
-* <code>[2015-05-31.html]</code>
+- <code>[2015-05-30.html]</code>
+- <code>[2015-05-31.html]</code>
 
 `2015-05-31.html` has a body that tells us it's the newest file, so
 let's revise `test/acceptance_test.js` to look for it:
 
 ```javascript
-it('displays the latest file from the Dropbox folder', function() {
-    this.browser.assert.text('body', /newest file/i);
-  });
+it('displays the latest file from the Dropbox folder', function () {
+  this.browser.assert.text('body', /newest file/i)
+})
 ```
 
 ## More callbacks!
@@ -59,28 +59,28 @@ app.get('/', (req, res) => {
     // reading the directory worked.
     if (dirError) {
       // Failure! Tell the user of our disgrace.
-      console.log(dirError);
-      return res.send(dirError.response.error);
+      console.log(dirError)
+      return res.send(dirError.response.error)
     }
 
     // Ignore files without dates in their names.
-    const datedFiles = filestats.filter(e => /^[0-9-]*\.html$/.test(e.name));
+    const datedFiles = filestats.filter((e) => /^[0-9-]*\.html$/.test(e.name))
     // Get the last one.
-    const latest = datedFiles.sort()[datedFiles.length - 1];
+    const latest = datedFiles.sort()[datedFiles.length - 1]
 
     // Ask Dropbox for the contents of the latest file.
     client.readFile(latest.path, (fileError, contents) => {
       // Another opportunity for failure!
       if (fileError) {
-        console.log(fileError);
-        return res.send(fileError.response.error);
+        console.log(fileError)
+        return res.send(fileError.response.error)
       }
 
       // Success at last! Display the file contents to the user.
-      return res.send(contents);
-    });
-  });
-});
+      return res.send(contents)
+    })
+  })
+})
 ```
 
 (Notice the arrow function expression in the `filter` line. We've used

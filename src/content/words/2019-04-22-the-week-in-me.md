@@ -1,5 +1,5 @@
 ---
-title: "the week in me #3"
+title: 'the week in me #3'
 date: 2019-04-22T22:27:27-0500
 tags:
 section: both
@@ -25,7 +25,7 @@ Over the years I've seen a lot of junior developers make the same mistake –
 and, to be honest, I'm still making it too. Of course, sometimes taking
 the time to figure things out for yourself can be valuable. You can learn
 a lot on the way to the answer, and if you get it right, it might feel
-great! But on the other hand you could ask someone for help, learn something,   
+great! But on the other hand you could ask someone for help, learn something,  
 and move on to the next thing to learn. You're not going to run out of those.
 
 Some things I did this week:
@@ -33,32 +33,32 @@ Some things I did this week:
 - slightly improved readability on the arts side of this web site
 - with my colleague Eric, started (and... almost finished) phase&nbsp;2 of a
   client project
-- a new one-page site for [Oncoming Productions][oncoming]... almost 
-- wrote about the latest version of [RubyMine, the IDE I use][rubymine-post] 
+- a new one-page site for [Oncoming Productions][oncoming]... almost
+- wrote about the latest version of [RubyMine, the IDE I use][rubymine-post]
 
 Some things I recommend:
 
 - [Sara Soueidan's][soueidan] talk at
-  [Coldfront 2018][coldfront-2018] on 
+  [Coldfront 2018][coldfront-2018] on
   ["Inclusively Responsive UIs with CSS and SVG"][soueidan-talk]
-- [Eva Penzey-Moog's][penzey-moog] talk at 
+- [Eva Penzey-Moog's][penzey-moog] talk at
   [Women Techmakers Montreal][wtm-montreal] on
   ["Designing Against Domestic Violence][penzey-moog-talk]
 - [Tatiana Mac][mac] on
   [How Tech Provides Platforms for Hate][canary]
-    
-There are so many opportunities to make things better. 
+
+There are so many opportunities to make things better.
 
 ## arts
 
-This week we started adding music to our section of 
+This week we started adding music to our section of
 [Five Fifths of Mary Poppins][poppins] – figuring out where it belongs,
 where it doesn't, what it should evoke, and how to evoke it. When we get
 it right, music adds depth and coherence to the scenes we're creating.
 I love getting it right.
 
 Other than that, all my arts action this week is future work I can't
-talk about yet.     
+talk about yet.
 
 ## life
 
@@ -68,14 +68,14 @@ since I rode anywhere at all. But the snow is finally gone, my ankle
 feels strong again, and on Thursday I biked to an improv meeting.
 And on Easter I took my first purely recreational ride in ages,
 around the edge of Bde Maka Ska. I wasn't the only one – it feels
-like when spring hits Minneapolis, everyone comes out to play.  
+like when spring hits Minneapolis, everyone comes out to play.
 
 I've been watching a little Swedish television. It started with
 [Al Pitcher på paus,][pitcher] a (mostly) English-language sitcom
 about a comedian finding his way through six months of Sweden's
 [generous parental leave.][parental-leave] The first episode was
 a good introduction to the characters and tone, but [episode 2][pitcher-2]
-made me laugh out loud. 
+made me laugh out loud.
 
 While I was on SVT's site, I ran across [Dips,][dips] which as far as
 I can tell is an unauthorized Swedish version of Veep, which is an
@@ -88,9 +88,8 @@ transcend national boundaries.
 If that doesn't work for you, try this
 [moose migration livestream.][moose]
 
-
 [help]: https://twitter.com/erikostrom/status/1118299780315115520
-[rubymine-post]: https://www.erikostrom.com/code/words/ruby-mine-2019-1 
+[rubymine-post]: https://www.erikostrom.com/code/words/ruby-mine-2019-1
 [soueidan]: https://www.sarasoueidan.com
 [soueidan-talk]: https://youtu.be/TbOxPhcVzCc
 [coldfront-2018]: https://2018.coldfront.co
@@ -99,11 +98,8 @@ If that doesn't work for you, try this
 [wtm-montreal]: https://wtmmontreal.com
 [mac]: https://tatianamac.com/
 [canary]: https://alistapart.com/article/canary-in-a-coal-mine-how-tech-provides-platforms-for-hate/
-
-
 [oncoming]: http://www.oncomingproductions.com/
 [poppins]: https://www.minnesotafringe.org/event-calendar/five-fifths
-
 [pitcher]: https://www.svt.se/al-pitcher-pa-paus/
 [pitcher-2]: https://www.svtplay.se/video/21744986/al-pitcher-pa-paus/al-pitcher-pa-paus-sasong-1-avsnitt-2
 [parental-leave]: https://sweden.se/society/10-things-that-make-sweden-family-friendly/

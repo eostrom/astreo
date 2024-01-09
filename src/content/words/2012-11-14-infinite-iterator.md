@@ -1,10 +1,10 @@
 ---
 title: Infinite iterator.
 date: 2012-11-14T00:12-06:00
-tags: 
-- ruby
-- tricks
-- loops
+tags:
+  - ruby
+  - tricks
+  - loops
 section: code
 ---
 

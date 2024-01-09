@@ -1,8 +1,8 @@
 ---
-title: "the year in me"
+title: 'the year in me'
 date: 2020-01-01T15:25:27-0500
-tags:     
-image: "/images/January car.jpg"
+tags:
+image: '/images/January car.jpg'
 section: both
 ---
 
@@ -13,7 +13,6 @@ section: both
   >
   <figcaption>2019, oh boy.</figcaption>
 </figure>
-
 
 ## code
 
@@ -55,7 +54,7 @@ Eric and I also took on a part-time gig as freelance mentors for a cohort of tal
 
 I liked working with the interns and the SfG team, but in some ways this was the hardest part of my year. Between Rails work and non-code projects, I didn't have much time to keep learning and developing new skills, or practice the skills I'd started to pick up, or create a new technical talk about anything. I was still doing little odd jobs to keep the spark alive, but my momentum slowed, and it started to feel like I would just fall permanently back into the Rails world.
 
-*(This feels like a good time to say that "doomed to program Rails professionally until I retire" is a pretty nice doom. Ruby is still my favorite programming language, Rails makes many things easy that are hard everywhere else, and let's be honest, any kind of programming is easy money once you get the gig. Rails has been very good to me, and I do enjoy working with it. It just doesn't feel like my future anymore.)*
+_(This feels like a good time to say that "doomed to program Rails professionally until I retire" is a pretty nice doom. Ruby is still my favorite programming language, Rails makes many things easy that are hard everywhere else, and let's be honest, any kind of programming is easy money once you get the gig. Rails has been very good to me, and I do enjoy working with it. It just doesn't feel like my future anymore.)_
 
 ### fall
 
@@ -103,7 +102,7 @@ him last December). I feel like I've learned a lot from him, and he's
 been picking things up pretty fast too.
 
 Oh, and I quit Amazon Prime, tried to fix my sleep, and read a bunch of books.
-I should write about the books I read! Well, maybe tomorrow.  
+I should write about the books I read! Well, maybe tomorrow.
 
 [I'm A Trio]: https://www.facebook.com/imatrio/
 [HUGE]: http://www.hugetheater.com/

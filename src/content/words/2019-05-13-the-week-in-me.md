@@ -1,5 +1,5 @@
 ---
-title: "the week in me #5"
+title: 'the week in me #5'
 date: 2019-05-13T20:45:27-0500
 tags:
 section: both
@@ -13,7 +13,7 @@ It's probably just that literally nothing happened the week before.
 ---
 
 ## code
-     
+
 Okay, actually I've had a tough week (or two, who's counting).
 
 For one thing, I took my first "programming test" in many years. This
@@ -44,7 +44,7 @@ different skills, learning new things and using previously
 acquired knowledge, helping and collaborating with different
 people. I want more days like that. (But also I want more
 of the projects I'm working on to pay me.)
-    
+
 And last night – listen, I'm just going to descend into technobabble
 for a moment, sorry, friends. Last night I added [Netlify CMS][] to
 a [Gatsby][] site I was already deploying on [ZEIT Now][]. As a test,
@@ -56,7 +56,7 @@ a hook that automatically
 deployed the branch for review to a new URL, which showed up as a
 notification in the Now menu bar app. I can't decide if this new
 web is a Rube Goldberg contraption or a beautiful, elegant machine,
-but either way it delighted me.      
+but either way it delighted me.
 
 ---
 
@@ -73,7 +73,7 @@ fifth of what we've occasionally called
 [Scary Poppins.][poppins] I'm really proud of the work we did.
 We were true to the original (in our fashion), while showcasing our
 strengths as a company: physical movement, black humor, philosophical
-resonance, creative lighting, and evocative music – which is my job.  
+resonance, creative lighting, and evocative music – which is my job.
 
 Over the past weeks, I'd watched the performance take shape, sketched
 out musical concepts to underscore the drama, worked with actors on the
@@ -93,12 +93,12 @@ Keep pressing the keys. Nothing.
 Check the screen. Looks fine. Nothing's happening. Press some buttons.
 Everything's working the way it should. But no notes are coming out.
 
-I'm not watching the cast but by this point I can *hear* them waiting
+I'm not watching the cast but by this point I can _hear_ them waiting
 for me, until someone decides the show must go on, and
 starts singing. Beautifully. Perfectly. The only thing
 wrong with the scene is that eventually I do get my gear working again
-and my ego won't let me just *not play,* so my instrumental backdrop and
-I blunder back into the song that's being sung just fine without us.   
+and my ego won't let me just _not play,_ so my instrumental backdrop and
+I blunder back into the song that's being sung just fine without us.
 
 Which is fine! The show's still great! No one who isn't in the cast
 notices, probably, and no one who isn't me gives it a second thought.
@@ -110,8 +110,8 @@ still hard for me to go out to the lobby and smile when people say
 
 Some prouder moments from my recent arts life:
 
-- Made some visual art for my friends [Beastie Y'all.][beastie] 
-  I never do visual art! Album drops in June, probably. 
+- Made some visual art for my friends [Beastie Y'all.][beastie]
+  I never do visual art! Album drops in June, probably.
 - First rehearsal with [The PAiNTERS][painters] for our upcoming run
   at [HUGE][] this summer.
 - A last-minute gig accompanying [The Show][] and [The Bearded Company][].
@@ -120,7 +120,7 @@ Some prouder moments from my recent arts life:
   different ways in which we regard ourselves as the weak link in the
   trio. This was hilarious, because our insecurities are foolish and
   when we bring them out in the light we can see it. I highly recommend
-  you work with people you trust enough to share your fears with.    
+  you work with people you trust enough to share your fears with.
 
 ---
 
@@ -133,7 +133,7 @@ It was a real bummer. Two things that maybe shouldn't have made a
 big difference in the face of all that, but did: Having someone I
 admire casually call
 me a friend, and biking downtown on a beautiful day
-for a [book festival.][wordplay] Sometimes we're simple creatures. 
+for a [book festival.][wordplay] Sometimes we're simple creatures.
 
 ![People walking past booths at the Wordplay festival, with
 US Bank Stadium looming over the scene.](../../src/assets/images/wordplay-festival.jpg)
@@ -143,7 +143,7 @@ Three more things I liked this week (or two, who's counting):
 - [<cite>The Play That Goes Wrong.</cite>][wrong] I haven't laughed
   this much
   at a play in a long while. If you live near me, you already
-  missed it. Sorry.   
+  missed it. Sorry.
 - [<cite>Caribbean Rhapsody.</cite>][rhapsody]
   James Carter's saxophone swirls and
   bobs through Roberto Sierra's Latin-tinged orchestral concerto.
@@ -166,21 +166,18 @@ Three more things I liked this week (or two, who's counting):
 [Netlify CMS]: https://www.netlifycms.org
 [Gatsby]: https://www.gatsbyjs.org
 [ZEIT Now]: https://zeit.co/now
-
 [oncoming]: https://oncomingproductions.com
 [poppins]: https://www.minnesotafringe.org/event-calendar/five-fifths
 [The Show]: https://www.facebook.com/TheShowImprov/
 [The Bearded Company]: https://beardedcompany.org
 [painters]: https://www.facebook.com/ThePaintersImprov/
 [trio]: https://www.facebook.com/imatrio/
-[HUGE]: http://www.hugetheater.com 
+[HUGE]: http://www.hugetheater.com
 [beastie]: https://beastieyall.bandcamp.com
-
 [wordplay]: https://loft.org/wordplay/about-wordplay
 [gidget]: https://www.amazon.com/Gidget-Goes-Rome-James-Darren/dp/B0087YSBQQ
 [wrong]: https://www.broadwaygoeswrong.com
 [rhapsody]: https://www.youtube.com/watch?v=lBqe4x1hFqo
-
 [walker]: https://walkerart.org
 [js-mn]: https://javascriptmn.com
 [vue.js]: https://vuejs.org
@@ -188,11 +185,6 @@ Three more things I liked this week (or two, who's counting):
 [gatsby]: https://www.gatsbyjs.org
 [shows page]: https://www.erikostrom.com/arts/shows/
 [heather quintal]: https://www.heatherquintal.com
-
-
-
 [arboretum]: http://www.arboretum.umn.edu
 [auction]: https://www.ebay.com/itm/Arboretum-with-Im-A-Trio/113731374166?hash=item1a7aeb0c56:g:aCgAAOSwhy9cxb1C
-
 [five-watt]: http://fivewattcoffee.com/five-watt-coffee
-

@@ -1,21 +1,21 @@
 ---
 supertitle: Dropbox Express with ECMAScript 6+
-subtitle: "Part 5: A sandbox."
-title: "Dropbox Express 5: A sandbox."
+subtitle: 'Part 5: A sandbox.'
+title: 'Dropbox Express 5: A sandbox.'
 date: 2015-05-28T21:31Z
-tags: 
-- dotenv
-- dropbox
-- node.js
-- testing 
+tags:
+  - dotenv
+  - dropbox
+  - node.js
+  - testing
 section: code
 ---
 
-*This is how I built a simple server-side JavaScript app on top of the
+_This is how I built a simple server-side JavaScript app on top of the
 Dropbox API, using Express.js, ECMAScript 6 (and one thing I hope will
 be in ES 7), and Zombie.js for testing. It was my first time using any
 of these things (except JavaScript, natch), so there are probably
-better ways to do some of it. [Let me know!][contact]*
+better ways to do some of it. [Let me know!][contact]_
 
 In [part 4], we wrote a simple app that counts files in a Dropbox
 folder. It passes its test! Now let's see what it looks like in the
@@ -28,7 +28,7 @@ We made our test load its configuration via [`dotenv`][dotenv], but we didn't
 make the application do it. Add this line to the top of `index.js`:
 
 ```javascript
-require('dotenv').load();
+require('dotenv').load()
 ```
 
 Visit <http://localhost:3000/> and it will tell you that there are
@@ -36,7 +36,7 @@ Visit <http://localhost:3000/> and it will tell you that there are
 
 ## Be suspicious.
 
-Of course, any good QA engineer knows that doesn't mean it's *working*.
+Of course, any good QA engineer knows that doesn't mean it's _working_.
 We could just have an app that says there are 0 files, no matter how many
 files there actually are. Let's make sure this is for real by adding a
 file to the Dropbox.
@@ -52,7 +52,7 @@ touch ~/Dropbox/Apps/journal\ test/2015-05-28.html
 ```
 
 Reload <http://localhost:3000/>. Voila! Two files. The system works!
- 
+
 ## Isolate tests.
 
 One problem: Now if you run `npm test`, you'll get an error:
@@ -83,7 +83,7 @@ DROPBOX_AUTH_TOKEN=Y0urN3wAcc355T0k3nF0rD3vG03sH3r3
 In `test/acceptance_test.js`, change the `dotenv` line:
 
 ```javascript
-require('dotenv').load({path: '.env.test'});
+require('dotenv').load({path: '.env.test'})
 ```
 
 And make sure you don't check your new access token into git:
@@ -100,6 +100,6 @@ what's inside it.
 [contact]: mailto:code@erikostrom.com
 [part 4]: /code/words/dropbox-express-4-the-dropbox-api
 [dotenv]: https://www.npmjs.com/package/dotenv
-[part-4-dropbox-app]: /code/words/dropbox-express-4-the-dropbox-api#a-test-app 
+[part-4-dropbox-app]: /code/words/dropbox-express-4-the-dropbox-api#a-test-app
 [dropbox app console]: https://www.dropbox.com/developers/apps
 [part 6]: /code/words/dropbox-express-6-double-dropbox

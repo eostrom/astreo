@@ -1,10 +1,10 @@
 ---
 title: Coding like a girl.
 date: 2015-06-02T21:37Z
-tags: 
-- programming
-- gender
-- feminism
+tags:
+  - programming
+  - gender
+  - feminism
 section: code
 ---
 
@@ -13,10 +13,10 @@ Meanwhile, enjoy an article by sailor mercury about [femininity and
 programming][coding-like-a-girl]. I liked this tip:
 
 > **Assume people are as or more qualified than you.**
-> 
+>
 > If you’re at a conference and talking to a feminine presenting person,
 > assume they are an expert in the field of the conference.
-> 
+>
 > Before you are about to explain a paper condescendingly to someone in a
 > dress, assume that they wrote it.
 

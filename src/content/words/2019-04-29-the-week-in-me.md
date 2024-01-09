@@ -1,5 +1,5 @@
 ---
-title: "the week in me #4"
+title: 'the week in me #4'
 date: 2019-04-29T20:45:27-0500
 tags:
 section: both
@@ -14,7 +14,7 @@ job in 2003, and I haven't applied for one since 2010 when I thought
 I might work at [high school Erik's favorite museum.][walker] I love the
 freelance life, but I've been missing the feeling of being part of a larger
 team, and I found an organization that's hiring whose mission I believe in,
-so I applied. We'll see. 
+so I applied. We'll see.
 
 I've been thinking about diversity and inclusion. I'm lucky
 enough to have been born into nearly every overrepresented population,
@@ -27,7 +27,7 @@ and I barely have coworkers, so a lot of what I read isn't advice
 I can use. I find myself wanting to work on a bigger team in part so
 I can try to be part of the solution... but on the other hand, maybe
 part of the solution is not hiring so many people like me. Still
-working out what I think about this. 
+working out what I think about this.
 
 ---
 
@@ -68,10 +68,10 @@ So I made a running joke out of it, saying "next slide" to nobody,
 gesturing futilely at the screen where
 the slides would be. I felt comfortable, people laughed, and some of
 them told me later they'd enjoyed my talk. Hey, I might be able
-to do this! Now to think of a topic for my next meetup.   
- 
+to do this! Now to think of a topic for my next meetup.
+
 ---
- 
+
 One more code achievement for the week: I improved the legibility
 of blog posts (and the [shows page]) on the arts side of this site,
 mostly by darkening the magenta I use on the home page. I also spent
@@ -79,7 +79,7 @@ hours trying to implement a cool triangle-based idea (suggested
 by my friend [Heather Quintal]) that would have tied the pages
 together, but I couldn't make the CSS work. Can't win 'em
 all, I guess.
-   
+
 ---
 
 ## arts
@@ -90,7 +90,7 @@ rehearsal for [Five Fifths of Mary Poppins][poppins] (coming up next
 Monday!). And I finally built us a web site – or, more accurately,
 [a web page.][oncoming] Hardly even a full page. And most of it is
 an ad for our show that will be over after next Monday. Guess I'll
-keep working on it.  
+keep working on it.
 
 My improv trio [I'm A Trio][trio] has an item up for bid in the
 [HUGE Theater][huge] Hangout Auction. The idea behind this annual
@@ -100,7 +100,7 @@ community.
 For example, you could come with us to the [Minnesota Landscape
 Arboretum][arboretum] where we and you and optionally an additional
 friend will look at trees together. Who doesn't like trees...
-and company? [Place your bid now!][auction]   
+and company? [Place your bid now!][auction]
 
 ---
 
@@ -113,7 +113,7 @@ personal.
 As for me, I've moved my copious junk food supplies into a cardboard box,
 and I'm now using that space for Pyrex bowls, Tupperware, measuring
 cups and spoons, and also whatever happens to be in my way in the kitchen.
-(This is how it begins.)   
+(This is how it begins.)
 
 I'm not saying the reason I moved to my current neighborhood
 was to hang out at Bull Run Coffee, but that was part of it. The coffee
@@ -122,10 +122,10 @@ the years, the name changed, Lee and Caleb started their own café,
 the other baristas I knew moved on, the coffee got worse, the wifi
 stopped working, and eventually the place shut down. But as of this
 Saturday, Lee and Caleb are back in
-Lyn-Lake, in the very space they'd left behind, in 
+Lyn-Lake, in the very space they'd left behind, in
 [Five Watt Coffee's][five-watt] newest location. I guess I'll stick
-around.  
- 
+around.
+
 ![A photo of the newly opened Five Watt Coffee Lyndale, with Lee
 and Caleb working behind the counter.](../../src/assets/images/five-watt-lyndale.jpg)
 
@@ -136,13 +136,10 @@ and Caleb working behind the counter.](../../src/assets/images/five-watt-lyndale
 [gatsby]: https://www.gatsbyjs.org
 [shows page]: https://www.erikostrom.com/arts/shows/
 [heather quintal]: https://www.heatherquintal.com
-
 [oncoming]: https://oncomingproductions.com
 [poppins]: https://www.minnesotafringe.org/event-calendar/five-fifths
 [trio]: https://www.facebook.com/imatrio/
-[huge]: http://www.hugetheater.com 
+[huge]: http://www.hugetheater.com
 [arboretum]: http://www.arboretum.umn.edu
 [auction]: https://www.ebay.com/itm/Arboretum-with-Im-A-Trio/113731374166?hash=item1a7aeb0c56:g:aCgAAOSwhy9cxb1C
-
 [five-watt]: http://fivewattcoffee.com/five-watt-coffee
-

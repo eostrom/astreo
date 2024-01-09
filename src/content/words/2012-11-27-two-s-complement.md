@@ -1,10 +1,10 @@
 ---
 title: Two's complement.
 date: 2012-11-27T00:16-06:00
-tags: 
-- math
-- computer science
-- binary
+tags:
+  - math
+  - computer science
+  - binary
 section: code
 ---
 
@@ -18,15 +18,15 @@ In pure math, negative binary numbers are easy: -8 decimal is <!-- READMORE --> 
 
 But computers don't have a negative sign; they just have a bunch of switches that are either on or off. So we need a way to use those switches to talk about negative numbers.
 
-Suppose we have a world where the only numbers you can talk about are ones that fit in four bits.  0000, 0001, 0010, ... 1111.
+Suppose we have a world where the only numbers you can talk about are ones that fit in four bits. 0000, 0001, 0010, ... 1111.
 
 An obvious way to translate between those four bits and integers is to, you know, do binary the way you know about. So 0000 = 0, 0001 = 1, 0010 = 2, all the way up to 1111 = 8 + 4 + 2 + 1 = 15.
 
 The problem with that is, now you have no way of talking about negative integers at all.
 
-So another way of translating is: you say, okay, everything that starts with a 0, we do that way.  0000 = 0 up to 0111 = 7.  Then you wrap around to 1000 = -8, 1001 = -7, 1010 = -6, .... 1111 = -1. That's Two's Complement.
+So another way of translating is: you say, okay, everything that starts with a 0, we do that way. 0000 = 0 up to 0111 = 7. Then you wrap around to 1000 = -8, 1001 = -7, 1010 = -6, .... 1111 = -1. That's Two's Complement.
 
-Another way of looking at it is like this: In regular binary numbers, looking from left to right, the bits stand for 8, 4, 2, 1. In Two's Complement, the leftmost digit doesn't stand for 8, it stands for *negative* 8.  So 1010 = -8 + 0 + 2 + 0 = -6.
+Another way of looking at it is like this: In regular binary numbers, looking from left to right, the bits stand for 8, 4, 2, 1. In Two's Complement, the leftmost digit doesn't stand for 8, it stands for _negative_ 8. So 1010 = -8 + 0 + 2 + 0 = -6.
 
 You can do this with different numbers of bits, of course: 8, 16, 32,
 64, whatever you have available.
@@ -55,6 +55,6 @@ is, but it's pretty neat.
 
 ## Note: Binary numbers are syntax.
 
-Ruby and Python support binary numbers as *syntax*, not as a data type.
+Ruby and Python support binary numbers as _syntax_, not as a data type.
 So you can enter a number as 0b00whatever, but it comes back out as decimal.
 Because they're both just integers, and the default output format for an integer is decimal.

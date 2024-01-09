@@ -1,22 +1,22 @@
 ---
 supertitle: Dropbox Express with ECMAScript 6+.
-subtitle: "Part 1: Express, Babel."
-title: "Dropbox Express: Express, Babel."
+subtitle: 'Part 1: Express, Babel.'
+title: 'Dropbox Express: Express, Babel.'
 date: 2015-05-22T21:50Z
-tags: 
-- node.js
-- express.js
-- es.next
-- babel
-- eslint
+tags:
+  - node.js
+  - express.js
+  - es.next
+  - babel
+  - eslint
 section: code
 ---
 
-*This is how I built a simple server-side JavaScript app on top of the
+_This is how I built a simple server-side JavaScript app on top of the
 Dropbox API, using Express.js, ECMAScript 6 (and [one thing][async-await]
 that I hope will be in ES 7), and Zombie.js for testing. It was my first
 time using any of these things (except JavaScript, natch), so there are
-probably better ways to do some of it. [Let me know!][contact]*
+probably better ways to do some of it. [Let me know!][contact]_
 
 In this post, I'll cover the initial setup. Future posts will be about
 more interesting things. <!-- READMORE -->
@@ -51,7 +51,7 @@ npm install --save-dev babel-eslint
 
 (The actual difference between `--save` and `--save-dev` is moot, but I'm
 using it to distinguish between run-time and develop-time dependencies.)
- 
+
 `babel-eslint` lets the [ESlint] code checker use Babel's parser, so it
 won't get thrown when we use some advanced language features.
 

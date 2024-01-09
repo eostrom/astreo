@@ -1,12 +1,13 @@
 ---
-title: "Svelte: first impressions"
+title: 'Svelte: first impressions'
 date: 2019-07-29T15:38-0500
 tags:
-- javascript
-- frameworks 
+  - javascript
+  - frameworks
 status: published
 section: code
 ---
+
 [Svelte] is "a tool for building fast web applications." Here are a few
 thoughts after
 running through the (excellent)
@@ -24,18 +25,17 @@ Here's some [code from the tutorial][reactive-declarations]:
 
 ```html
 <script>
-  let count = 0;
-  $: doubled = count * 2;
-	
+  let count = 0
+  $: doubled = count * 2
+
   function handleClick() {
-    count += 1;
+    count += 1
   }
 </script>
 
-<button on:click={handleClick}>
-  Clicked {count}
-  {count === 1 ? 'time' : 'times'}
-</button> 
+<button on:click="{handleClick}">
+  Clicked {count} {count === 1 ? 'time' : 'times'}
+</button>
 
 <p>{count} doubled is {doubled}</p>
 ```
@@ -45,9 +45,9 @@ it took to make it reactive. Now when it's incremented in `handleClick`,
 the button text is automatically updated.
 
 The `$` label signifies a <i>reactive declaration.</i> `doubled` is not
-just *initialized* but *defined* as `count * 2` – meaning that whenever
+just _initialized_ but _defined_ as `count * 2` – meaning that whenever
 `count` changes, `doubled` is recomputed. And when `doubled` changes,
-the paragraph below the button is automatically updated too.  
+the paragraph below the button is automatically updated too.
 
 All the modern frameworks have some version of this, and the differences
 are subtle. All I can say is that this feels good to me.
@@ -69,15 +69,14 @@ outside of them. Here's another [sample from the tutorial][custom-stores]:
 
 ```javascript
 function createCount() {
-  const { subscribe, set, update }
-    = writable(0);
+  const {subscribe, set, update} = writable(0)
 
   return {
     subscribe,
-    increment: () => update(n => n + 1),
-    decrement: () => update(n => n - 1),
-    reset: () => set(0)
-  };
+    increment: () => update((n) => n + 1),
+    decrement: () => update((n) => n - 1),
+    reset: () => set(0),
+  }
 }
 ```
 
@@ -86,7 +85,7 @@ data store with a standard interface (subscribe and unsubscribe), and
 a custom interface (increment, decrement, reset).
 
 I don't know what it's like to use this for complex applications, but
-at this level, it's very appealing.  
+at this level, it's very appealing.
 
 ---
 
@@ -96,16 +95,14 @@ for promises][await-blocks]:
 
 ```html
 {#await promise}
-  <p>...waiting</p>
+<p>...waiting</p>
 {:then number}
-  <p>The number is {number}</p>
+<p>The number is {number}</p>
 {:catch error}
-  <p style="color: red">
-    {error.message}
-  </p>
+<p style="color: red">{error.message}</p>
 {/await}
 ```
-  
+
 This makes a no-brainer out of the "loading" indicators I often put
 off until later because they feel like tedious boilerplate.
 
@@ -128,11 +125,11 @@ Svelte is much faster than most frameworks.
 To me, those aren't the most
 exciting things about Svelte. There are three reasons for that:
 
-- While Svelte delivers an [impressively small bundle,][bundle-size]   
+- While Svelte delivers an [impressively small bundle,][bundle-size]  
   that's only one component of perceived and actual [performance].
 - Performance is important, but it's not the only important thing.
   Robustness matters. Developer experience matters.
-- I don't know, it's just not what I think is fun.   
+- I don't know, it's just not what I think is fun.
 
 To be clear, I'm not saying that Svelte's overall performance isn't great,
 or that it isn't robust, or that the developer experience is bad. (In fact,
@@ -145,10 +142,10 @@ There are at least two things I'm curious about:
 
 - What is debugging like? Is it harder because the compiled JavaScript
   is further removed from the source code?
-- What is testing like? (Sounds like it's a [work in progress][testing].) 
-    
+- What is testing like? (Sounds like it's a [work in progress][testing].)
+
 Overall, though, I'm impressed with Svelte. I'm looking forward to building
-something with it, and I recommend front-end developers check it out.   
+something with it, and I recommend front-end developers check it out.
 
 [Svelte]: https://svelte.dev/
 [tutorial]: https://svelte.dev/tutorial/basics
