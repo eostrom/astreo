@@ -34,11 +34,11 @@
   --blue-hue: 225;
   --pink-hue: 300;
   /*
-  This "midway" is not mathematically at the midpoint, but at least
-  to my eyes the actual midpoint looked higher-contrast in blue-on-pink
-  than pink-on-blue. If I start using the midway hue elsewhere, I'll
-  reconsider.
-   */
+    This "midway" is not mathematically at the midpoint, but at least
+    to my eyes the actual midpoint looked higher-contrast in blue-on-pink
+    than pink-on-blue. If I start using the midway hue elsewhere, I'll
+    reconsider.
+     */
   --midway-hue: calc((var(--blue-hue) * 2 + var(--pink-hue) * 3) / 5);
   --near-blue-hue: calc((var(--blue-hue) + var(--midway-hue)) / 2);
   --near-pink-hue: calc((var(--pink-hue) + var(--midway-hue)) / 2);
@@ -82,9 +82,15 @@ body {
   min-height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 code,
-.display, .main.display-only {
+.display,
+.main.display-only {
   font-family: var(--display-font-family);
   font-style: var(--display-font-style);
   color: var(--display-color);
@@ -118,7 +124,12 @@ hr {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0.5em 0;
 }
@@ -129,8 +140,13 @@ h1 {
   padding: calc((var(--lh-5) - var(--fs-5)) / 2) 0;
 }
 
-h1::before { content: '[' }
-h1::after { content: ']' }
+h1::before {
+  content: '[';
+}
+
+h1::after {
+  content: ']';
+}
 
 h2 {
   font-size: var(--fs-3);
@@ -149,11 +165,17 @@ p {
   padding: 0.5em 0;
 }
 
-p, ul, ol, figure, iframe {
+p,
+ul,
+ol,
+figure,
+iframe {
   max-width: 60ch;
 }
 
-p img, li img, figure img {
+p img,
+li img,
+figure img {
   max-width: 100%;
 }
 
@@ -168,7 +190,10 @@ figcaption {
 
 a {
   text-decoration: none;
-  &:link:hover { text-decoration: underline; }
+
+  &:link:hover {
+    text-decoration: underline;
+  }
 
   &:link,
   &:visited {
@@ -245,19 +270,25 @@ a.side {
   color: var(--far-display-color);
   filter: blur(3px);
   overflow-x: hidden;
-  transition: filter 250ms linear, color 250ms linear;
+  transition:
+    filter 250ms linear,
+    color 250ms linear;
 
   & .side-label {
     filter: blur(1px);
-    transition: filter 250ms linear, color 250ms linear;
+    transition:
+      filter 250ms linear,
+      color 250ms linear;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     filter: blur(0);
     color: var(--near-display-color);
   }
 
-  & .side-label:hover, & .side-label:focus {
+  & .side-label:hover,
+  & .side-label:focus {
     filter: blur(0);
     color: var(--display-color);
   }
@@ -328,7 +359,8 @@ a.side {
   --far-display-color: var(--midway-bright-color);
 }
 
-.body ul, .body ol {
+.body ul,
+.body ol {
   padding: 0 0 0 2ch;
 }
 
@@ -387,11 +419,19 @@ pre code {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .brand,
 .main.display,
 pre code {
-  transition: font-size 250ms, line-height 250ms, height 250ms;
+  transition:
+    font-size 250ms,
+    line-height 250ms,
+    height 250ms;
 }
 
 @media (max-width: 640px) {
