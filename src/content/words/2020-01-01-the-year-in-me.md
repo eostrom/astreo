@@ -6,9 +6,11 @@ image: '/images/January car.jpg'
 section: both
 ---
 
+---
+
 <figure>
   <img
-    src="/images/January Car.jpg"
+    src="/images/January car.jpg"
     alt="A once-white car, covered in snow and muck."
   >
   <figcaption>2019, oh boy.</figcaption>

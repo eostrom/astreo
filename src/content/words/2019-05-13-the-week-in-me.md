@@ -135,8 +135,12 @@ admire casually call
 me a friend, and biking downtown on a beautiful day
 for a [book festival.][wordplay] Sometimes we're simple creatures.
 
-![People walking past booths at the Wordplay festival, with
-US Bank Stadium looming over the scene.](../../src/assets/images/wordplay-festival.jpg)
+<p>
+  <img
+    src="/images/wordplay-festival.jpg"
+    alt="People walking past booths at the Wordplay festival, with US Bank Stadium looming over the scene."
+  />
+</p>
 
 Three more things I liked this week (or two, who's counting):
 

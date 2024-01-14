@@ -126,8 +126,12 @@ Lyn-Lake, in the very space they'd left behind, in
 [Five Watt Coffee's][five-watt] newest location. I guess I'll stick
 around.
 
-![A photo of the newly opened Five Watt Coffee Lyndale, with Lee
-and Caleb working behind the counter.](../../src/assets/images/five-watt-lyndale.jpg)
+<p>
+  <img
+    src="/images/five-watt-lyndale.jpg"
+    alt="A photo of the newly opened Five Watt Coffee Lyndale, with Lee and Caleb working behind the counter."
+  />
+</p>
 
 [walker]: https://walkerart.org
 [js-mn]: https://javascriptmn.com

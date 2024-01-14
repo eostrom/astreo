@@ -12,6 +12,7 @@
 
 <script>
 import {parseISO} from 'date-fns'
+import {slugify} from '../utils/slugify'
 
 const shortDateFormat = new Intl.DateTimeFormat('en-US', {
   month: 'short',
@@ -34,7 +35,7 @@ export default {
     },
 
     slug() {
-      return `${this.post.slug}`
+      return `${slugify(this.post.data.title)}`
     },
 
     path() {

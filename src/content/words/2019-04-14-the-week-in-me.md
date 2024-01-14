@@ -78,8 +78,12 @@ expecting an American child, and I couldn't stop picturing myself
 reading the book to that future child, in mispronounced Swedish and
 mistranslated English, so a few days later I went back and bought it.
 
-![A photo of Bokslukaren, the bookstore, with a life-sized stuffed
-gorilla sitting at the patio table outside.](../../src/assets/images/stockholm-bokslukaren-gorilla.jpg)
+<p>
+  <img
+    src="/images/stockholm-bokslukaren-gorilla.jpg"
+    alt="A photo of Bokslukaren, the bookstore, with a life-sized stuffed gorilla sitting at the patio table outside."
+  />
+</p>
 
 That child is now over three months old, and this week I finally started
 translating Lena Sjöberg's [<cite>Natten lyser!</cite>][natten-lyser].

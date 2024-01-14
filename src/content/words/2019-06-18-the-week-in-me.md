@@ -36,7 +36,7 @@ help we can get. If you're interested in this at all, please
   <img
     src="/images/bummertown-2019.jpg"
     alt="A bunch of improvisers expressing different emotions, two of them holding red balloons."
-  >
+  />
   <figcaption>Bummertown USA. Photo by <a href="http://www.adamiversonphotography.com">Adam Iverson.</a></figcaption>
 </figure>
 
@@ -65,7 +65,12 @@ More info and links, as always, on my [shows page.][shows page]
 
 ---
 
-![A loosely arranged collection of photos, posters, and art from California and rural Minnesota.](../../src/assets/images/wanna-know-beastie-yall.jpg)
+<p>
+  <img
+    src="/images/wanna-know-beastie-yall.jpg"
+    alt="A loosely arranged collection of photos, posters, and art from California and rural Minnesota."
+  />
+</p>
 
 Also, I [shot a photo][wanna-know-instagram] for an album that came out TODAY.
 [Beastie Y'all][beastie] wrote a song about reflecting on the
