@@ -1,0 +1,55 @@
+---
+import {getCollection} from 'astro:content'
+import CodePost from '../../../components/CodePost.vue'
+import {slugify} from '../../../utils/slugify'
+import CodeGrid from '../../../layouts/CodeGrid.astro'
+import {parseISO} from 'date-fns'
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection(
+    'words',
+    ({data}) =>
+      data.status !== 'draft' && ['code', 'both'].includes(data.section),
+  )
+  return blogEntries.map((entry) => ({
+    params: {slug: slugify(entry.data.title)},
+    props: {entry},
+  }))
+}
+
+const shortDateFormat = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+})
+
+const {entry} = Astro.props
+const {title, date} = entry.data
+const {Content} = await entry.render()
+const dateObject = parseISO(date)
+const isoDate = dateObject.toISOString()
+const shortDate = shortDateFormat.format(dateObject)
+---
+
+<CodeGrid class="post">
+  <article>
+    <header>
+      <h1>{title}</h1>
+
+      <time datetime={isoDate} class="display">
+        {shortDate}
+      </time>
+    </header>
+
+    <div class="body">
+      <Content />
+    </div>
+  </article>
+</CodeGrid>
+
+<style>
+  .body {
+    max-width: 100%;
+    text-align: left;
+  }
+</style>
