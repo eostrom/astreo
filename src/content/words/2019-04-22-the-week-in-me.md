@@ -19,7 +19,6 @@ to finish just one more thing first. Which I didn't. I hate that.
 I've been thinking this week about [asking for help:][help]
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This is so important. As a junior developer I was afraid to ask for help because I thought my employers would regret hiring me if they found out what I didn&#39;t know. Ironically what they should have regretted was the time I wasted not asking for help.</p>&mdash; Erik Ostrom (@erikostrom) <a href="https://twitter.com/erikostrom/status/1118299780315115520?ref_src=twsrc%5Etfw">April 16, 2019</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Over the years I've seen a lot of junior developers make the same mistake –
 and, to be honest, I'm still making it too. Of course, sometimes taking

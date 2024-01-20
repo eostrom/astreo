@@ -21,6 +21,10 @@ const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <slot name="head" />
+    <script
+      src="https://platform.twitter.com/widgets.js"
+      async="true"
+      charset="utf-8"></script>
   </head>
   <body>
     <slot />
