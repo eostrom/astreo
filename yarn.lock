@@ -1913,6 +1913,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
     "@typescript-eslint/parser": "npm:^6.18.0"
     astro: "npm:^4.1.1"
+    astro-seo-meta: "npm:^4.1.0"
     date-fns: "npm:^3.1.0"
     eslint: "npm:^8.56.0"
     eslint-config-prettier: "npm:^9.1.0"
@@ -1942,6 +1943,15 @@ __metadata:
     espree: "npm:^9.0.0"
     semver: "npm:^7.3.8"
   checksum: 420f75d15e899c4ca54b3b7ea3f1416c334b9cc68a6142f31253f80bb948e02241e70a23456bcb5014edd448f47d34230d9b3d5cee2e9938c803e8101587d77c
+  languageName: node
+  linkType: hard
+
+"astro-seo-meta@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "astro-seo-meta@npm:4.1.0"
+  peerDependencies:
+    astro: ^4.0.0
+  checksum: e38e5a455ed2cc53eeb911a6b40be6ee70fba3e9afedb099a48d489128e5d840c7a21edd69cab74447298eef8e5175fa76813b14ba04afaf2482fffc60828c1f
   languageName: node
   linkType: hard
 

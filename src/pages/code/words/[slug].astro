@@ -1,8 +1,9 @@
 ---
+import {Seo} from 'astro-seo-meta'
+import {parseISO} from 'date-fns'
 import {getCollection} from 'astro:content'
 import {slugify} from '../../../utils/slugify'
 import CodeGrid from '../../../layouts/CodeGrid.astro'
-import {parseISO} from 'date-fns'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection(
@@ -28,9 +29,17 @@ const {Content} = await entry.render()
 const dateObject = parseISO(date)
 const isoDate = dateObject.toISOString()
 const shortDate = shortDateFormat.format(dateObject)
+const facebook = {image: entry.data.image}
+const twitter = {
+  image: entry.data.image,
+  card: 'summary',
+  site: '@erikostrom',
+}
 ---
 
 <CodeGrid class="post">
+  <Seo slot="head" facebook={facebook} twitter={twitter} />
+
   <article>
     <header>
       <h1>{title}</h1>

@@ -20,6 +20,7 @@ const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <slot name="head" />
   </head>
   <body>
     <slot />
