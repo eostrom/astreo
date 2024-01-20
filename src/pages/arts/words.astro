@@ -12,7 +12,7 @@ const allArtsPosts = (
 ).reverse()
 ---
 
-<ArtsGrid displayOnly={true}>
+<ArtsGrid title="arts[words]" displayOnly={true}>
   <h1>words</h1>
 
   {allArtsPosts.map((post) => <BlogPostExcerpt post={post} />)}
