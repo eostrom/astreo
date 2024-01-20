@@ -1,4 +1,5 @@
 ---
+import type {SeoProps} from 'astro-seo-meta'
 import {Seo} from 'astro-seo-meta'
 import {parseISO} from 'date-fns'
 import {getCollection} from 'astro:content'
@@ -29,15 +30,15 @@ const {Content} = await entry.render()
 const dateObject = parseISO(date)
 const isoDate = dateObject.toISOString()
 const shortDate = shortDateFormat.format(dateObject)
-const facebook = {image: entry.data.image}
-const twitter = {
+const facebook: SeoProps['facebook'] = {image: entry.data.image}
+const twitter: SeoProps['twitter'] = {
   image: entry.data.image,
   card: 'summary',
   site: '@erikostrom',
 }
 ---
 
-<CodeGrid class="post">
+<CodeGrid>
   <Seo slot="head" facebook={facebook} twitter={twitter} />
 
   <article>
