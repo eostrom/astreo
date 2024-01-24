@@ -1,0 +1,99 @@
+---
+import _ from 'lodash/fp'
+import {isAfter, startOfToday} from 'date-fns'
+import {getCollection} from 'astro:content'
+import type {CollectionEntry} from 'astro:content'
+import ArtsGrid from '../../layouts/ArtsGrid.astro'
+import ShowRow from '../../components/ShowRow.astro'
+
+const allShows = await getCollection('shows')
+
+const today = startOfToday()
+const pastShows = _.reverse(
+  _.takeWhile(
+    (show: CollectionEntry<'shows'>) => !isAfter(show.data.lastDate, today),
+  )(allShows),
+)
+const futureShows = allShows.slice(pastShows.length)
+---
+
+<ArtsGrid title="shows">
+  <h1>shows</h1>
+
+  <table class="show-table">
+    <thead>
+      <tr>
+        <td colspan="3"><h2>coming up</h2></td>
+      </tr>
+
+      <tr>
+        <th><h3>when</h3></th>
+        <th><h3>where</h3></th>
+        <th><h3>what</h3></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {futureShows.map((show) => <ShowRow show={show} />)}
+    </tbody>
+
+    <thead>
+      <tr>
+        <td colspan="3"><h2>gone down</h2></td>
+      </tr>
+
+      <tr>
+        <th><h3>when</h3></th>
+        <th><h3>where</h3></th>
+        <th><h3>what</h3></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {pastShows.map((show) => <ShowRow show={show} />)}
+    </tbody>
+  </table>
+</ArtsGrid>
+
+<style>
+  .show-table {
+    width: 100%;
+
+    :global(h3) {
+      padding: 0;
+    }
+
+    :global(td),
+    :global(th) {
+      padding: 0.5em;
+      vertical-align: top;
+
+      &:not(:first-child) {
+        padding-left: 1em;
+      }
+
+      &:not(:last-child) {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .show-table :global(td),
+  .show-table :global(th) {
+    padding: 0.5em 1em;
+  }
+
+  .show-table :global(td):first-child,
+  .show-table :global(th):first-child {
+    padding-left: 0;
+  }
+
+  .show-table :global(td):last-child,
+  .show-table :global(th):last-child {
+    padding-right: 0;
+  }
+
+  .show-table :global(h3) {
+    padding: 0;
+  }
+</style>

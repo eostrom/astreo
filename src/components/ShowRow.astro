@@ -1,0 +1,20 @@
+---
+import type {CollectionEntry} from 'astro:content'
+
+type Show = CollectionEntry<'shows'> // typeof getCollection('words')[number]
+
+export type Props = {
+  show: Show
+}
+
+const {show} = Astro.props
+const {Content} = await show.render()
+---
+
+<tr>
+  <td set:html={show.data.when} />
+  <td><a href={show.data.whereUrl} set:html={show.data.where} /></td>
+  <td class="show-what">
+    <Content />
+  </td>
+</tr>

@@ -1284,6 +1284,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4":
+  version: 4.14.202
+  resolution: "@types/lodash@npm:4.14.202"
+  checksum: 6064d43c8f454170841bd67c8266cc9069d9e570a72ca63f06bceb484cb4a3ee60c9c1f305c1b9e3a87826049fd41124b8ef265c4dd08b00f6766609c7fe9973
+  languageName: node
+  linkType: hard
+
 "@types/mdast@npm:^4.0.0":
   version: 4.0.3
   resolution: "@types/mdast@npm:4.0.3"
@@ -1910,15 +1917,17 @@ __metadata:
     "@fontsource/noto-serif": "npm:^5.0.18"
     "@fontsource/roboto": "npm:^5.0.8"
     "@fontsource/roboto-mono": "npm:^5.0.16"
+    "@types/lodash": "npm:^4"
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
     "@typescript-eslint/parser": "npm:^6.18.0"
     astro: "npm:^4.1.1"
     astro-seo-meta: "npm:^4.1.0"
-    date-fns: "npm:^3.1.0"
+    date-fns: "npm:^3.3.0"
     eslint: "npm:^8.56.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-astro: "npm:^0.31.0"
     eslint-plugin-vue: "npm:^9.19.2"
+    lodash: "npm:^4.17.21"
     normalize.css: "npm:^8.0.1"
     postcss-nesting: "npm:^12.0.2"
     prettier: "npm:^3.1.1"
@@ -2527,10 +2536,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "date-fns@npm:3.1.0"
-  checksum: 60ded37aff397077780bf7b4e545b85041ee97e2acb24ffb99b84dcd8cf64d1c360d1f7bbf7e811840bb8df4f054508fa3dfb438f9e1558ddf5fe7645f4bdbf9
+"date-fns@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "date-fns@npm:3.3.0"
+  checksum: 71aa44146f1f4a626535d3c81c751f870a57a5bee141412accd18e02f9f215aeb51fce67204a9e13eb228e90ffadcada9974d542e474d2b1b6510eefb244bd7d
   languageName: node
   linkType: hard
 

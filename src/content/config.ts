@@ -12,6 +12,18 @@ const wordsCollection = defineCollection({
   }),
 })
 
+const showsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    when: z.string(),
+    where: z.string(),
+    whereUrl: z.string(),
+    firstDate: z.date(),
+    lastDate: z.date(),
+  }),
+})
+
 export const collections = {
   words: wordsCollection,
+  shows: showsCollection,
 }
