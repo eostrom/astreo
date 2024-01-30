@@ -143,7 +143,7 @@ around.
 [oncoming]: https://oncomingproductions.com
 [poppins]: https://www.minnesotafringe.org/event-calendar/five-fifths
 [trio]: https://www.facebook.com/imatrio/
-[huge]: http://www.hugetheater.com
-[arboretum]: http://www.arboretum.umn.edu
+[huge]: https://www.hugetheater.com
+[arboretum]: https://arb.umn.edu/
 [auction]: https://www.ebay.com/itm/Arboretum-with-Im-A-Trio/113731374166?hash=item1a7aeb0c56:g:aCgAAOSwhy9cxb1C
-[five-watt]: http://fivewattcoffee.com/five-watt-coffee
+[five-watt]: https://fivewattcoffee.com/

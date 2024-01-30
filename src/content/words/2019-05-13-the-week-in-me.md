@@ -176,7 +176,7 @@ Three more things I liked this week (or two, who's counting):
 [The Bearded Company]: https://beardedcompany.org
 [painters]: https://www.facebook.com/ThePaintersImprov/
 [trio]: https://www.facebook.com/imatrio/
-[HUGE]: http://www.hugetheater.com
+[HUGE]: https://www.hugetheater.com
 [beastie]: https://beastieyall.bandcamp.com
 [wordplay]: https://loft.org/wordplay/about-wordplay
 [gidget]: https://www.amazon.com/Gidget-Goes-Rome-James-Darren/dp/B0087YSBQQ
@@ -189,6 +189,4 @@ Three more things I liked this week (or two, who's counting):
 [gatsby]: https://www.gatsbyjs.org
 [shows page]: https://www.erikostrom.com/arts/shows/
 [heather quintal]: https://www.heatherquintal.com
-[arboretum]: http://www.arboretum.umn.edu
 [auction]: https://www.ebay.com/itm/Arboretum-with-Im-A-Trio/113731374166?hash=item1a7aeb0c56:g:aCgAAOSwhy9cxb1C
-[five-watt]: http://fivewattcoffee.com/five-watt-coffee

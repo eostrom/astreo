@@ -15,4 +15,4 @@ Still loving this line from [@apike]:
 The [rest of the article][frameworks] is also good.
 
 [@apike]: https://twitter.com/apike/ '@apike on Twitter'
-[frameworks]: http://www.allenpike.com/2015/javascript-framework-fatigue/
+[frameworks]: https://www.allenpike.com/2015/javascript-framework-fatigue/

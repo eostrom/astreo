@@ -11,4 +11,4 @@ by [Oncoming Productions,][oncoming]
 at the [Twin Cities Horror Festival.][tchf]
 
 [oncoming]: https://oncomingproductions.com
-[tchf]: http://www.tchorrorfestival.com
+[tchf]: https://www.tchorrorfestival.com

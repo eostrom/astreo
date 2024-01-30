@@ -17,7 +17,7 @@ const showsCollection = defineCollection({
   schema: z.object({
     when: z.string(),
     where: z.string(),
-    whereUrl: z.string(),
+    whereUrl: z.string().optional(),
     firstDate: z.date(),
     lastDate: z.date(),
   }),

@@ -85,12 +85,12 @@ colors, and I hope soon to find out from my doctor what's ailing me.
 [Minnestar]: https://minnestar.org
 [Drasner Coldfront]: https://youtu.be/qdlL9Z8PdIo
 [Sarah Drasner]: https://sarahdrasnerdesign.com
-[Coldfront 2018]: http://2018.coldfront.co/
+[Coldfront 2018]: https://2018.coldfront.co/
 [Improv A Go Go]: https://www.hugetheater.com/event/improv-a-go-go-5-2019-08-18/
 [I'm A Trio]: https://www.facebook.com/imatrio/
-[HUGE]: http://www.hugetheater.com/
+[HUGE]: https://www.hugetheater.com/
 [peer gynt]: https://www.norwayhouse.org/calendar/peer-gynt
-[TCHF]: http://www.tchorrorfestival.com
+[TCHF]: https://www.tchorrorfestival.com
 [bummertown]: https://www.facebook.com/bummertown/
 [Oncoming Productions]: https://oncomingproductions.com
 

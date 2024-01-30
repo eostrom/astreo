@@ -80,7 +80,7 @@ Soon, I hope.
 [poppins]: https://www.minnesotafringe.org/event-calendar/five-fifths
 [trio]: https://www.facebook.com/pg/imatrio
 [shows]: https://www.erikostrom.com/arts/shows
-[huge]: http://www.hugetheater.com
+[huge]: https://www.hugetheater.com
 [spamalot]: https://ordway.org/event/monty-pythons-spamalot/
 [attenborough]: https://www.hugetheater.com/event/attenborough-the-improvised-wildlife-documentary-2019-03-15-2019-04-05/
 [one-brain]: https://www.erikostrom.com/arts/words/one-brain

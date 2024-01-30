@@ -1,7 +1,6 @@
 ---
 when: Thursday, March&nbsp;28
 where: Honey
-whereUrl: http://honeympls.com/
 firstDate: 2019-03-28
 lastDate: 2019-03-28
 ---

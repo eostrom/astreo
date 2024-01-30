@@ -97,7 +97,7 @@ then use [tyda.se][] to investigate words that look a bit off, or that I'm
 just curious about. It's going okay. I only have about two pages done,
 but I've got time – this book is for readers aged 9 to 12.
 
-[oncoming]: http://www.oncomingproductions.com/
+[oncoming]: https://www.oncomingproductions.com/
 [poppins]: https://www.minnesotafringe.org/event-calendar/five-fifths
 [bummertown]: https://www.facebook.com/bummertown/
 [bummertown-run]: https://www.erikostrom.com/arts/shows
@@ -107,14 +107,14 @@ but I've got time – this book is for readers aged 9 to 12.
 [lengstorf-quote]: https://twitter.com/erikostrom/status/1117555949831507968
 [firebase]: https://firebase.google.com
 [firebase-functions]: https://www.reddit.com/r/Firebase/comments/b2lnt1/can_i_prevent_users_from_abusing_firestore/
-[macrae]: http://macr.ae/
+[macrae]: https://macr.ae/
 [vue-accessibility]: https://www.youtube.com/watch?v=1Rvg_XkFH8Q
 [cocreatz]: https://www.cocreatz.org
 [creative enterprise zone]: https://creativeenterprisezone.org
 [railsconf]: https://railsconf.com
 [minnebar]: https://minnestar.org/minnebar/
 [blogs]: https://www.erikostrom.com/code/words/the-feeds-i-read
-[bokslukaren]: http://www.bokslukaren.com
-[natten-lyser]: http://www.lenasjoberg.com/books/natten-lyser/
+[bokslukaren]: https://www.bokslukaren.com
+[natten-lyser]: https://www.lenasjoberg.com/books/natten-lyser/
 [microsoft translator]: https://www.bing.com/translator?ref=TThis&&text=&from=sv&to=en
 [tyda.se]: https://tyda.se

@@ -75,7 +75,7 @@ to share:
 You know what? You get it. All I'm going to say here is that I got
 a hand blender and it's great. See you next "week."
 
-[HUGE]: http://www.hugetheater.com/
+[HUGE]: https://www.hugetheater.com/
 [painters]: https://www.facebook.com/ThePaintersImprov
 [bummertown]: https://www.facebook.com/bummertown/
 [bad poets society]: https://www.facebook.com/badpoetssocietyimprov/

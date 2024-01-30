@@ -1,7 +1,7 @@
 ---
 when: Fridays in July and August
 where: HUGE Theater
-whereUrl: http://www.hugetheater.com/
+whereUrl: https://www.hugetheater.com/
 firstDate: 2019-07-05
 lastDate: 2019-08-30
 ---

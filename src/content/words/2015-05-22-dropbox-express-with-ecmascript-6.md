@@ -42,7 +42,7 @@ the code at this point.)
 
 [Exciting things are happening][es6] in the world of JavaScript! It will
 be a while before browsers implement them, but for server-side development,
-it's easy to get started now by installing [Babel](http://babeljs.io/).
+it's easy to get started now by installing [Babel](https://babeljs.io/).
 
 ```bash
 npm install --save babel
@@ -93,11 +93,11 @@ and my personal preferences (the rules).
 In [part 2], we'll start developing the app, test-first.
 
 [contact]: mailto:code@erikostrom.com
-[node]: http://nodejs.org/
-[install-express]: http://expressjs.com/starter/installing.html
+[node]: https://nodejs.org/
+[install-express]: https://expressjs.com/starter/installing.html
 [npm-name-format]: https://docs.npmjs.com/files/package.json#people-fields-author-contributors
 [gitignore]: https://github.com/github/gitignore/blob/master/Node.gitignore
 [es6]: http://es6-features.org/
-[eslint]: http://eslint.org/
+[eslint]: https://eslint.org/
 [async-await]: https://github.com/lukehoban/ecmascript-asyncawait
 [part 2]: /code/words/dropbox-express-2-zombie-testing

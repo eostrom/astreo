@@ -22,7 +22,7 @@ made this list of the main RSS feeds I follow (with [Feedly][]/[gReader][]).
   links from here, but it helps me keep tabs on what the wider developer
   community is talking about. This is the reason I know I should probably
   know what Kubernetes is.
-- I wasn't subscribed to [CSS Tricks](http://css-tricks.com/) until
+- I wasn't subscribed to [CSS Tricks](https://css-tricks.com/) until
   I made this list, but I seemed to wind up reading a lot of articles from
   there anyway, so now I am.
 - Also I just found [Web Platform News](https://webplatform.news/)

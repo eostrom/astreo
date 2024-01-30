@@ -1,7 +1,7 @@
 ---
 when: Wednesdays in January and February
 where: HUGE Theater
-whereUrl: http://www.hugetheater.com/
+whereUrl: https://www.hugetheater.com/
 firstDate: 2019-01-02
 lastDate: 2019-02-27
 ---

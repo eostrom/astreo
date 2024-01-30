@@ -1,7 +1,7 @@
 ---
 when: most Wednesdays in November and December
 where: HUGE Theater
-whereUrl: http://www.hugetheater.com/
+whereUrl: https://www.hugetheater.com/
 firstDate: 2019-11-06
 lastDate: 2019-12-31
 ---

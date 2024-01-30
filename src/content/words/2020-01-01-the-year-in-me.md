@@ -92,7 +92,7 @@ I also created live musical scores for several improv groups, including Rebel Gr
 
 I didn't do a lot of recording this year, but [All the Books in the Library][] did record one thing I'm very proud of, our version of the Wilco song ["Radio Cure."][Radio Cure]
 
-<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3127836027/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1681872158/transparent=true/" seamless><a href="http://thememusictribute.bandcamp.com/album/yankee-hotel-foxtrot">Yankee Hotel Foxtrot by All the Books in the Library</a></iframe>
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3127836027/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1681872158/transparent=true/" seamless><a href="https://thememusictribute.bandcamp.com/album/yankee-hotel-foxtrot">Yankee Hotel Foxtrot by All the Books in the Library</a></iframe>
 
 ---
 
@@ -107,7 +107,7 @@ Oh, and I quit Amazon Prime, tried to fix my sleep, and read a bunch of books.
 I should write about the books I read! Well, maybe tomorrow.
 
 [I'm A Trio]: https://www.facebook.com/imatrio/
-[HUGE]: http://www.hugetheater.com/
+[HUGE]: https://www.hugetheater.com/
 [bummertown]: https://www.facebook.com/bummertown/
 [Oncoming Productions]: https://oncomingproductions.com
 [Don Norman]: https://jnd.org

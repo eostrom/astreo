@@ -1,7 +1,7 @@
 ---
 when: Saturday, June&nbsp;29
 where: HUGE Theater
-whereUrl: http://www.hugetheater.com/
+whereUrl: https://www.hugetheater.com/
 firstDate: 2019-06-29
 lastDate: 2019-06-29
 ---

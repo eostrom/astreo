@@ -1,7 +1,7 @@
 ---
 when: Fridays in March and April
 where: HUGE Theater
-whereUrl: http://www.hugetheater.com/
+whereUrl: https://www.hugetheater.com/
 firstDate: 2020-03-06
 lastDate: 2020-05-01
 ---

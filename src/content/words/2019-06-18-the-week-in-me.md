@@ -160,10 +160,10 @@ a science fiction fan at this point – but I always go, and I'm always
 glad I went. Life is like that sometimes, I guess.
 
 [sfg]: https://www.softwareforgood.com/
-[code+libraries]: http://eyeofestival.com/summit/
-[HUGE]: http://www.hugetheater.com/
-[hugemove]: http://www.hugetheater.com/donate/hugemove/
-[hugeleap]: http://www.hugetheater.com/donate/capcam/
+[code+libraries]: https://eyeofestival.com/summit/
+[HUGE]: https://www.hugetheater.com/
+[hugemove]: https://www.hugetheater.com/donate/hugemove/
+[hugeleap]: https://www.hugetheater.com/donate/capcam/
 [painters]: https://www.facebook.com/ThePaintersImprov
 [ess]: https://www.elizabethess.com/
 [improvocation]: https://www.facebook.com/events/2296702307209088/
@@ -177,6 +177,6 @@ glad I went. Life is like that sometimes, I guess.
 [bakken]: https://thebakken.org
 [stemprov]: https://www.facebook.com/STEMprovMN/
 [the irreverent bookworm]: https://irrevbooks.com
-[The Depot]: http://www.thedepotcoffeehouse.com
+[The Depot]: https://www.thedepotcoffeehouse.com
 [The Buzz]: https://www.facebook.com/TheBuzzImprov/
-[convergence]: http://www.convergence-con.org
+[convergence]: https://www.convergence-con.org
