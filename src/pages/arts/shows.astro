@@ -4,7 +4,7 @@ import {isAfter, startOfToday} from 'date-fns'
 import {getCollection} from 'astro:content'
 import type {CollectionEntry} from 'astro:content'
 import ArtsGrid from '../../layouts/ArtsGrid.astro'
-import ShowRow from '../../components/ShowRow.astro'
+import ShowRows from '../../components/ShowRows.astro'
 
 const allShows = await getCollection('shows')
 
@@ -34,7 +34,7 @@ const futureShows = allShows.slice(pastShows.length)
     </thead>
 
     <tbody>
-      {futureShows.map((show) => <ShowRow show={show} />)}
+      <ShowRows shows={futureShows} />
     </tbody>
 
     <thead>
@@ -50,7 +50,7 @@ const futureShows = allShows.slice(pastShows.length)
     </thead>
 
     <tbody>
-      {pastShows.map((show) => <ShowRow show={show} />)}
+      <ShowRows shows={pastShows} />
     </tbody>
   </table>
 </ArtsGrid>
