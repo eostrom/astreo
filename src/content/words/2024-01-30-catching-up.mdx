@@ -6,15 +6,24 @@ image: /images/little-rock-time-capsule.jpg
 section: both
 ---
 
+import {Image} from 'astro:assets'
+import timeCapsule from '../../assets/images/little-rock-time-capsule.jpg'
+import bummertown from '../../../public/images/bummertown-2019.jpg'
+
 <figure>
-  <img
-    src="/images/little-rock-time-capsule.jpg"
+  <Image
+    src={timeCapsule}
+    width={570}
     alt="A plaque that reads: TIME CAPSULE OPEN AD 2086"
   />
+
   <figcaption>
-    How time flies. Photo by 
-    <a href="https://www.flickr.com/photos/51103012@N00/2382043384">Adam Bartlett,</a>
-    <a href="https://creativecommons.org/licenses/by-sa/2.0/">some rights reserved.</a>,
+    How time flies. Photo by [Adam Bartlett,][time-capsule-credit] [some rights
+    reserved.][time-capsule-license]
+
+    [time-capsule-credit]: https://www.flickr.com/photos/51103012@N00/2382043384
+    [time-capsule-license]: https://creativecommons.org/licenses/by-sa/2.0/
+
   </figcaption>
 </figure>
 
@@ -48,11 +57,18 @@ Buildings are expensive!
 ---
 
 <figure>
-  <img
-    src="/images/bummertown-2019.jpg"
+  <Image
+    src={bummertown}
+    width={570}
     alt="A bunch of improvisers expressing different emotions, two of them holding red balloons."
   />
-  <figcaption>Bummertown USA. Photo by <a href="http://www.adamiversonphotography.com">Adam Iverson.</a></figcaption>
+
+  <figcaption>
+    Bummertown USA. Photo by [Adam Iverson.][adam]
+
+    [adam]: http://www.adamiversonphotography.com
+
+  </figcaption>
 </figure>
 
 - Bummertown, the show I was rehearsing in June 2019, is back! "Comedic

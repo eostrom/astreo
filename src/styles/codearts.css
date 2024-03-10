@@ -177,6 +177,7 @@ p img,
 li img,
 figure img {
   max-width: 100%;
+  height: auto;
 }
 
 figure {
