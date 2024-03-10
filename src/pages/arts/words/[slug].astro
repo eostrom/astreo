@@ -26,13 +26,14 @@ const shortDateFormat = new Intl.DateTimeFormat('en-US', {
 
 const {entry} = Astro.props
 const {title, date} = entry.data
+const image = entry.data.image && new URL(entry.data.image, Astro.url).href
 const {Content} = await entry.render()
 const dateObject = parseISO(date)
 const isoDate = dateObject.toISOString()
 const shortDate = shortDateFormat.format(dateObject)
-const facebook: SeoProps['facebook'] = {image: entry.data.image}
+const facebook: SeoProps['facebook'] = {image}
 const twitter: SeoProps['twitter'] = {
-  image: entry.data.image,
+  image,
   card: 'summary',
   site: '@erikostrom',
 }
