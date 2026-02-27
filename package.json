@@ -21,7 +21,7 @@
     "date-fns": "^3.3.0",
     "lodash": "^4.17.23",
     "normalize.css": "^8.0.1",
-    "typescript": "^5.3.3",
+    "typescript": "^5.9.3",
     "vue": "^3.4.5"
   },
   "devDependencies": {
