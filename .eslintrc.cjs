@@ -8,9 +8,10 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:astro/recommended',
-      'plugin:vue/vue3-essential',
-      'prettier',
+    'plugin:vue/vue3-essential',
+    'prettier',
   ],
+  ignorePatterns: ['dist'],
   overrides: [
     {
       env: {
