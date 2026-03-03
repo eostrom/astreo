@@ -1,5 +1,4 @@
 import {defineConfig, globalIgnores} from 'eslint/config'
-import {fixupPluginRules} from '@eslint/compat'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import vue from 'eslint-plugin-vue'
 import globals from 'globals'
@@ -28,7 +27,7 @@ export default defineConfig([
 
     plugins: {
       '@typescript-eslint': typescriptEslint,
-      vue: fixupPluginRules(vue)
+      vue
     },
 
     languageOptions: {
