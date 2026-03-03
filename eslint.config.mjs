@@ -1,4 +1,5 @@
 import {defineConfig, globalIgnores} from 'eslint/config'
+import {fixupPluginRules} from '@eslint/compat'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import vue from 'eslint-plugin-vue'
 import globals from 'globals'
@@ -22,13 +23,12 @@ export default defineConfig([
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
       'plugin:astro/recommended',
-      'plugin:vue/vue3-essential',
       'prettier'
     ),
 
     plugins: {
       '@typescript-eslint': typescriptEslint,
-      vue
+      vue: fixupPluginRules(vue)
     },
 
     languageOptions: {
