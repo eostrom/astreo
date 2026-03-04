@@ -972,24 +972,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/noto-serif@npm:^5.0.18":
-  version: 5.0.18
-  resolution: "@fontsource/noto-serif@npm:5.0.18"
-  checksum: 1e170d1c789e48f7a2b894614c416f27e906de273d3f9eac7088c433fd7425bc7f7d5b7d38c891cd2073cadfd2c45403d245b7f57d06b40bf4d3cc26e6822377
+"@fontsource/noto-serif@npm:^5.2.9":
+  version: 5.2.9
+  resolution: "@fontsource/noto-serif@npm:5.2.9"
+  checksum: a98d78dd56319969af1f31f2f202f6ac9713db609dd92c9f15ed0e3555b09028f08ee022a859fbec45f87e98b4fe8ed9372d2ed8a182a8bfbcdd74839034a286
   languageName: node
   linkType: hard
 
-"@fontsource/roboto-mono@npm:^5.0.16":
-  version: 5.0.16
-  resolution: "@fontsource/roboto-mono@npm:5.0.16"
-  checksum: 9a2031f5bc14fab3324a3693d67dc27a098d76e408d70bd4c94121f75ed17d38b21ff51eab2d7ecbe459a59d62b0036aa31a8c4337ab5180b4fd32b7f09db16f
+"@fontsource/roboto-mono@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource/roboto-mono@npm:5.2.8"
+  checksum: 042aeb468ebd89cecb2e78d1c3775ce5ab33d496003f56d31c84c0f04db38fc11714fa30846a330800e44ec0faf7620bca54833b641a9bcbae33e8489f0b5444
   languageName: node
   linkType: hard
 
-"@fontsource/roboto@npm:^5.0.8":
-  version: 5.0.8
-  resolution: "@fontsource/roboto@npm:5.0.8"
-  checksum: da262037305145cc2a3b7f7c00066df72d4aa36d237001d7affce9390d16b3488eadaf0aa43a7ba86b3be8e310e3ae6823fa838365ee0e9a2e98a65e89e9d0f9
+"@fontsource/roboto@npm:^5.2.10":
+  version: 5.2.10
+  resolution: "@fontsource/roboto@npm:5.2.10"
+  checksum: abadfcaefbe2196bbd36d9258b336063f721894a3624a9639da00792583c565bfd0748ef978f91a38c3c0de8d247615c9be92a763184c085c630fa43f04b1cd9
   languageName: node
   linkType: hard
 
@@ -2263,9 +2263,9 @@ __metadata:
     "@astrojs/vue": "npm:^4.0.8"
     "@eslint/eslintrc": "npm:^3.3.4"
     "@eslint/js": "npm:^10.0.1"
-    "@fontsource/noto-serif": "npm:^5.0.18"
-    "@fontsource/roboto": "npm:^5.0.8"
-    "@fontsource/roboto-mono": "npm:^5.0.16"
+    "@fontsource/noto-serif": "npm:^5.2.9"
+    "@fontsource/roboto": "npm:^5.2.10"
+    "@fontsource/roboto-mono": "npm:^5.2.8"
     "@types/lodash": "npm:^4.17.24"
     "@typescript-eslint/eslint-plugin": "npm:^8.56.1"
     "@typescript-eslint/parser": "npm:^8.56.1"
