@@ -1,6 +1,8 @@
 {
   "extends": "stylelint-config-recommended",
 
+  "ignoreFiles": ["dist/**"],
+
   "rules": {
     "max-nesting-depth": 2,
     "length-zero-no-unit": null

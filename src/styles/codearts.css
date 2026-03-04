@@ -107,23 +107,6 @@ hr {
   grid-template: auto 1fr 1fr auto / 5rem 1fr 1fr 5rem;
 }
 
-.brand {
-  grid-area: brand;
-  font-size: var(--fs-7);
-  line-height: var(--fs-7);
-  height: var(--fs-7);
-  padding: 0 0.25rem;
-  text-align: center;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  & .display {
-    background: transparent;
-  }
-}
-
 h1,
 h2,
 h3,
@@ -192,13 +175,13 @@ figcaption {
 a {
   text-decoration: none;
 
-  &:link:hover {
-    text-decoration: underline;
-  }
-
   &:link,
   &:visited {
     color: var(--link-color);
+  }
+
+  &:link:hover {
+    text-decoration: underline;
   }
 }
 
@@ -216,6 +199,42 @@ a.tk {
   }
 }
 
+.link-list {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-style: var(--display-font-style);
+  font-size: var(--fs-3);
+  line-height: var(--fs-3);
+
+  & li + li {
+    margin-top: calc(var(--lh-3) - var(--fs-3));
+  }
+}
+
+.body ul,
+.body ol {
+  padding: 0 0 0 2ch;
+}
+
+.body ul {
+  list-style-type: disc;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- old code, fix later */
+.body li {
+  padding: 0.125em 0;
+}
+
+.body li:first-child {
+  padding-top: 0;
+}
+
+.body li:last-child {
+  padding-bottom: 0;
+}
+
 .contents-header {
   grid-area: header;
 
@@ -229,20 +248,6 @@ a.tk {
     & > li {
       padding: 0 1rem;
     }
-  }
-}
-
-.link-list {
-  list-style: none;
-  padding: 0.5rem 0;
-  margin: 0;
-  font-family: var(--display-font-family);
-  font-style: var(--display-font-style);
-  font-size: var(--fs-3);
-  line-height: var(--fs-3);
-
-  & li + li {
-    margin-top: calc(var(--lh-3) - var(--fs-3));
   }
 }
 
@@ -360,27 +365,6 @@ a.side {
   --far-display-color: var(--midway-bright-color);
 }
 
-.body ul,
-.body ol {
-  padding: 0 0 0 2ch;
-}
-
-.body ul {
-  list-style-type: disc;
-}
-
-.body li {
-  padding: 0.125em 0;
-}
-
-.body li:first-child {
-  padding-top: 0;
-}
-
-.body li:last-child {
-  padding-bottom: 0;
-}
-
 pre.shiki {
   max-width: 80ch;
   overflow-x: scroll;
@@ -475,5 +459,22 @@ pre code {
 
   pre code {
     font-size: var(--fs-0);
+  }
+}
+
+.brand {
+  grid-area: brand;
+  font-size: var(--fs-7);
+  line-height: var(--fs-7);
+  height: var(--fs-7);
+  padding: 0 0.25rem;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  & .display {
+    background: transparent;
   }
 }
