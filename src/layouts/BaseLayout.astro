@@ -22,6 +22,7 @@ const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
     <title>{pageTitle}</title>
     <slot name="head" />
     <script
+      is:inline
       src="https://platform.twitter.com/widgets.js"
       async="true"
       charset="utf-8"></script>
