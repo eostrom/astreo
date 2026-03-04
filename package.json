@@ -40,8 +40,8 @@
     "postcss-nesting": "^12.0.2",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "stylelint": "^16.1.0",
-    "stylelint-config-recommended": "^14.0.0",
+    "stylelint": "^17.4.0",
+    "stylelint-config-recommended": "^18.0.0",
     "vue-eslint-parser": "^10.4.0"
   },
   "packageManager": "yarn@4.0.2"
