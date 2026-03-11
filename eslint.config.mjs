@@ -1,6 +1,5 @@
 import {defineConfig, globalIgnores} from 'eslint/config'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
-import vue from 'eslint-plugin-vue'
 import globals from 'globals'
 import parser from 'astro-eslint-parser'
 import path from 'node:path'
@@ -27,7 +26,6 @@ export default defineConfig([
 
     plugins: {
       '@typescript-eslint': typescriptEslint,
-      vue
     },
 
     languageOptions: {
