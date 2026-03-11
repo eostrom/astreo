@@ -1,0 +1,49 @@
+---
+import {parseISO} from 'date-fns'
+import {slugify} from '../utils/slugify'
+
+const shortDateFormat = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+})
+
+export interface Props {
+  post: {
+    data: {
+      title: string
+      date: string
+    }
+    excerpt?: string
+    body?: string
+  }
+}
+
+const {post} = Astro.props
+
+const title = post.data.title
+const slug = `${slugify(post.data.title)}`
+const path = `${slug}/`
+const date = parseISO(post.data.date)
+const shortDate = shortDateFormat.format(date)
+---
+
+<article>
+  <h2>
+    <time datetime={date.toISOString()}>
+      {shortDate}
+    </time>
+    {' '}
+    <a href={path}>{title}</a>
+  </h2>
+</article>
+
+<style>
+  h2 {
+    font-size: var(--fs-2);
+    line-height: var(--fs-2);
+  }
+
+  time {
+    white-space: nowrap;
+  }
+</style>
