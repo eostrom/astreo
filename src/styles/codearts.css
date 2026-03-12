@@ -419,6 +419,23 @@ pre code {
     height 250ms;
 }
 
+.brand {
+  grid-area: brand;
+  font-size: var(--fs-7);
+  line-height: var(--fs-7);
+  height: var(--fs-7);
+  padding: 0 0.25rem;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  & .display {
+    background: transparent;
+  }
+}
+
 @media (max-width: 640px) {
   .braingrid {
     grid-template-columns: 3rem 1fr 1fr 3rem;
@@ -459,22 +476,5 @@ pre code {
 
   pre code {
     font-size: var(--fs-0);
-  }
-}
-
-.brand {
-  grid-area: brand;
-  font-size: var(--fs-7);
-  line-height: var(--fs-7);
-  height: var(--fs-7);
-  padding: 0 0.25rem;
-  text-align: center;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  & .display {
-    background: transparent;
   }
 }
