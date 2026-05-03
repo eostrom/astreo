@@ -1,0 +1,91 @@
+---
+title: 'ToneBlock'
+date: 2026-05-03T17:19:27+0100
+tags:
+image: /images/toneblock-2026-05-02.jpg
+image_alt: a photo of the Northern Lights, cut into sliding blocks and rearranged
+section: code
+---
+
+import {Image} from 'astro:assets'
+
+import toneBlock from '../../assets/images/toneblock-2026-05-02.jpg'
+
+On my accidental sabbatical I wanted to build a little side project,
+to learn a new framework and to further explore LLMs.
+One early idea was a board game, but learning to do multiplayer on
+the web felt like a whole project in its own right. So I argued myself
+down to a simple [sliding block puzzle][].
+
+I also had the urge to do something with sound or music. So much
+of my artistic life is wrapped up in sound, it's strange how little
+I've let it into my programming life. And web audio has come a long way since
+I last looked at it. For this, I decided to try a musical [sonification][]
+of the puzzle, somehow representing the state of the blocks with scale tones.
+
+In a couple of weeks I head back to real life, and here's where I'm at:
+I have a sliding block puzzle, and it makes sounds.
+
+<figure>
+  <Image
+    src={toneBlock}
+    width={570}
+    alt="A photo of the Northern Lights, cut into sliding blocks and rearranged."
+  />
+  <figcaption>
+    This is just a screenshot. Imagine if there were music though.
+  </figcaption>
+</figure>
+
+A few notes on the process:
+
+1. The UI framework I'm using is [Solid][]. It looks like React on
+   the surface, but the underlying conceptual model is very different.
+   That meant I often thought I knew how to do things, and I was often
+   wrong. At this point I appreciate its simplicity in theory, but am
+   frustrated by what I don't get about it.
+2. For sound generation, I chose [Elementary][]. It looks very powerful,
+   and it takes a very different approach than most audio libraries.
+   Instead of procedural, event-driven code, it encourages you to
+   "describe your audio process as a function of your application state."
+   For web developers, this is akin to the shift from jQuery to React.
+   It's fascinating. I don't have my head around this yet either.
+3. There was a [study last year][metr-ai-study] that suggested that
+   developers think "AI" makes them more productive, even while it makes
+   them quantifiably _less_ productive. I don't have data, but this feels
+   true for me. Faced with a coding task, I feel the tedium
+   of typing it all out will be unbearable. But when I make an LLM do it,
+   it gets enough things wrong, and is sufficiently hard to correct, that
+   it may end up taking longer. I also think using LLMs for this
+   project has contributed to my failure to master the frameworks. If I'd
+   written all the code myself, I would have been very frustrated, but
+   working through the frustration would have taught me a lot.
+4. It was hard for me to set priorities. At one
+   point I decided to let the LLM do the Solid UI and do a mediocre
+   job of it, because it would let me get on to the audio work. Adding music
+   would be fun, it would be creative, and it's an area where
+   I have something unique to offer. But it's really hard for me to let
+   mediocre code be committed.
+5. The idea that I would spend my time in Europe working on
+   self-directed projects was a delusion. Why would I do that, when Europe
+   was all around me? What was I thinking? The most I ever got done in a day
+   was on a train, and only because I lucked into a dull landscape.
+
+As a result, what I have is a [codebase][ToneBlock GitHub] I'm
+reasonably happy with, a UI that is
+fine, and... the sound part, the fun part, is still just my original proof of
+concept. I have ideas for making it interesting, useful, and beautiful – like
+sounds that help you hear the transition when you slide a block, and that
+are gentle and soothing. But instead it's, well, it
+makes sounds. If you unmute it. (It's muted by default because
+it's annoying.)
+
+Anyway, if you want to slide some blocks around, [ToneBlock is live][ToneBlock]!
+
+[sliding block puzzle]: https://en.wikipedia.org/wiki/Sliding_puzzle
+[sonification]: https://en.wikipedia.org/wiki/Sonification
+[ToneBlock]: https://toneblock.erikostrom.com/
+[Solid]: https://www.solidjs.com/
+[Elementary]: https://www.elementary.audio/
+[metr-ai-study]: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+[ToneBlock GitHub]: https://github.com/eostrom/
