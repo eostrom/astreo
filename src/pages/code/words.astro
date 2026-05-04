@@ -9,7 +9,9 @@ const allCodePosts = (
     ({data}) =>
       data.status !== 'draft' && ['code', 'both'].includes(data.section),
   )
-).reverse()
+)
+  .toSorted((a, b) => Date.parse(a.data.date) - Date.parse(b.data.date))
+  .toReversed()
 ---
 
 <CodeGrid title="code[words]" displayOnly={true}>
