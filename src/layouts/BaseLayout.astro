@@ -7,9 +7,10 @@ import '../styles/codearts.css'
 
 export type Props = {
   title: string
+  description?: string
 }
 
-const {title} = Astro.props
+const {title, description} = Astro.props
 const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
 ---
 
@@ -20,6 +21,16 @@ const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <meta name="og:title" content={pageTitle} />
+    {
+      description && (
+        <>
+          <meta name="description" content={description} />
+          <meta name="og:description" content={description} />
+        </>
+      )
+    }
+
     <slot name="head" />
     <script
       is:inline

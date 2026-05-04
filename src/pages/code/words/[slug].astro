@@ -25,7 +25,7 @@ const shortDateFormat = new Intl.DateTimeFormat('en-US', {
 })
 
 const {entry} = Astro.props
-const {title, date} = entry.data
+const {title, description, date} = entry.data
 const image = entry.data.image && new URL(entry.data.image, Astro.url).href
 const {Content} = await entry.render()
 const dateObject = parseISO(date)
@@ -39,7 +39,7 @@ const twitter: SeoProps['twitter'] = {
 }
 ---
 
-<CodeGrid title={title}>
+<CodeGrid title={title} description={description}>
   <Seo slot="head" facebook={facebook} twitter={twitter} />
 
   <article>

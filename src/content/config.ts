@@ -4,6 +4,7 @@ const wordsCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    description: z.optional(z.string()),
     date: z.string(),
     section: z.enum(['code', 'arts', 'both']),
     tags: z.union([z.array(z.string()).optional(), z.null()]),

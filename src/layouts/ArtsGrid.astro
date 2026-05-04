@@ -7,10 +7,10 @@ type Props = BaseLayoutProps & {
   displayOnly?: boolean
 }
 
-const {displayOnly, title} = Astro.props
+const {displayOnly, title, description} = Astro.props
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
   <slot name="head" slot="head" />
   <div class="braingrid arts">
     <a class="brand" href="/">
