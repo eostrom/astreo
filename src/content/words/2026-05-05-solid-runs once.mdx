@@ -1,0 +1,129 @@
+---
+title: 'Solid runs once'
+description: I'm learning Solid by unlearning React.
+date: 2026-05-05T17:19:27+0100
+tags:
+section: code
+---
+
+[The other day][ToneBlock post] I wrote that [Solid][] was like React on the surface,
+but very different underneath. This can lead to
+unearned confidence, followed by confusion and despair. I also wrote
+that using LLMs might have sped my coding, but slowed my learning.
+
+Yesterday I was coding offline, LLM-free, and hit an obstacle that illustrates
+both points.
+
+## The mystery
+
+To create a React component that shows an indicator when the application
+is busy, I'd write something like this:
+
+```jsx
+// When busy, annoy the user about it, 1995-style.
+return viewState.busy && <blink>busy</blink>
+```
+
+If for some reason it wasn't working, my first guess would be that
+the state wasn't getting updated, and I'd test my hypothesis with good old
+`console.log`:
+
+```jsx
+console.log('busy', viewState.busy)
+return viewState.busy && <blink>busy</blink>
+```
+
+In React, when the state changed from not busy to busy, I'd see a
+message in the console about it... or I'd know the state wasn't changing.
+But in Solid, I saw one message when the app loaded, and then nothing –
+even though I could see in other components that the state was changing.
+Why?
+
+## The explanation
+
+_[Disclaimer: I am obviously not a Solid expert. There's some hand-waving below.]_
+
+In both frameworks, a component is a function.
+
+In React, the function is executed every time a piece of state changes.
+The first time, the application isn't busy, and nothing is rendered.
+When the application becomes busy, the function is executed again, and
+this time it renders the indicator.
+
+In Solid, the function is executed only once. It returns an... apparatus
+(another function)
+that knows what state it depends on for what. Rendering is done as needed
+when the relevant state changes.
+
+That's why it only logs to the console once. More importantly, it's why
+my component didn't work. When the component function ran, the application
+wasn't busy, so it didn't return the apparatus. The busy indicator was
+never created.
+
+## The fix
+
+Solid provides a component for conditional rendering:
+
+```tsx
+return (
+  <Show when={viewState.busy}>
+    <blink>busy</blink>
+  </Show>
+)
+```
+
+This returns an apparatus that will render the indicator or not when
+the view state changes. Problem solved!
+
+## Another fix?
+
+One reason this was a puzzle for me is that I was extracting my busy
+indicator component from a larger component. That component contained
+code like this:
+
+```tsx
+<div class="relative">
+  {/* some other elements... */}
+  {viewState.busy && <blink>busy</blink>}
+</div>
+```
+
+That worked fine. Why didn't it work when I put the exact same code
+in its own component?
+
+As we've seen, the answer is the `return`. The extracted component
+only runs once, and if it returns nothing, that's the end of it.
+The original returned a larger apparatus that _contained_ the
+conditional logic.
+
+That means we just need an implementation that always returns something.
+The simplest thing I can think of is a JSX fragment:
+
+```tsx
+return <>{viewState.busy && <blink>busy</blink>}</>
+```
+
+But from now on I'll probably choose `Show`, precisely because I know it
+will still work if I move it to a different context.
+
+## How to learn, and why
+
+The funny thing is, at one point I knew all of this. I went through the
+(excellent) [Solid tutorial][], which explained how rendering works and
+how to use the `Show` component. But then I had an LLM write the code for me.
+
+I knew about the rendering process and `Show`, but I didn't _know_ them
+until I had to solve a problem myself. (And I didn't _know_ know until
+I dug further and wrote this post. And there's still so much I don't know!)
+
+Does that matter? Do I need to be able to write JavaScript myself, or will
+it soon be like knowing how to use a slide rule –
+a charming affectation with no practical use?
+
+I don't know, but I like understanding how things work.
+
+[ToneBlock post]: https://www.erikostrom.com/code/words/toneblock/
+[ToneBlock]: https://toneblock.erikostrom.com/
+[Solid]: https://www.solidjs.com/
+[Elementary]: https://www.elementary.audio/
+[Solid tutorial]: https://www.solidjs.com/tutorial/introduction_basics
