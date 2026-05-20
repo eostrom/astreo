@@ -1,8 +1,8 @@
 ---
-when: June 12-16 sometime
+when: Sunday, June 16
 where: HUGE Theater
 whereUrl: https://www.hugetheater.com/
-firstDate: 2024-06-12
+firstDate: 2024-06-16
 lastDate: 2024-06-16
 ---
 

@@ -1,5 +1,5 @@
 ---
-when: March 31
+when: Tuesday, March 31
 where: Tøyen Impro, Oslo, Norway
 whereUrl: https://www.toyenimpro.no/
 firstDate: 2026-03-31

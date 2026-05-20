@@ -1,5 +1,5 @@
 ---
-when: May 9
+when: Saturday, May 9
 where: Unity Theatre, Liverpool, England
 whereUrl: https://www.unitytheatreliverpool.co.uk
 firstDate: 2026-05-09
