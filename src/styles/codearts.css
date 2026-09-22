@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   --fs-0: 13px;
   --lh-0: 25px;
@@ -346,6 +350,16 @@ a.side {
 .main.arts.display-only {
   --display-color: var(--bright-blue);
   --background-color: var(--bright-pink);
+}
+
+.main.code,
+.side.other-side.code {
+  view-transition-name: code-panel;
+}
+
+.main.arts,
+.side.other-side.arts {
+  view-transition-name: arts-panel;
 }
 
 .main > * {
