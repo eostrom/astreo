@@ -390,6 +390,49 @@ a.side {
   z-index: var(--side-label-z-index);
 }
 
+/*
+  Smooth the sharp <-> blurry change that happens as the side label
+  moves between this-side (sharp) and other-side (blurred 1px). The
+  live element's blur is driven by a plain CSS `transition`, which
+  doesn't run during the view-transition morph (the browser is
+  animating snapshot pseudo-elements, not the live DOM), so without
+  this the blur previously snapped in abruptly the instant the
+  transition ended.
+
+  This uses ::view-transition-image-pair() (not
+  ::view-transition-group()) so the blur keyframes layer on top of
+  the browser's default position/rotation morph instead of replacing
+  it -- animating `group` directly overrides its built-in
+  position/size interpolation entirely, losing the morph.
+ */
+::view-transition-image-pair(code-side-label) {
+  animation: side-label-blur-in 2000ms linear;
+}
+
+::view-transition-image-pair(arts-side-label) {
+  animation: side-label-blur-out 2000ms linear;
+}
+
+@keyframes side-label-blur-in {
+  from {
+    filter: blur(1px);
+  }
+
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes side-label-blur-out {
+  from {
+    filter: blur(0);
+  }
+
+  to {
+    filter: blur(1px);
+  }
+}
+
 .contents-header .nav-works {
   view-transition-name: nav-works;
 }
