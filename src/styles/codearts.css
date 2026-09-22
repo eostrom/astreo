@@ -388,6 +388,14 @@ a.side {
   z-index: var(--side-label-z-index);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 .main > * {
   max-width: 100%;
 }
