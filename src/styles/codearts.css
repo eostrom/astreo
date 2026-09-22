@@ -388,6 +388,29 @@ a.side {
   z-index: var(--side-label-z-index);
 }
 
+.contents-header .nav-works {
+  view-transition-name: nav-works;
+}
+
+.contents-header .nav-words {
+  view-transition-name: nav-words;
+}
+
+.contents-header .nav-links {
+  view-transition-name: nav-links;
+}
+
+.brand .monogram {
+  view-transition-name: brand-monogram;
+}
+
+::view-transition-group(nav-works),
+::view-transition-group(nav-words),
+::view-transition-group(nav-links),
+::view-transition-group(brand-monogram) {
+  animation-duration: 500ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-old(*),
