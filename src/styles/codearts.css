@@ -237,6 +237,7 @@ a.tk {
 
 .contents-header {
   grid-area: header;
+  display: flex;
 
   & .contents {
     padding: 0 1rem;
@@ -247,6 +248,14 @@ a.tk {
 
     & > li {
       padding: 0 1rem;
+    }
+  }
+
+  .arts & {
+    justify-content: flex-end;
+
+    & .contents {
+      flex-direction: row-reverse;
     }
   }
 }
