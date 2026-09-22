@@ -63,6 +63,7 @@
   --near-bright-blue: hsl(var(--near-blue-hue), 90%, 50%);
   --near-bright-pink: hsl(var(--near-pink-hue), 90%, 50%);
   --body-background: hsl(0, 100%, 0%); /* black */
+  --side-label-z-index: 1;
   --background-color: transparent;
 }
 
@@ -277,6 +278,8 @@ a.side {
   font-size: var(--fs-6);
   position: absolute;
   top: 4rem;
+  /* keep the label resting on top of the main content panel */
+  z-index: var(--side-label-z-index);
 }
 
 .other-side .side-label {
@@ -360,6 +363,29 @@ a.side {
 .main.arts,
 .side.other-side.arts {
   view-transition-name: arts-panel;
+}
+
+.side.this-side.code .side-label,
+.side.other-side.code .side-label {
+  view-transition-name: code-side-label;
+}
+
+.side.this-side.arts .side-label,
+.side.other-side.arts .side-label {
+  view-transition-name: arts-side-label;
+}
+
+::view-transition-group(code-panel),
+::view-transition-group(arts-panel),
+::view-transition-group(code-side-label),
+::view-transition-group(arts-side-label) {
+  animation-duration: 500ms;
+}
+
+::view-transition-group(code-side-label),
+::view-transition-group(arts-side-label) {
+  /* keep the label resting on top of the main content panel */
+  z-index: var(--side-label-z-index);
 }
 
 .main > * {
