@@ -403,6 +403,57 @@ a.side {
 }
 
 /*
+  `shows` has no code-side counterpart, so it can't morph in from
+  anywhere -- it's purely a new arrival when navigating into arts.
+  Naming it lets us delay/animate its entrance independently instead
+  of it popping in at full opacity/position the instant the new
+  document paints, ahead of everything else still settling.
+ */
+.contents-header .nav-shows {
+  view-transition-name: nav-shows;
+}
+
+::view-transition-old(nav-shows) {
+  /* fade out quickly, in a short window at the very start of the
+     transition, so `shows` is gone before the rest of the nav is far
+     into its slide -- rather than lingering, half-faded, alongside
+     items that have mostly finished moving */
+  animation: nav-shows-exit 5000ms linear both;
+}
+
+@keyframes nav-shows-exit {
+  0% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+::view-transition-new(nav-shows) {
+  /* stay hidden through most of the transition, then fade in late --
+     roughly once the panel has expanded enough to have revealed it --
+     rather than fading in from the very start */
+  animation: nav-shows-enter 5000ms linear both;
+}
+
+@keyframes nav-shows-enter {
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
   Deliberately *not* giving the monogram a shared view-transition-name
   across pages. Its position differs between code and arts pages, and
   pairing it would make the browser morph a single box between the
@@ -422,6 +473,7 @@ a.side {
 ::view-transition-group(nav-words),
 ::view-transition-group(nav-links) {
   animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
 }
 
 /*
