@@ -1,11 +1,6 @@
 ---
 import _ from 'lodash/fp'
-import {
-  differenceInCalendarDays,
-  isAfter,
-  isBefore,
-  startOfToday,
-} from 'date-fns'
+import {isBefore, startOfToday} from 'date-fns'
 import {tz} from '@date-fns/tz'
 import {getCollection} from 'astro:content'
 import type {CollectionEntry} from 'astro:content'
@@ -37,10 +32,12 @@ const isShowOver = (show: CollectionEntry<'shows'>) =>
   !isBefore(show.data.lastDate, today)
 const [futureShows, pastShows] = _.partition(isShowOver)(allShows)
 const goneDown = _.flow(
-  _.sortBy((show) => show.data.lastDate),
+  _.sortBy((show: CollectionEntry<'shows'>) => show.data.lastDate),
   _.reverse,
 )(pastShows)
-const comingUp = _.sortBy((show) => show.data.firstDate)(futureShows)
+const comingUp = _.sortBy(
+  (show: CollectionEntry<'shows'>) => show.data.firstDate,
+)(futureShows)
 ---
 
 <ArtsGrid title="shows">
