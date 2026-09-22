@@ -473,6 +473,27 @@ a.side {
 ::view-transition-group(nav-words),
 ::view-transition-group(nav-links) {
   animation-duration: 5000ms;
+}
+
+/*
+  Distinct easing per nav item, so they don't move in perfect lockstep
+  (converging/diverging together) but instead feel like they're each
+  moving of their own volition:
+    - "works" has the longest distance to travel, so it gets the most
+      "eager" curve -- fast out of the gate.
+    - "words" is the most "hesitant" -- slow to start, catching up
+      at the end.
+    - "links" stays on the plain ease-in-out as a middle ground.
+ */
+::view-transition-group(nav-works) {
+  animation-timing-function: cubic-bezier(0.2, 0.5, 0.3, 1);
+}
+
+::view-transition-group(nav-words) {
+  animation-timing-function: cubic-bezier(0.7, 0, 0.8, 0.5);
+}
+
+::view-transition-group(nav-links) {
   animation-timing-function: ease-in-out;
 }
 
