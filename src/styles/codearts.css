@@ -243,6 +243,8 @@ a.tk {
 .contents-header {
   grid-area: header;
   display: flex;
+  position: relative;
+  z-index: 2;
 
   & .contents {
     padding: 0 1rem;
@@ -379,7 +381,7 @@ a.side {
 ::view-transition-group(arts-panel),
 ::view-transition-group(code-side-label),
 ::view-transition-group(arts-side-label) {
-  animation-duration: 500ms;
+  animation-duration: 2000ms;
 }
 
 ::view-transition-group(code-side-label),
@@ -400,15 +402,40 @@ a.side {
   view-transition-name: nav-links;
 }
 
-.brand .monogram {
-  view-transition-name: brand-monogram;
-}
+/*
+  Deliberately *not* giving the monogram a shared view-transition-name
+  across pages. Its position differs between code and arts pages, and
+  pairing it would make the browser morph a single box between the
+  two positions -- sliding it across the screen while old/new
+  crossfade inside that moving box, which produced a "double vision"
+  ghosting effect (two overlapping, spatially-offset glyphs) at
+  slower transition speeds.
+
+  Leaving it unnamed means old and new are independent, un-paired
+  elements: the old monogram simply fades out in place on the
+  departing page, and the new monogram fades in in place on the
+  arriving page, with no shared group and no positional interpolation
+  -- eliminating the ghosting entirely.
+ */
 
 ::view-transition-group(nav-works),
 ::view-transition-group(nav-words),
-::view-transition-group(nav-links),
-::view-transition-group(brand-monogram) {
-  animation-duration: 500ms;
+::view-transition-group(nav-links) {
+  animation-duration: 5000ms;
+}
+
+/*
+  The monogram is intentionally unnamed (see comment above), so it's
+  just part of the root snapshot's default crossfade, which otherwise
+  runs on the browser's short default duration -- far shorter than
+  the rest of the transition. Stretching just the duration here
+  (leaving animation-name alone) keeps the browser's own fade
+  animation intact while making it run in step with everything else,
+  instead of finishing early and looking like a pop.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 5000ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
