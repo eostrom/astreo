@@ -381,7 +381,7 @@ a.side {
 ::view-transition-group(arts-panel),
 ::view-transition-group(code-side-label),
 ::view-transition-group(arts-side-label) {
-  animation-duration: 2000ms;
+  animation-duration: 5000ms;
 }
 
 ::view-transition-group(code-side-label),
@@ -406,11 +406,11 @@ a.side {
   position/size interpolation entirely, losing the morph.
  */
 ::view-transition-image-pair(code-side-label) {
-  animation: side-label-blur-in 2000ms linear;
+  animation: side-label-blur-in 5000ms linear;
 }
 
 ::view-transition-image-pair(arts-side-label) {
-  animation: side-label-blur-out 2000ms linear;
+  animation: side-label-blur-out 5000ms linear;
 }
 
 @keyframes side-label-blur-in {
