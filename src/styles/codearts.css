@@ -288,15 +288,40 @@ a.side {
   top: 8.5rem;
 }
 
+/** Declare this property as a length so browsers will animate it. */
+@property --edge-fade-width {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0;
+}
+
 .side.other-side {
   background: var(--background-color);
   grid-area: othersidebar;
   color: var(--far-display-color);
-  filter: blur(3px);
-  overflow-x: hidden;
+  overflow: hidden;
+  /* soft inner edge, faded out over the first --edge-fade-width from
+     the boundary with .main/.footer; sharpens to a crisp edge (fade
+     width of 0) on hover/focus. --edge-fade-width is animated rather
+     than mask-image directly, since browsers can't interpolate between
+     two different gradients. */
+  --edge-fade-width: var(--space-1);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black var(--edge-fade-width)
+  );
   transition:
-    filter 250ms linear,
-    color 250ms linear;
+    color 250ms linear,
+    --edge-fade-width 250ms linear;
+
+  .arts & {
+    mask-image: linear-gradient(
+      to left,
+      transparent,
+      black var(--edge-fade-width)
+    );
+  }
 
   & .side-label {
     filter: blur(1px);
@@ -307,7 +332,7 @@ a.side {
 
   &:hover,
   &:focus {
-    filter: blur(0);
+    --edge-fade-width: 0px;
     color: var(--near-display-color);
   }
 
