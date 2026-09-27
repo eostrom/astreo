@@ -37,6 +37,41 @@ const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
       src="https://platform.twitter.com/widgets.js"
       async="true"
       charset="utf-8"></script>
+    <script is:inline>
+      /*
+        Store the direction of navigation (from-home/to-home),
+        so our CSS can use it to prevent layout animation collisions
+        when the new page loads.
+
+        If the browser doesn't support `pageswap`, the user gets
+        a somewhat less elegant transition.
+
+        TODO: once `:active-view-transition-type()` has wider support,
+        switch to that instead of sessionStorage + a data attribute.
+       */
+      window.addEventListener('pageswap', (event) => {
+        const fromHome = location.pathname === '/'
+        const toUrl = event.activation?.entry?.url
+        const toPath = toUrl ? new URL(toUrl).pathname : ''
+        const toHome = toPath === '/'
+
+        if (fromHome && !toHome) {
+          sessionStorage.setItem('nav-direction', 'from-home')
+        } else if (!fromHome && toHome) {
+          sessionStorage.setItem('nav-direction', 'to-home')
+        }
+      })
+
+      /*
+        Check for `nav-direction` on load and copy it to a `data-` attribute
+        if present. Wipe it from storage so it doesn't affect future page loads.
+       */
+      const direction = sessionStorage.getItem('nav-direction')
+      if (direction) {
+        document.documentElement.setAttribute('data-nav-direction', direction)
+        sessionStorage.removeItem('nav-direction')
+      }
+    </script>
   </head>
   <body>
     <slot />

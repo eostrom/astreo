@@ -245,6 +245,9 @@ a.tk {
   display: flex;
   position: relative;
   z-index: 2;
+  /* named separately from the nav items so its own crossfade can be
+     controlled independently of them */
+  view-transition-name: nav-container;
 
   & .contents {
     padding: 0 1rem;
@@ -471,11 +474,10 @@ a.side {
 }
 
 /*
-  `shows` has no code-side counterpart, so it can't morph in from
-  anywhere -- it's purely a new arrival when navigating into arts.
-  Naming it lets us delay/animate its entrance independently instead
-  of it popping in at full opacity/position the instant the new
-  document paints, ahead of everything else still settling.
+  `shows` has no code-side counterpart, so it can only fade in/out,
+  not morph position (see the exit/enter keyframes below). Scoped to
+  interior pages only, so it stays paired (no animation) across
+  arts->arts navigation.
  */
 .contents-header .nav-shows {
   view-transition-name: nav-shows;
@@ -521,22 +523,6 @@ a.side {
   }
 }
 
-/*
-  Deliberately *not* giving the monogram a shared view-transition-name
-  across pages. Its position differs between code and arts pages, and
-  pairing it would make the browser morph a single box between the
-  two positions -- sliding it across the screen while old/new
-  crossfade inside that moving box, which produced a "double vision"
-  ghosting effect (two overlapping, spatially-offset glyphs) at
-  slower transition speeds.
-
-  Leaving it unnamed means old and new are independent, un-paired
-  elements: the old monogram simply fades out in place on the
-  departing page, and the new monogram fades in in place on the
-  arriving page, with no shared group and no positional interpolation
-  -- eliminating the ghosting entirely.
- */
-
 ::view-transition-group(nav-works),
 ::view-transition-group(nav-words),
 ::view-transition-group(nav-links) {
@@ -544,14 +530,71 @@ a.side {
 }
 
 /*
-  Distinct easing per nav item, so they don't move in perfect lockstep
-  (converging/diverging together) but instead feel like they're each
-  moving of their own volition:
-    - "works" has the longest distance to travel, so it gets the most
-      "eager" curve -- fast out of the gate.
-    - "words" is the most "hesitant" -- slow to start, catching up
-      at the end.
-    - "links" stays on the plain ease-in-out as a middle ground.
+  The nav container's own crossfade (background/whitespace, not the
+  individually-morphing item text) uses the browser's default
+  old/new opacity animation. Stretch it to the full transition
+  duration, then apply a direction-aware easing to the fade itself:
+  fades out quickly when leaving the homepage (from-home), fades in
+  slowly when arriving at the homepage (to-home) -- via the same
+  data-nav-direction attribute used elsewhere.
+ */
+::view-transition-old(nav-container),
+::view-transition-new(nav-container) {
+  animation-duration: 5000ms;
+}
+
+/*
+  .brand and nav-container share the header row, so give the outgoing
+  side a quick early fade and the incoming side a delayed late fade
+  to avoid them overlapping mid-transition.
+ */
+::view-transition-old(home-brand),
+::view-transition-old(nav-container) {
+  animation: header-fade-out-early 5000ms linear both;
+}
+
+::view-transition-new(home-brand),
+::view-transition-new(nav-container) {
+  animation: header-fade-in-late 5000ms linear both;
+}
+
+html[data-nav-direction='from-home'] ::view-transition-old(nav-container) {
+  animation-timing-function: cubic-bezier(0.1, 0, 0.05, 1);
+}
+
+html[data-nav-direction='to-home'] ::view-transition-new(nav-container) {
+  animation-timing-function: cubic-bezier(0.95, 0, 0.9, 1);
+}
+
+@keyframes header-fade-out-early {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes header-fade-in-late {
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+  Distinct easing per nav item so they don't move in lockstep: "works"
+  is fast out of the gate, "words" is slow to start then catches up,
+  "links" stays on a plain ease-in-out.
  */
 ::view-transition-group(nav-works) {
   animation-timing-function: cubic-bezier(0.2, 0.5, 0.3, 1);
