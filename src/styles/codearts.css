@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   --fs-0: 13px;
   --lh-0: 25px;
@@ -59,7 +63,11 @@
   --near-bright-blue: hsl(var(--near-blue-hue), 90%, 50%);
   --near-bright-pink: hsl(var(--near-pink-hue), 90%, 50%);
   --body-background: hsl(0, 100%, 0%); /* black */
+  --side-label-z-index: 1;
   --background-color: transparent;
+
+  --transition-duration-default: 2500ms;
+  --transition-duration-links: 1250ms;
 }
 
 * {
@@ -117,17 +125,21 @@ h6 {
   padding: 0.5em 0;
 }
 
-h1 {
+h1,
+.main-heading {
   font-size: var(--fs-5);
   line-height: var(--fs-5);
+  font-weight: normal;
   padding: calc((var(--lh-5) - var(--fs-5)) / 2) 0;
 }
 
-h1::before {
+h1::before,
+.main-heading::before {
   content: '[';
 }
 
-h1::after {
+h1::after,
+.main-heading::after {
   content: ']';
 }
 
@@ -238,6 +250,11 @@ a.tk {
 .contents-header {
   grid-area: header;
   display: flex;
+  position: relative;
+  z-index: 2;
+  /* named separately from the nav items so its own crossfade can be
+     controlled independently of them */
+  view-transition-name: nav-container;
 
   & .contents {
     padding: 0 1rem;
@@ -273,21 +290,48 @@ a.side {
   font-size: var(--fs-6);
   position: absolute;
   top: 4rem;
+  /* keep the label resting on top of the main content panel */
+  z-index: var(--side-label-z-index);
 }
 
 .other-side .side-label {
   top: 8.5rem;
 }
 
+/** Declare this property as a length so browsers will animate it. */
+@property --edge-fade-width {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0;
+}
+
 .side.other-side {
   background: var(--background-color);
   grid-area: othersidebar;
   color: var(--far-display-color);
-  filter: blur(3px);
-  overflow-x: hidden;
+  overflow: hidden;
+  /* soft inner edge, faded out over the first --edge-fade-width from
+     the boundary with .main/.footer; sharpens to a crisp edge (fade
+     width of 0) on hover/focus. --edge-fade-width is animated rather
+     than mask-image directly, since browsers can't interpolate between
+     two different gradients. */
+  --edge-fade-width: var(--space-1);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black var(--edge-fade-width)
+  );
   transition:
-    filter 250ms linear,
-    color 250ms linear;
+    color 250ms linear,
+    --edge-fade-width 250ms linear;
+
+  .arts & {
+    mask-image: linear-gradient(
+      to left,
+      transparent,
+      black var(--edge-fade-width)
+    );
+  }
 
   & .side-label {
     filter: blur(1px);
@@ -298,7 +342,7 @@ a.side {
 
   &:hover,
   &:focus {
-    filter: blur(0);
+    --edge-fade-width: 0px;
     color: var(--near-display-color);
   }
 
@@ -348,6 +392,349 @@ a.side {
   --background-color: var(--bright-pink);
 }
 
+.main.code,
+.side.other-side.code {
+  view-transition-name: code-panel;
+}
+
+.main.arts,
+.side.other-side.arts {
+  view-transition-name: arts-panel;
+}
+
+.side.this-side.code .side-label,
+.side.other-side.code .side-label {
+  view-transition-name: code-side-label;
+}
+
+.side.this-side.arts .side-label,
+.side.other-side.arts .side-label {
+  view-transition-name: arts-side-label;
+}
+
+::view-transition-group(code-panel),
+::view-transition-group(arts-panel),
+::view-transition-group(code-side-label),
+::view-transition-group(arts-side-label),
+::view-transition-group(code-footer),
+::view-transition-group(arts-footer) {
+  animation-duration: var(--transition-duration-default);
+}
+
+::view-transition-group(code-side-label),
+::view-transition-group(arts-side-label) {
+  /* keep the label resting on top of the main content panel */
+  z-index: var(--side-label-z-index);
+}
+
+html[data-nav-direction='from-home']::view-transition-group(code-side-label),
+html[data-nav-direction='from-home']::view-transition-group(arts-side-label),
+html[data-nav-direction='to-home']::view-transition-group(code-side-label),
+html[data-nav-direction='to-home']::view-transition-group(arts-side-label) {
+  /*
+    The single group transform has to serve both the outgoing (old)
+    and incoming (new) side of the transition, which want opposite
+    timing: old should move slowly while still visible (0-40%), then
+    move fast once invisible; new should move fast while still
+    invisible, then move slowly once visible (60-100%). A single
+    easing curve can't satisfy both shapes independently, so this
+    exaggerates a slow-fast-slow S-curve -- very little motion near
+    either end (where each side is visible), most motion in the
+    fast middle stretch (where both are invisible).
+   */
+  animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+}
+
+/*
+  Smooth the sharp <-> blurry change that happens as the side label
+  moves between this-side (sharp) and other-side (blurred 1px). The
+  live element's blur is driven by a plain CSS `transition`, which
+  doesn't run during the view-transition morph (the browser is
+  animating snapshot pseudo-elements, not the live DOM), so without
+  this the blur previously snapped in abruptly the instant the
+  transition ended.
+
+  This uses ::view-transition-image-pair() (not
+  ::view-transition-group()) so the blur keyframes layer on top of
+  the browser's default position/rotation morph instead of replacing
+  it -- animating `group` directly overrides its built-in
+  position/size interpolation entirely, losing the morph.
+ */
+::view-transition-image-pair(code-side-label) {
+  animation: side-label-blur-in var(--transition-duration-default) linear;
+}
+
+::view-transition-image-pair(arts-side-label) {
+  animation: side-label-blur-out var(--transition-duration-default) linear;
+}
+
+/*
+  Rather than a plain linear crossfade the whole time (which showed
+  both old and new snapshots overlapping while they're moving/
+  rotating -- a "ghosting" effect, since both are flat raster images,
+  not live text), fade the old one out quickly near the start and
+  the new one in only near the end. Keyframes below ensure the two
+  boxes are never visible at the same time, so we don't see the ghosting.
+ */
+html[data-nav-direction='from-home']::view-transition-old(code-side-label),
+html[data-nav-direction='from-home']::view-transition-old(arts-side-label),
+html[data-nav-direction='to-home']::view-transition-old(code-side-label),
+html[data-nav-direction='to-home']::view-transition-old(arts-side-label) {
+  animation: side-label-old-exit var(--transition-duration-default)
+    cubic-bezier(0.55, 0, 1, 0.45) both;
+}
+
+html[data-nav-direction='from-home']::view-transition-new(code-side-label),
+html[data-nav-direction='from-home']::view-transition-new(arts-side-label),
+html[data-nav-direction='to-home']::view-transition-new(code-side-label),
+html[data-nav-direction='to-home']::view-transition-new(arts-side-label) {
+  animation: side-label-new-enter var(--transition-duration-default)
+    cubic-bezier(0.55, 0, 1, 0.45) both;
+}
+
+/* Interior transitions don't have ghosting so we don't have to hide them. */
+html[data-nav-direction='interior']::view-transition-image-pair(
+    code-side-label
+  ),
+html[data-nav-direction='interior']::view-transition-image-pair(
+    arts-side-label
+  ) {
+  animation: side-label-stay-visible var(--transition-duration-default) linear
+    both;
+}
+
+@keyframes side-label-stay-visible {
+  from,
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes side-label-old-exit {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes side-label-new-enter {
+  0%,
+  60% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes side-label-blur-in {
+  from {
+    filter: blur(1px);
+  }
+
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes side-label-blur-out {
+  from {
+    filter: blur(0);
+  }
+
+  to {
+    filter: blur(1px);
+  }
+}
+
+.contents-header .nav-works {
+  view-transition-name: nav-works;
+}
+
+.contents-header .nav-words {
+  view-transition-name: nav-words;
+}
+
+.contents-header .nav-links {
+  view-transition-name: nav-links;
+}
+
+/*
+  `shows` has no code-side counterpart, so it can only fade in/out,
+  not morph position (see the exit/enter keyframes below). Scoped to
+  interior pages only, so it stays paired (no animation) across
+  arts->arts navigation.
+ */
+.contents-header .nav-shows {
+  view-transition-name: nav-shows;
+}
+
+::view-transition-old(nav-shows) {
+  /* fade out quickly, in a short window at the very start of the
+     transition, so `shows` is gone before the rest of the nav is far
+     into its slide -- rather than lingering, half-faded, alongside
+     items that have mostly finished moving */
+  animation: nav-shows-exit var(--transition-duration-default) linear both;
+}
+
+@keyframes nav-shows-exit {
+  0% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+::view-transition-new(nav-shows) {
+  /* stay hidden through most of the transition, then fade in late --
+     roughly once the panel has expanded enough to have revealed it --
+     rather than fading in from the very start */
+  animation: nav-shows-enter var(--transition-duration-default) linear both;
+}
+
+@keyframes nav-shows-enter {
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+::view-transition-group(nav-works),
+::view-transition-group(nav-words),
+::view-transition-group(nav-links) {
+  animation-duration: var(--transition-duration-default);
+}
+
+/*
+  The nav container's own crossfade (background/whitespace, not the
+  individually-morphing item text) uses the browser's default
+  old/new opacity animation. Stretch it to the full transition
+  duration, then apply a direction-aware easing to the fade itself:
+  fades out quickly when leaving the homepage (from-home), fades in
+  slowly when arriving at the homepage (to-home) -- via the same
+  data-nav-direction attribute used elsewhere.
+ */
+::view-transition-old(nav-container),
+::view-transition-new(nav-container) {
+  animation-duration: var(--transition-duration-default);
+}
+
+/*
+  .brand and nav-container share the header row, so give the outgoing
+  side a quick early fade and the incoming side a delayed late fade
+  to avoid them overlapping mid-transition.
+ */
+::view-transition-old(home-brand),
+::view-transition-old(nav-container) {
+  animation: header-fade-out-early var(--transition-duration-default) linear
+    both;
+}
+
+::view-transition-new(home-brand),
+::view-transition-new(nav-container) {
+  animation: header-fade-in-late var(--transition-duration-default) linear both;
+}
+
+html[data-nav-direction='from-home'] ::view-transition-old(nav-container) {
+  animation-timing-function: cubic-bezier(0.1, 0, 0.05, 1);
+}
+
+html[data-nav-direction='to-home'] ::view-transition-new(nav-container) {
+  animation-timing-function: cubic-bezier(0.95, 0, 0.9, 1);
+}
+
+@keyframes header-fade-out-early {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes header-fade-in-late {
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+  Distinct easing per nav item so they don't move in lockstep: "works"
+  is fast out of the gate, "words" is slow to start then catches up,
+  "links" stays on a plain ease-in-out.
+ */
+::view-transition-group(nav-works) {
+  animation-timing-function: cubic-bezier(0.2, 0.5, 0.3, 1);
+}
+
+::view-transition-group(nav-words) {
+  animation-timing-function: cubic-bezier(0.7, 0, 0.8, 0.5);
+}
+
+::view-transition-group(nav-links) {
+  animation-timing-function: ease-in-out;
+}
+
+/*
+  The monogram is intentionally unnamed (see comment above), so it's
+  just part of the root snapshot's default crossfade, which otherwise
+  runs on the browser's short default duration -- far shorter than
+  the rest of the transition. Stretching just the duration here
+  (leaving animation-name alone) keeps the browser's own fade
+  animation intact while making it run in step with everything else,
+  instead of finishing early and looking like a pop.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--transition-duration-default);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 .main > * {
   max-width: 100%;
 }
@@ -391,14 +778,6 @@ pre.shiki {
   font-family: var(--footer-font-family);
   color: hsla(0, 0%, 100%, 0.4);
   background: var(--background-color);
-}
-
-.code .footer {
-  text-align: right;
-}
-
-.arts .footer {
-  text-align: left;
 }
 
 pre code {
