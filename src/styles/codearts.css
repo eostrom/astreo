@@ -122,17 +122,21 @@ h6 {
   padding: 0.5em 0;
 }
 
-h1 {
+h1,
+.main-heading {
   font-size: var(--fs-5);
   line-height: var(--fs-5);
+  font-weight: normal;
   padding: calc((var(--lh-5) - var(--fs-5)) / 2) 0;
 }
 
-h1::before {
+h1::before,
+.main-heading::before {
   content: '[';
 }
 
-h1::after {
+h1::after,
+.main-heading::after {
   content: ']';
 }
 

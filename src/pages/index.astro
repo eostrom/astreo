@@ -6,13 +6,13 @@ import CodeContents from '../components/CodeContents.astro'
 
 <BaseLayout title="code|arts">
   <div class="braingrid">
-    <div class="brand">
+    <h1 class="brand">
       <span class="display arts">Erik&nbsp;</span><span class="display code"
         >Ostrom</span
       >
-    </div>
+    </h1>
     <div class="main code display-only">
-      <h1>code</h1>
+      <h2 class="main-heading">code</h2>
       <p>
         I'm a freelance web developer, architect, and designer. I love to create
         robust, modern, humane software experiences.
@@ -20,7 +20,7 @@ import CodeContents from '../components/CodeContents.astro'
       <CodeContents />
     </div>
     <div class="main arts display-only">
-      <h1>arts</h1>
+      <h2 class="main-heading">arts</h2>
       <p>
         I'm a composer, improviser, singer, player, and theater maker. I love to
         create playful, moving, immersive artistic experiences.
@@ -32,9 +32,9 @@ import CodeContents from '../components/CodeContents.astro'
 </BaseLayout>
 
 <style>
-  h1::before,
-  h1::after {
-    content: '';
+  .brand::before,
+  .brand::after {
+    content: ''; /* don't put brackets around the brand heading */
   }
 
   .braingrid {
