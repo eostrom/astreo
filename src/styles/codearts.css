@@ -65,6 +65,9 @@
   --body-background: hsl(0, 100%, 0%); /* black */
   --side-label-z-index: 1;
   --background-color: transparent;
+
+  --transition-duration-default: 2500ms;
+  --transition-duration-links: 1250ms;
 }
 
 * {
@@ -412,14 +415,34 @@ a.side {
 ::view-transition-group(code-panel),
 ::view-transition-group(arts-panel),
 ::view-transition-group(code-side-label),
-::view-transition-group(arts-side-label) {
-  animation-duration: 5000ms;
+::view-transition-group(arts-side-label),
+::view-transition-group(code-footer),
+::view-transition-group(arts-footer) {
+  animation-duration: var(--transition-duration-default);
 }
 
 ::view-transition-group(code-side-label),
 ::view-transition-group(arts-side-label) {
   /* keep the label resting on top of the main content panel */
   z-index: var(--side-label-z-index);
+}
+
+html[data-nav-direction='from-home']::view-transition-group(code-side-label),
+html[data-nav-direction='from-home']::view-transition-group(arts-side-label),
+html[data-nav-direction='to-home']::view-transition-group(code-side-label),
+html[data-nav-direction='to-home']::view-transition-group(arts-side-label) {
+  /*
+    The single group transform has to serve both the outgoing (old)
+    and incoming (new) side of the transition, which want opposite
+    timing: old should move slowly while still visible (0-40%), then
+    move fast once invisible; new should move fast while still
+    invisible, then move slowly once visible (60-100%). A single
+    easing curve can't satisfy both shapes independently, so this
+    exaggerates a slow-fast-slow S-curve -- very little motion near
+    either end (where each side is visible), most motion in the
+    fast middle stretch (where both are invisible).
+   */
+  animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
 }
 
 /*
@@ -438,11 +461,11 @@ a.side {
   position/size interpolation entirely, losing the morph.
  */
 ::view-transition-image-pair(code-side-label) {
-  animation: side-label-blur-in 5000ms linear;
+  animation: side-label-blur-in var(--transition-duration-default) linear;
 }
 
 ::view-transition-image-pair(arts-side-label) {
-  animation: side-label-blur-out 5000ms linear;
+  animation: side-label-blur-out var(--transition-duration-default) linear;
 }
 
 /*
@@ -457,14 +480,16 @@ html[data-nav-direction='from-home']::view-transition-old(code-side-label),
 html[data-nav-direction='from-home']::view-transition-old(arts-side-label),
 html[data-nav-direction='to-home']::view-transition-old(code-side-label),
 html[data-nav-direction='to-home']::view-transition-old(arts-side-label) {
-  animation: side-label-old-exit 5000ms linear both;
+  animation: side-label-old-exit var(--transition-duration-default)
+    cubic-bezier(0.55, 0, 1, 0.45) both;
 }
 
 html[data-nav-direction='from-home']::view-transition-new(code-side-label),
 html[data-nav-direction='from-home']::view-transition-new(arts-side-label),
 html[data-nav-direction='to-home']::view-transition-new(code-side-label),
 html[data-nav-direction='to-home']::view-transition-new(arts-side-label) {
-  animation: side-label-new-enter 5000ms linear both;
+  animation: side-label-new-enter var(--transition-duration-default)
+    cubic-bezier(0.55, 0, 1, 0.45) both;
 }
 
 /* Interior transitions don't have ghosting so we don't have to hide them. */
@@ -474,7 +499,8 @@ html[data-nav-direction='interior']::view-transition-image-pair(
 html[data-nav-direction='interior']::view-transition-image-pair(
     arts-side-label
   ) {
-  animation: side-label-stay-visible 5000ms linear both;
+  animation: side-label-stay-visible var(--transition-duration-default) linear
+    both;
 }
 
 @keyframes side-label-stay-visible {
@@ -489,7 +515,12 @@ html[data-nav-direction='interior']::view-transition-image-pair(
     opacity: 1;
   }
 
-  20% {
+  25% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  40% {
     opacity: 0;
   }
 
@@ -502,6 +533,11 @@ html[data-nav-direction='interior']::view-transition-image-pair(
   0%,
   60% {
     opacity: 0;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  65% {
+    opacity: 1;
   }
 
   100% {
@@ -556,7 +592,7 @@ html[data-nav-direction='interior']::view-transition-image-pair(
      transition, so `shows` is gone before the rest of the nav is far
      into its slide -- rather than lingering, half-faded, alongside
      items that have mostly finished moving */
-  animation: nav-shows-exit 5000ms linear both;
+  animation: nav-shows-exit var(--transition-duration-default) linear both;
 }
 
 @keyframes nav-shows-exit {
@@ -577,7 +613,7 @@ html[data-nav-direction='interior']::view-transition-image-pair(
   /* stay hidden through most of the transition, then fade in late --
      roughly once the panel has expanded enough to have revealed it --
      rather than fading in from the very start */
-  animation: nav-shows-enter 5000ms linear both;
+  animation: nav-shows-enter var(--transition-duration-default) linear both;
 }
 
 @keyframes nav-shows-enter {
@@ -594,7 +630,7 @@ html[data-nav-direction='interior']::view-transition-image-pair(
 ::view-transition-group(nav-works),
 ::view-transition-group(nav-words),
 ::view-transition-group(nav-links) {
-  animation-duration: 5000ms;
+  animation-duration: var(--transition-duration-default);
 }
 
 /*
@@ -608,7 +644,7 @@ html[data-nav-direction='interior']::view-transition-image-pair(
  */
 ::view-transition-old(nav-container),
 ::view-transition-new(nav-container) {
-  animation-duration: 5000ms;
+  animation-duration: var(--transition-duration-default);
 }
 
 /*
@@ -618,12 +654,13 @@ html[data-nav-direction='interior']::view-transition-image-pair(
  */
 ::view-transition-old(home-brand),
 ::view-transition-old(nav-container) {
-  animation: header-fade-out-early 5000ms linear both;
+  animation: header-fade-out-early var(--transition-duration-default) linear
+    both;
 }
 
 ::view-transition-new(home-brand),
 ::view-transition-new(nav-container) {
-  animation: header-fade-in-late 5000ms linear both;
+  animation: header-fade-in-late var(--transition-duration-default) linear both;
 }
 
 html[data-nav-direction='from-home'] ::view-transition-old(nav-container) {
@@ -687,7 +724,7 @@ html[data-nav-direction='to-home'] ::view-transition-new(nav-container) {
  */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 5000ms;
+  animation-duration: var(--transition-duration-default);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -741,14 +778,6 @@ pre.shiki {
   font-family: var(--footer-font-family);
   color: hsla(0, 0%, 100%, 0.4);
   background: var(--background-color);
-}
-
-.code .footer {
-  text-align: right;
-}
-
-.arts .footer {
-  text-align: left;
 }
 
 pre code {
