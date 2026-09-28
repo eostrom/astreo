@@ -66,6 +66,8 @@ const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
           sessionStorage.setItem('nav-direction', 'from-home')
         } else if (!fromHome && toHome) {
           sessionStorage.setItem('nav-direction', 'to-home')
+        } else if (!fromHome && !toHome) {
+          sessionStorage.setItem('nav-direction', 'interior')
         }
       })
 

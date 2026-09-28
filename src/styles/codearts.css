@@ -445,6 +445,70 @@ a.side {
   animation: side-label-blur-out 5000ms linear;
 }
 
+/*
+  Rather than a plain linear crossfade the whole time (which showed
+  both old and new snapshots overlapping while they're moving/
+  rotating -- a "ghosting" effect, since both are flat raster images,
+  not live text), fade the old one out quickly near the start and
+  the new one in only near the end. Keyframes below ensure the two
+  boxes are never visible at the same time, so we don't see the ghosting.
+ */
+html[data-nav-direction='from-home']::view-transition-old(code-side-label),
+html[data-nav-direction='from-home']::view-transition-old(arts-side-label),
+html[data-nav-direction='to-home']::view-transition-old(code-side-label),
+html[data-nav-direction='to-home']::view-transition-old(arts-side-label) {
+  animation: side-label-old-exit 5000ms linear both;
+}
+
+html[data-nav-direction='from-home']::view-transition-new(code-side-label),
+html[data-nav-direction='from-home']::view-transition-new(arts-side-label),
+html[data-nav-direction='to-home']::view-transition-new(code-side-label),
+html[data-nav-direction='to-home']::view-transition-new(arts-side-label) {
+  animation: side-label-new-enter 5000ms linear both;
+}
+
+/* Interior transitions don't have ghosting so we don't have to hide them. */
+html[data-nav-direction='interior']::view-transition-image-pair(
+    code-side-label
+  ),
+html[data-nav-direction='interior']::view-transition-image-pair(
+    arts-side-label
+  ) {
+  animation: side-label-stay-visible 5000ms linear both;
+}
+
+@keyframes side-label-stay-visible {
+  from,
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes side-label-old-exit {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes side-label-new-enter {
+  0%,
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes side-label-blur-in {
   from {
     filter: blur(1px);
