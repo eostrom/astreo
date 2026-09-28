@@ -634,24 +634,6 @@ html[data-nav-direction='to-home'] ::view-transition-new(nav-container) {
   }
 }
 
-/*
-  Below the 480px braingrid breakpoint, mobile browsers frequently
-  resize the viewport mid-navigation (e.g. the URL bar/toolbar
-  collapsing or expanding), which aborts the whole cross-document view
-  transition and falls back to an instant swap. Rather than animate
-  transitions inconsistently, we disable them entirely on mobile.
-
-  (The inconsistency is still possible on larger screens, but not
-  as common.)
- */
-@media (max-width: 480px) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation: none !important;
-  }
-}
-
 .main > * {
   max-width: 100%;
 }

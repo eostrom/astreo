@@ -50,6 +50,13 @@ const pageTitle = title ? `${title} – Erik Ostrom` : 'Erik Ostrom'
         switch to that instead of sessionStorage + a data attribute.
        */
       window.addEventListener('pageswap', (event) => {
+        if (window.innerWidth < 480) {
+          // On small screens the browser often resizes the viewport
+          // mid-navigation, canceling the transition. We don't want
+          // transitions to be intermittent, so we just skip them.
+          event.viewTransition?.skipTransition()
+        }
+
         const fromHome = location.pathname === '/'
         const toUrl = event.activation?.entry?.url
         const toPath = toUrl ? new URL(toUrl).pathname : ''
