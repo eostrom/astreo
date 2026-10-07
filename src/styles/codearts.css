@@ -334,7 +334,7 @@ a.side {
   }
 
   & .side-label {
-    filter: blur(1px);
+    filter: blur(3px);
     transition:
       filter 250ms linear,
       color 250ms linear;
