@@ -780,6 +780,14 @@ pre.shiki {
   background: var(--background-color);
 }
 
+.code .footer {
+  text-align: right;
+}
+
+.arts .footer {
+  text-align: left;
+}
+
 pre code {
   display: block;
   padding: var(--space-4);
