@@ -66,14 +66,14 @@ The existing site and dependency constraints have a recorded baseline for review
 - [x] Record pre-existing failures and the exact stable versions available at execution time.
 - [x] Present the baseline checklist and findings; pause for user review and approval.
 
-### Step 2: Migrate legacy content collections on Astro 5
+### ✓ Step 2: Migrate legacy content collections on Astro 5
 
 Existing articles and shows use the current content-layer APIs without changing their public behavior.
 
-- [ ] Move `src/content/config.ts` to `src/content.config.ts` and define explicit loaders for both collections.
-- [ ] Replace legacy rendering calls in both article routes and `src/components/ShowRow.astro` with `render(entry)`.
-- [ ] Build and compare routes, drafts, content and show ordering with the baseline.
-- [ ] Present the migration checklist, changes and validation results; pause for user review and approval.
+- [x] Move `src/content/config.ts` to `src/content.config.ts` and define explicit loaders for both collections.
+- [x] Replace legacy rendering calls in both article routes and `src/components/ShowRow.astro` with `render(entry)`.
+- [x] Build and compare routes, drafts, content and show ordering with the baseline.
+- [x] Present the migration checklist, changes and validation results; pause for user review and approval.
 
 ### Step 3: Upgrade and validate Astro 6 ecosystem
 

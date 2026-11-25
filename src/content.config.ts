@@ -1,7 +1,8 @@
+import {glob} from 'astro/loaders'
 import {z, defineCollection} from 'astro:content'
 
 const wordsCollection = defineCollection({
-  type: 'content',
+  loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/words'}),
   schema: z.object({
     title: z.string(),
     description: z.optional(z.string()),
@@ -14,7 +15,7 @@ const wordsCollection = defineCollection({
 })
 
 const showsCollection = defineCollection({
-  type: 'content',
+  loader: glob({pattern: '**/*.md', base: './src/content/shows'}),
   schema: z.object({
     when: z.string(),
     where: z.string(),

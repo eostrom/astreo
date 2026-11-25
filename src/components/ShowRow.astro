@@ -1,5 +1,6 @@
 ---
 import type {CollectionEntry} from 'astro:content'
+import {render} from 'astro:content'
 
 type Show = CollectionEntry<'shows'> // typeof getCollection('words')[number]
 
@@ -8,7 +9,7 @@ export type Props = {
 }
 
 const {show} = Astro.props
-const {Content} = await show.render()
+const {Content} = await render(show)
 ---
 
 <tr>

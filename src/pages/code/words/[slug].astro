@@ -2,7 +2,7 @@
 import type {SeoProps} from 'astro-seo-meta'
 import {Seo} from 'astro-seo-meta'
 import {parseISO} from 'date-fns'
-import {getCollection} from 'astro:content'
+import {getCollection, render} from 'astro:content'
 import {slugify} from '../../../utils/slugify'
 import CodeGrid from '../../../layouts/CodeGrid.astro'
 
@@ -27,7 +27,7 @@ const shortDateFormat = new Intl.DateTimeFormat('en-US', {
 const {entry} = Astro.props
 const {title, description, date} = entry.data
 const image = entry.data.image && new URL(entry.data.image, Astro.url).href
-const {Content} = await entry.render()
+const {Content} = await render(entry)
 const dateObject = parseISO(date)
 const isoDate = dateObject.toISOString()
 const shortDate = shortDateFormat.format(dateObject)
