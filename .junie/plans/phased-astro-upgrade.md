@@ -84,14 +84,14 @@ A compatible Astro 6 checkpoint builds and preserves the existing site.
 - [x] Run build and lint checks and compare representative generated pages and metadata.
 - [x] Present the Astro 6 checklist, changes and validation results; pause for user review and approval.
 
-### Step 4: Upgrade to current stable Astro
+### ✓ Step 4: Upgrade to current stable Astro
 
 The site runs on the latest compatible stable Astro release with its rendering behavior checked.
 
-- [ ] Update Astro and its integrations together, checking Node and processor peer requirements.
-- [ ] Address Astro 7 compiler, Markdown and whitespace changes in affected configuration or templates while preserving content and presentation.
-- [ ] Validate routes, Markdown and MDX output, heading anchors, styles, SEO, development and production preview.
-- [ ] Present the Astro upgrade checklist, changes and validation results; pause for user review and approval.
+- [x] Update Astro and its integrations together, checking Node and processor peer requirements.
+- [x] Address Astro 7 compiler, Markdown and whitespace changes in affected configuration or templates while preserving content and presentation.
+- [x] Validate routes, Markdown and MDX output, heading anchors, styles, SEO, development and production preview.
+- [x] Present the Astro upgrade checklist, changes and validation results; pause for user review and approval.
 
 ### Step 5: Update remaining compatible dependencies
 
