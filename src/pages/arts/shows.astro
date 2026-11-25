@@ -31,13 +31,18 @@ const isShowOver = (show: CollectionEntry<'shows'>) =>
   // Note: `isAfter` gives the wrong answer for shows that end today
   !isBefore(show.data.lastDate, today)
 const [futureShows, pastShows] = _.partition(isShowOver)(allShows)
-const goneDown = _.flow(
-  _.sortBy((show: CollectionEntry<'shows'>) => show.data.lastDate),
-  _.reverse,
-)(pastShows)
-const comingUp = _.sortBy(
-  (show: CollectionEntry<'shows'>) => show.data.firstDate,
-)(futureShows)
+const goneDown = [...pastShows].sort(
+  (a, b) =>
+    b.data.lastDate.getTime() - a.data.lastDate.getTime() ||
+    b.data.firstDate.getTime() - a.data.firstDate.getTime() ||
+    b.id.localeCompare(a.id),
+)
+const comingUp = [...futureShows].sort(
+  (a, b) =>
+    a.data.firstDate.getTime() - b.data.firstDate.getTime() ||
+    a.data.lastDate.getTime() - b.data.lastDate.getTime() ||
+    a.id.localeCompare(b.id),
+)
 ---
 
 <ArtsGrid title="shows">
