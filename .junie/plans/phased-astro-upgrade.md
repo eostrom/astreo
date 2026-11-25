@@ -75,14 +75,14 @@ Existing articles and shows use the current content-layer APIs without changing 
 - [x] Build and compare routes, drafts, content and show ordering with the baseline.
 - [x] Present the migration checklist, changes and validation results; pause for user review and approval.
 
-### Step 3: Upgrade and validate Astro 6 ecosystem
+### ✓ Step 3: Upgrade and validate Astro 6 ecosystem
 
 A compatible Astro 6 checkpoint builds and preserves the existing site.
 
-- [ ] Update Astro, MDX, SEO integration and checker to mutually compatible versions in `package.json` and `yarn.lock`.
-- [ ] Resolve applicable Zod 4, frontmatter, SEO, Shiki and heading differences without changing intended content or URLs.
-- [ ] Run build and lint checks and compare representative generated pages and metadata.
-- [ ] Present the Astro 6 checklist, changes and validation results; pause for user review and approval.
+- [x] Update Astro, MDX, SEO integration and checker to mutually compatible versions in `package.json` and `yarn.lock`.
+- [x] Resolve applicable Zod 4, frontmatter, SEO, Shiki and heading differences without changing intended content or URLs.
+- [x] Run build and lint checks and compare representative generated pages and metadata.
+- [x] Present the Astro 6 checklist, changes and validation results; pause for user review and approval.
 
 ### Step 4: Upgrade to current stable Astro
 
