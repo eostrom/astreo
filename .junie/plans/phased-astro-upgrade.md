@@ -57,14 +57,14 @@ Upgrade from Astro 5 to the latest stable Astro safely, with a working Astro 6 c
 
 Complete one stage at a time. At each stage's review checkpoint, present the completed checklist, changes and validation results; stop and wait for user approval before starting the next stage.
 
-### Step 1: Establish upgrade baseline and inventory
+### ✓ Step 1: Establish upgrade baseline and inventory
 
 The existing site and dependency constraints have a recorded baseline for review.
 
 - [x] Capture current build and lint results, dependency/peer and security findings, and representative generated routes and HTML outside the project.
-- [ ] Verify local Node and Yarn versions and identify any accessible deployment runtime configuration.
-- [ ] Record pre-existing failures and the exact stable versions available at execution time.
-- [ ] Present the baseline checklist and findings; pause for user review and approval.
+- [x] Verify local Node and Yarn versions and identify any accessible deployment runtime configuration.
+- [x] Record pre-existing failures and the exact stable versions available at execution time.
+- [x] Present the baseline checklist and findings; pause for user review and approval.
 
 ### Step 2: Migrate legacy content collections on Astro 5
 

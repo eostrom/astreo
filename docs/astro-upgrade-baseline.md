@@ -8,6 +8,13 @@ Captured before the Astro upgrade on 2026-11-24. Use this as a reference when ch
 - Baseline lockfile: [`yarn.lock`](../yarn.lock) at that commit
 - Astro was `5.18.0`; the project used Yarn `4.0.2`.
 
+## Registry versions checked on 2026-11-24
+
+- Latest stable releases: Astro `7.4.13`, `@astrojs/mdx` `8.1.6`, `astro-seo-meta` `7.0.2`, `@astrojs/check` `0.9.12`, and TypeScript `7.0.2`.
+- Astro 6 checkpoint releases: Astro `6.4.8`, `@astrojs/mdx` `6.0.3` (peers require Astro `^6.4.0` and `@astrojs/markdown-satteri` `^0.3.0`), and `astro-seo-meta` `6.0.0` (peer requires Astro `^6.0.0`).
+- Astro 7 compatibility: `@astrojs/mdx` `8.1.6` requires Astro `^7.2.10`, `@astrojs/markdown-remark` `^7.3.0`, and `@astrojs/markdown-satteri` `^0.4.0`; `astro-seo-meta` `7.0.2` requires Astro `^7.0.0`.
+- `@astrojs/check` `0.9.12` accepts TypeScript `^5.0.0 || ^6.0.0`, so TypeScript 7 is not a compatible update for this checkpoint.
+
 ## Runtime
 
 - Local Node: `24.16.0` (from `.tool-versions`)
@@ -17,6 +24,7 @@ Captured before the Astro upgrade on 2026-11-24. Use this as a reference when ch
 
 - `yarn build`: passed; `astro check` reported 0 errors and warnings, and the build generated 60 pages.
 - `yarn lint-check`: passed.
+- No pre-existing build or lint failures were found.
 - `yarn install --immutable`: succeeded with an unmet `postcss` peer warning from `postcss-nesting`; this warning is intentionally deferred for now.
 
 ## Security audit
@@ -28,8 +36,4 @@ Captured before the Astro upgrade on 2026-11-24. Use this as a reference when ch
 
 ## Comparison artifacts
 
-At baseline, a 60-route manifest and representative home, arts article, MDX article, and shows HTML snapshots were saved outside the repository at:
-
-`/var/folders/mw/nf9wcwv95x54tl3pxkxn0tb40000gp/T/junie-session-261102-145414-1mge/astro-baseline`
-
-This is a temporary system location and may no longer be available; the committed lockfile and this note are the durable baseline records.
+The 60-route baseline manifest is preserved in [`astro-upgrade-baseline-routes.txt`](./astro-upgrade-baseline-routes.txt).
