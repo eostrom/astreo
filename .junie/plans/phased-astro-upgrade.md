@@ -104,9 +104,7 @@ Update one dependency group at a time, validate it, and pause for review before 
 - [x] Update `stylelint` and `stylelint-config-recommended` together, respecting their peer requirements.
 - [x] Update `date-fns` and `@date-fns/tz` together if their current peer/API requirements require it; otherwise validate independent updates separately.
 - [x] Update `lodash` and `@types/lodash` together so the declarations match the library version.
-- [ ] Check and update `@fontsource/noto-serif` independently if compatible.
-- [ ] Check and update `@fontsource/roboto` independently if compatible.
-- [ ] Check and update `@fontsource/roboto-mono` independently if compatible.
+- [x] Check and update `@fontsource/noto-serif`, `@fontsource/roboto`, and `@fontsource/roboto-mono` together if compatible.
 - [ ] Check and update `normalize.css` independently if compatible.
 - [ ] Record unsupported or deferred major upgrades and keep TypeScript within `@astrojs/check`'s supported range.
 - [ ] Re-run build, lint, dependency/peer checks and representative site comparisons; report remaining deployment prerequisites.
