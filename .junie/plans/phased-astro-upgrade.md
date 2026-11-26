@@ -93,7 +93,7 @@ The site runs on the latest compatible stable Astro release with its rendering b
 - [x] Validate routes, Markdown and MDX output, heading anchors, styles, SEO, development and production preview.
 - [x] Present the Astro upgrade checklist, changes and validation results; pause for user review and approval.
 
-### * Step 5: Update remaining compatible dependencies
+### ✓ Step 5: Update remaining compatible dependencies
 
 Update one dependency group at a time, validate it, and pause for review before starting the next group. Check current versions and peer/API requirements when each group is reached; defer incompatible upgrades rather than forcing them.
 
