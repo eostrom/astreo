@@ -11,22 +11,24 @@ import CodeContents from '../components/CodeContents.astro'
         >Ostrom</span
       >
     </h1>
-    <div class="main code display-only">
-      <h2 class="main-heading">code</h2>
-      <p>
-        I'm a freelance web developer, architect, and designer. I love to create
-        robust, modern, humane software experiences.
-      </p>
-      <CodeContents />
-    </div>
-    <div class="main arts display-only">
-      <h2 class="main-heading">arts</h2>
-      <p>
-        I'm a composer, improviser, singer, player, and theater maker. I love to
-        create playful, moving, immersive artistic experiences.
-      </p>
-      <ArtsContents />
-    </div>
+    <main class="home-content">
+      <section class="main code display-only">
+        <h2 class="main-heading">code</h2>
+        <p>
+          I'm a freelance web developer, architect, and designer. I love to create
+          robust, modern, humane software experiences.
+        </p>
+        <CodeContents />
+      </section>
+      <section class="main arts display-only">
+        <h2 class="main-heading">arts</h2>
+        <p>
+          I'm a composer, improviser, singer, player, and theater maker. I love to
+          create playful, moving, immersive artistic experiences.
+        </p>
+        <ArtsContents />
+      </section>
+    </main>
     <div class="footer">© 2019, 2024, 2026 Erik Ostrom</div>
   </div>
 </BaseLayout>
@@ -40,14 +42,29 @@ import CodeContents from '../components/CodeContents.astro'
   .braingrid {
     grid-template-areas:
       'header header header header'
-      'code code arts arts'
-      'code code arts arts'
+      'main main main main'
+      'main main main main'
       'footer footer footer footer';
   }
 
   .brand {
     grid-area: header;
     view-transition-name: home-brand;
+  }
+
+  .home-content {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+  }
+
+  .home-content > .main.code {
+    grid-area: 1 / 1 / -1 / span 2;
+  }
+
+  .home-content > .main.arts {
+    grid-area: 1 / 3 / -1 / span 2;
   }
 
   .main.code {
@@ -77,8 +94,8 @@ import CodeContents from '../components/CodeContents.astro'
     .braingrid {
       grid-template-areas:
         'header header header header'
-        'code code code code'
-        'arts arts arts arts'
+        'main main main main'
+        'main main main main'
         'footer footer footer footer';
     }
 
@@ -86,8 +103,16 @@ import CodeContents from '../components/CodeContents.astro'
       padding-left: 12.5%;
     }
 
+    .home-content > .main.code {
+      grid-area: 1 / 1 / 2 / -1;
+    }
+
     .main.arts {
       padding-right: 12.5%;
+    }
+
+    .home-content > .main.arts {
+      grid-area: 2 / 1 / 3 / -1;
     }
   }
 </style>

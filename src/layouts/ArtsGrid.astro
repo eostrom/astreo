@@ -22,9 +22,9 @@ const {displayOnly, title, description} = Astro.props
     <a class="side this-side display arts" href="/arts/words/">
       <div class="side-label">arts</div>
     </a>
-    <div class={`main arts ${displayOnly ? 'display-only' : ''}`}>
+    <main class={`main arts ${displayOnly ? 'display-only' : ''}`}>
       <slot />
-    </div>
+    </main>
     <a class="side other-side display code" href="/code/words/">
       <div class="side-label">code</div>
     </a>

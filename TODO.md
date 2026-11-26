@@ -25,7 +25,7 @@
 - a11y
   - 2026-11-24: Lighthouse 88 (compare with before color audit)
   - [ ] works non-link
-  - [ ] no main landmark on home page (or elsewhere)
+  - [x] no main landmark on home page (or elsewhere)
 - [ ] security audit
   - yarn npm audit --all --recursive
 - [ ] Link between corresponding code/arts pages (right now the sidebar
