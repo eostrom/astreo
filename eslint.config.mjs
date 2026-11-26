@@ -1,7 +1,8 @@
 import {defineConfig, globalIgnores} from 'eslint/config'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
+import astro from 'eslint-plugin-astro'
 import globals from 'globals'
-import parser from 'astro-eslint-parser'
+import * as parser from 'astro-eslint-parser'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import js from '@eslint/js'
@@ -16,11 +17,11 @@ const compat = new FlatCompat({
 })
 
 export default defineConfig([
-  globalIgnores(['**/dist', '.astro']), {
+  globalIgnores(['**/dist', '.astro']),
+  ...astro.configs['flat/recommended'], {
     extends: compat.extends(
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
-      'plugin:astro/recommended',
       'prettier'
     ),
 
