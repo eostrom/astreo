@@ -3,6 +3,7 @@
 - [ ] Add arts/works page
 - [ ] Update code/works page
 - [ ] Consider rethinking shows page for symmetry
+- [ ] set up prettier
 
 - green stuff
   - metrics as of 2026-11-24
@@ -28,9 +29,9 @@
 - [ ] security audit
   - yarn npm audit --all --recursive
 - [ ] Link between corresponding code/arts pages (right now the sidebar
-  always goes to "words")
+      always goes to "words")
 - [ ] disable side panel links to the same site section
 - [ ] disable nav links to the page you're already on (fixes the
-  `shows` fade-out/fade-in flicker on arts->arts navigation, same
-  root cause as the side panel item above)
+      `shows` fade-out/fade-in flicker on arts->arts navigation, same
+      root cause as the side panel item above)
 - [ ] improve semantic markup (header/footer tags, etc.)

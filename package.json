@@ -40,8 +40,8 @@
     "globals": "^17.14.0",
     "postcss": "^8.5.33",
     "postcss-nesting": "^14.0.0",
-    "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1",
+    "prettier": "^3.10.1",
+    "prettier-plugin-astro": "^1.1.2",
     "stylelint": "^17.4.0",
     "stylelint-config-recommended": "^18.0.0"
   },
