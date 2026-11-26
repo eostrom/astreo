@@ -93,11 +93,21 @@ The site runs on the latest compatible stable Astro release with its rendering b
 - [x] Validate routes, Markdown and MDX output, heading anchors, styles, SEO, development and production preview.
 - [x] Present the Astro upgrade checklist, changes and validation results; pause for user review and approval.
 
-### Step 5: Update remaining compatible dependencies
+### \* Step 5: Update remaining compatible dependencies
 
-Other dependency groups are updated where compatible, with unsupported upgrades documented.
+Update one dependency group at a time, validate it, and pause for review before starting the next group. Check current versions and peer/API requirements when each group is reached; defer incompatible upgrades rather than forcing them.
 
-- [ ] Update runtime libraries and lint/format tooling in separate compatible groups; fix peer declarations and tool configuration where necessary.
-- [ ] Keep TypeScript within `@astrojs/check`'s supported range and record any other deferred major upgrades.
+- [ ] Resolve the `postcss-nesting` peer warning by adding or updating a compatible direct `postcss` dependency; verify the install no longer reports the warning.
+- [ ] Update `typescript` and `@astrojs/check` together within the checker's supported TypeScript range; verify compatibility with the TypeScript ESLint parser and plugin.
+- [ ] Update the ESLint stack together: `eslint`, `@eslint/js`, `@eslint/eslintrc`, `@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`, `eslint-plugin-astro`, `astro-eslint-parser`, `eslint-config-prettier`, and `globals`. Declare `astro-eslint-parser` directly if `eslint.config.mjs` continues to import it, and adjust configuration only as required.
+- [ ] Update `prettier` and `prettier-plugin-astro` together; verify Astro formatting remains compatible.
+- [ ] Update `stylelint` and `stylelint-config-recommended` together, respecting their peer requirements.
+- [ ] Update `date-fns` and `@date-fns/tz` together if their current peer/API requirements require it; otherwise validate independent updates separately.
+- [ ] Update `lodash` and `@types/lodash` together so the declarations match the library version.
+- [ ] Check and update `@fontsource/noto-serif` independently if compatible.
+- [ ] Check and update `@fontsource/roboto` independently if compatible.
+- [ ] Check and update `@fontsource/roboto-mono` independently if compatible.
+- [ ] Check and update `normalize.css` independently if compatible.
+- [ ] Record unsupported or deferred major upgrades and keep TypeScript within `@astrojs/check`'s supported range.
 - [ ] Re-run build, lint, dependency/peer checks and representative site comparisons; report remaining deployment prerequisites.
 - [ ] Present the dependency-update checklist, changes and validation results for final user review.
