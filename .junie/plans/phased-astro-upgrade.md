@@ -97,6 +97,8 @@ The site runs on the latest compatible stable Astro release with its rendering b
 
 Update one dependency group at a time, validate it, and pause for review before starting the next group. Check current versions and peer/API requirements when each group is reached; defer incompatible upgrades rather than forcing them.
 
+Compatibility note checked 2026-11-26: the project uses TypeScript `6.0.3`, compatible with `@astrojs/check` `0.9.12` (`^5.0.0 || ^6.0.0`) and the TypeScript-ESLint `8.74.0` parser/plugin (`>=4.8.4 <6.1.0`). TypeScript `7.0.2` is deferred because it is outside those peer ranges.
+
 - [x] Resolve the `postcss-nesting` peer warning by adding or updating a compatible direct `postcss` dependency; verify the install no longer reports the warning.
 - [x] Update `typescript` and `@astrojs/check` together within the checker's supported TypeScript range; verify compatibility with the TypeScript ESLint parser and plugin.
 - [ ] Update the ESLint stack together: `eslint`, `@eslint/js`, `@eslint/eslintrc`, `@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`, `eslint-plugin-astro`, `astro-eslint-parser`, `eslint-config-prettier`, and `globals`. Declare `astro-eslint-parser` directly if `eslint.config.mjs` continues to import it, and adjust configuration only as required.
@@ -105,7 +107,7 @@ Update one dependency group at a time, validate it, and pause for review before 
 - [x] Update `date-fns` and `@date-fns/tz` together if their current peer/API requirements require it; otherwise validate independent updates separately.
 - [x] Update `lodash` and `@types/lodash` together so the declarations match the library version.
 - [x] Check and update `@fontsource/noto-serif`, `@fontsource/roboto`, and `@fontsource/roboto-mono` together if compatible.
-- [ ] Check and update `normalize.css` independently if compatible.
-- [ ] Record unsupported or deferred major upgrades and keep TypeScript within `@astrojs/check`'s supported range.
+- [x] Check and update `normalize.css` independently if compatible.
+- [x] Record unsupported or deferred major upgrades and keep TypeScript within `@astrojs/check`'s supported range.
 - [ ] Re-run build, lint, dependency/peer checks and representative site comparisons; report remaining deployment prerequisites.
 - [ ] Present the dependency-update checklist, changes and validation results for final user review.
