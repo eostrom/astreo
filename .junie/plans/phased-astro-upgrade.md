@@ -102,8 +102,8 @@ Update one dependency group at a time, validate it, and pause for review before 
 - [ ] Update the ESLint stack together: `eslint`, `@eslint/js`, `@eslint/eslintrc`, `@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`, `eslint-plugin-astro`, `astro-eslint-parser`, `eslint-config-prettier`, and `globals`. Declare `astro-eslint-parser` directly if `eslint.config.mjs` continues to import it, and adjust configuration only as required.
 - [x] Update `prettier` and `prettier-plugin-astro` together; verify Astro formatting remains compatible.
 - [x] Update `stylelint` and `stylelint-config-recommended` together, respecting their peer requirements.
-- [ ] Update `lodash` and `@types/lodash` together so the declarations match the library version.
 - [x] Update `date-fns` and `@date-fns/tz` together if their current peer/API requirements require it; otherwise validate independent updates separately.
+- [x] Update `lodash` and `@types/lodash` together so the declarations match the library version.
 - [ ] Check and update `@fontsource/noto-serif` independently if compatible.
 - [ ] Check and update `@fontsource/roboto` independently if compatible.
 - [ ] Check and update `@fontsource/roboto-mono` independently if compatible.
