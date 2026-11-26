@@ -2199,6 +2199,7 @@ __metadata:
     globals: "npm:^17.4.0"
     lodash: "npm:^4.17.23"
     normalize.css: "npm:^8.0.1"
+    postcss: "npm:^8.5.33"
     postcss-nesting: "npm:^14.0.0"
     prettier: "npm:^3.8.1"
     prettier-plugin-astro: "npm:^0.14.1"
@@ -4806,7 +4807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.5.32":
+"postcss@npm:^8.5.32, postcss@npm:^8.5.33":
   version: 8.5.33
   resolution: "postcss@npm:8.5.33"
   dependencies:
