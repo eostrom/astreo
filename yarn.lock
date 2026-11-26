@@ -555,10 +555,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@date-fns/tz@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "@date-fns/tz@npm:1.4.1"
-  checksum: 9033fdc4682fe3d4d147625ce04fa88a8792653594e2de8d5a438c8f3bfc0990ee28fe773f91cac6810b06d818b5b281ae0608752ba8337257d0279ded3f019a
+"@date-fns/tz@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@date-fns/tz@npm:1.5.0"
+  checksum: 4ef25eedd55924938fa81b23b949a3425201597e2007f5323db54d50fc19283eca5e2a7963c3d82c99b3adf273e9ea9bc7adfd1c9076e15badd99c593a984ffa
   languageName: node
   linkType: hard
 
@@ -2128,7 +2128,7 @@ __metadata:
     "@astrojs/check": "npm:^0.9.12"
     "@astrojs/markdown-satteri": "npm:^0.4.10"
     "@astrojs/mdx": "npm:^8.1.6"
-    "@date-fns/tz": "npm:^1.4.1"
+    "@date-fns/tz": "npm:^1.5.0"
     "@eslint/eslintrc": "npm:^3.3.7"
     "@eslint/js": "npm:^10.0.1"
     "@fontsource/noto-serif": "npm:^5.2.9"
@@ -2140,7 +2140,7 @@ __metadata:
     astro: "npm:^7.4.13"
     astro-eslint-parser: "npm:^3.2.0"
     astro-seo-meta: "npm:^7.0.2"
-    date-fns: "npm:^4.2.1"
+    date-fns: "npm:^4.4.0"
     eslint: "npm:^10.15.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-astro: "npm:^3.2.1"
@@ -2600,10 +2600,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "date-fns@npm:4.2.1"
-  checksum: 1694c57a180a76c1001401fde85925cebb3b89594d37625063be0a571eddde278a87d3c76ecad5759c3dbeabcc34a5c5757eb6b3487d89a9a61ef48571791166
+"date-fns@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "date-fns@npm:4.4.0"
+  checksum: 988f0a13db183f5dfc85c36bbb6847a9c135a9225888bbea4005876ec15539a8613c21a07370a4e7ea543918d5a1cafb423c528b42cdbbde5fdfddb178126b21
   languageName: node
   linkType: hard
 
