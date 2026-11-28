@@ -6,4 +6,4 @@ firstDate: 2024-05-04
 lastDate: 2024-07-27
 ---
 
-Onstage in Family Funeral: an improvised drama.
+Onstage in <cite>Family Funeral:</cite> an improvised drama.

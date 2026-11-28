@@ -6,6 +6,6 @@ firstDate: 2019-10-02
 lastDate: 2019-10-23
 ---
 
-Live score for Gregory Parks' solo improv show [Where I Am Now].
+Live score for Gregory Parks' solo improv show <cite>[Where I Am Now]</cite>.
 
 [Where I Am Now]: https://www.facebook.com/pg/WIANimprov

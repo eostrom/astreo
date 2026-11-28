@@ -6,5 +6,5 @@ firstDate: 2026-12-15
 lastDate: 2026-12-15
 ---
 
-Two's Company at [Technically Funny Live,](https://www.instagram.com/technicallyfunny.lol/)
+Two's Company at <cite>[Technically Funny Live,](https://www.instagram.com/technicallyfunny.lol/)</cite>
 in person or livestream!

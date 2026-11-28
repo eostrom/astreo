@@ -6,6 +6,6 @@ firstDate: 2019-05-03
 lastDate: 2019-05-24
 ---
 
-Accompanied [The Bearded Company's][beards] Voyage to the Red Planet.
+Accompanied [The Bearded Company's][beards] <cite>Voyage to the Red Planet.</cite>
 
 [beards]: https://beardedcompany.org

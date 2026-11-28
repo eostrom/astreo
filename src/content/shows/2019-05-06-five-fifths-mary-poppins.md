@@ -7,6 +7,6 @@ lastDate: 2019-05-06
 ---
 
 Oncoming Productions and four other companies present
-[Five Fifths of Mary Poppins][poppins].
+[Five Fifths of <cite>Mary Poppins</cite>][poppins].
 
 [poppins]: https://www.minnesotafringe.org/event-calendar/five-fifths

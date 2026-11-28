@@ -6,6 +6,6 @@ firstDate: 2026-10-16
 lastDate: 2026-10-20
 ---
 
-Live score for Tales of Terror... from the Tomb!!! by Wet Splat Productions
+Live score for <cite>Tales of Terror... from the Tomb!!!</cite> by Wet Splat Productions
 at the [Twin Cities Horror Festival.](https://www.tchorrorfestival.com/festival-lineup.html)
 Improvised horror, with puns!

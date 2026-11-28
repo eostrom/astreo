@@ -6,7 +6,7 @@ firstDate: 2020-01-03
 lastDate: 2020-03-01
 ---
 
-[Throwback Night][] is three casts performing three classic improv forms.
+<cite>[Throwback Night][]</cite> is three casts performing three classic improv forms.
 I'm in the [Living Room] cast.
 
 [Throwback Night]: https://www.hugetheater.com/event/throwback-night/

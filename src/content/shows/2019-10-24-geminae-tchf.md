@@ -6,7 +6,7 @@ firstDate: 2019-10-24
 lastDate: 2019-11-03
 ---
 
-Original score for Geminae, a space horror play
+Original score for <cite>Geminae</cite>, a space horror play
 by [Oncoming Productions,][oncoming]
 at the [Twin Cities Horror Festival.][tchf]
 
