@@ -1,0 +1,91 @@
+---
+import type {CollectionEntry} from 'astro:content'
+import ShowRows from './ShowRows.astro'
+
+export type Props = {
+  shows: CollectionEntry<'shows'>[]
+  emptyMessage?: string
+}
+
+const {shows, emptyMessage} = Astro.props
+---
+
+{shows.length > 0 || !emptyMessage ? (
+  <table class="show-table">
+    <thead>
+      <tr>
+        <th scope="col">
+          <span class="column-heading">when</span>
+        </th>
+        <th scope="col">
+          <span class="column-heading">where</span>
+        </th>
+        <th scope="col">
+          <span class="column-heading">what</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ShowRows shows={shows} />
+    </tbody>
+  </table>
+) : (
+  <p>{emptyMessage}</p>
+)}
+
+<style>
+  .show-table {
+    width: 100%;
+
+    :global(td),
+    :global(th) {
+      padding: 0.5em;
+      vertical-align: top;
+      text-wrap: balance;
+      text-wrap: pretty;
+
+      &:not(:first-child) {
+        padding-left: 1em;
+      }
+
+      &:not(:last-child) {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .show-table :global(th:first-child),
+  .show-table :global(td:first-child) {
+    width: 16ch;
+  }
+
+  .show-table :global(th:nth-child(2)),
+  .show-table :global(td:nth-child(2)) {
+    width: 16ch;
+  }
+
+  .show-table :global(td),
+  .show-table :global(th) {
+    padding: 0.5em 1em;
+  }
+
+  .show-table :global(td):first-child,
+  .show-table :global(th):first-child {
+    padding-left: 0;
+  }
+
+  .show-table :global(td):last-child,
+  .show-table :global(th):last-child {
+    padding-right: 0;
+  }
+
+  .column-heading {
+    display: block;
+    font-family: var(--display-font-family);
+    font-style: var(--display-font-style);
+    color: var(--display-color);
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    padding-block: calc((var(--lh-1) - var(--fs-1)) / 2);
+  }
+</style>

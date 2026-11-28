@@ -1,48 +1,9 @@
 ---
-import _ from 'lodash/fp'
-import {isBefore, startOfToday} from 'date-fns'
-import {tz} from '@date-fns/tz'
-import {getCollection} from 'astro:content'
-import type {CollectionEntry} from 'astro:content'
 import ArtsGrid from '../../layouts/ArtsGrid.astro'
-import ShowRows from '../../components/ShowRows.astro'
+import ShowsList from '../../components/ShowsList.astro'
+import {getShowGroups} from '../../utils/shows'
 
-/*
-  Divide shows into "coming up" (today or after, sorted by start date)
-  and "gone down" (yesterday or before, sorted by end date).
-
-  Getting this right is tricky, dependent on both the show's time zone
-  (which I haven't provided) and the user's (which we can't know when
-  building the site). Or we could go by start time, but that's not in
-  the data either.
-
-  Also, static site generation means a show that happened after the last
-  build but before today will still be listed as "coming up."
-
-  Also ideally we would sort "coming up" not by start date but by next
-  occurrence, which is also not available in the current data.
-
-  Anyway, this is good enough for now.
- */
-
-const today = startOfToday({in: tz('utc')})
-const allShows = await getCollection('shows')
-const isShowOver = (show: CollectionEntry<'shows'>) =>
-  // Note: `isAfter` gives the wrong answer for shows that end today
-  !isBefore(show.data.lastDate, today)
-const [futureShows, pastShows] = _.partition(isShowOver)(allShows)
-const goneDown = [...pastShows].sort(
-  (a, b) =>
-    b.data.lastDate.getTime() - a.data.lastDate.getTime() ||
-    b.data.firstDate.getTime() - a.data.firstDate.getTime() ||
-    b.id.localeCompare(a.id),
-)
-const comingUp = [...futureShows].sort(
-  (a, b) =>
-    a.data.firstDate.getTime() - b.data.firstDate.getTime() ||
-    a.data.lastDate.getTime() - b.data.lastDate.getTime() ||
-    a.id.localeCompare(b.id),
-)
+const {comingUp, goneDown} = await getShowGroups()
 ---
 
 <ArtsGrid title="shows">
@@ -50,50 +11,12 @@ const comingUp = [...futureShows].sort(
 
   <section>
     <h2>coming up</h2>
-    {comingUp.length > 0 ? (
-      <table class="show-table">
-        <thead>
-          <tr>
-            <th scope="col">
-              <span class="column-heading">when</span>
-            </th>
-            <th scope="col">
-              <span class="column-heading">where</span>
-            </th>
-            <th scope="col">
-              <span class="column-heading">what</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <ShowRows shows={comingUp} />
-        </tbody>
-      </table>
-    ) : (
-      <p>Nothing right now.</p>
-    )}
+    <ShowsList shows={comingUp} emptyMessage="Nothing right now." />
   </section>
 
   <section>
     <h2>gone down</h2>
-    <table class="show-table">
-      <thead>
-        <tr>
-          <th scope="col">
-            <span class="column-heading">when</span>
-          </th>
-          <th scope="col">
-            <span class="column-heading">where</span>
-          </th>
-          <th scope="col">
-            <span class="column-heading">what</span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <ShowRows shows={goneDown} />
-      </tbody>
-    </table>
+    <ShowsList shows={goneDown} />
   </section>
 </ArtsGrid>
 
@@ -108,60 +31,5 @@ const comingUp = [...futureShows].sort(
 
   section > h2 + p {
     margin-block-start: 0.5em;
-  }
-
-  .show-table {
-    width: 100%;
-
-    :global(td),
-    :global(th) {
-      padding: 0.5em;
-      vertical-align: top;
-      text-wrap: balance;
-      text-wrap: pretty;
-
-      &:not(:first-child) {
-        padding-left: 1em;
-      }
-
-      &:not(:last-child) {
-        padding-right: 1em;
-      }
-    }
-  }
-
-  .show-table :global(th:first-child),
-  .show-table :global(td:first-child) {
-    width: 16ch;
-  }
-
-  .show-table :global(th:nth-child(2)),
-  .show-table :global(td:nth-child(2)) {
-    width: 16ch;
-  }
-
-  .show-table :global(td),
-  .show-table :global(th) {
-    padding: 0.5em 1em;
-  }
-
-  .show-table :global(td):first-child,
-  .show-table :global(th):first-child {
-    padding-left: 0;
-  }
-
-  .show-table :global(td):last-child,
-  .show-table :global(th):last-child {
-    padding-right: 0;
-  }
-
-  .column-heading {
-    display: block;
-    font-family: var(--display-font-family);
-    font-style: var(--display-font-style);
-    color: var(--display-color);
-    font-size: var(--fs-1);
-    line-height: var(--lh-1);
-    padding-block: calc((var(--lh-1) - var(--fs-1)) / 2);
   }
 </style>

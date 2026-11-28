@@ -1,0 +1,49 @@
+import _ from 'lodash/fp'
+import {isBefore, startOfToday} from 'date-fns'
+import {tz} from '@date-fns/tz'
+import {getCollection} from 'astro:content'
+import type {CollectionEntry} from 'astro:content'
+
+/*
+  Divide shows into "coming up" (today or after, sorted by start date)
+  and "gone down" (yesterday or before, sorted by end date).
+
+  Getting this right is tricky, dependent on both the show's time zone
+  (which I haven't provided) and the user's (which we can't know when
+  building the site). Or we could go by start time, but that's not in
+  the data either.
+
+  Also, static site generation means a show that happened after the last
+  build but before today will still be listed as "coming up."
+
+  Also ideally we would sort "coming up" not by start date but by next
+  occurrence, which is also not available in the current data.
+
+  Anyway, this is good enough for now.
+ */
+
+export const getShowGroups = async (): Promise<{
+  comingUp: CollectionEntry<'shows'>[]
+  goneDown: CollectionEntry<'shows'>[]
+}> => {
+  const today = startOfToday({in: tz('utc')})
+  const allShows = await getCollection('shows')
+  const isShowOver = (show: CollectionEntry<'shows'>) =>
+    // Note: `isAfter` gives the wrong answer for shows that end today
+    !isBefore(show.data.lastDate, today)
+  const [futureShows, pastShows] = _.partition(isShowOver)(allShows)
+  const goneDown = [...pastShows].sort(
+    (a, b) =>
+      b.data.lastDate.getTime() - a.data.lastDate.getTime() ||
+      b.data.firstDate.getTime() - a.data.firstDate.getTime() ||
+      b.id.localeCompare(a.id),
+  )
+  const comingUp = [...futureShows].sort(
+    (a, b) =>
+      a.data.firstDate.getTime() - b.data.firstDate.getTime() ||
+      a.data.lastDate.getTime() - b.data.lastDate.getTime() ||
+      a.id.localeCompare(b.id),
+  )
+
+  return {comingUp, goneDown}
+}
