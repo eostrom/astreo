@@ -1,5 +1,5 @@
 ---
-when: June 14
+when: Sunday, June 14
 where: Phoenix Theater
 whereUrl: https://www.phoenixtheatermpls.org
 firstDate: 2026-06-14

@@ -1,5 +1,5 @@
 ---
-when: December 15
+when: Tuesday, December 15
 where: The Others
 whereUrl: https://www.instagram.com/theothers.mpls/
 firstDate: 2026-12-15

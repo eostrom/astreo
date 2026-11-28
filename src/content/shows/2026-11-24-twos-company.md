@@ -1,5 +1,5 @@
 ---
-when: November 24
+when: Tuesday, November 24
 where: The Hive Collaborative
 whereUrl: https://www.thehivecollaborativemn.com/
 firstDate: 2026-11-24

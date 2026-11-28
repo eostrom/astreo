@@ -1,5 +1,5 @@
 ---
-when: June 16
+when: Tuesday, June 16
 where: The Hive Collaborative
 whereUrl: https://www.thehivecollaborativemn.com/
 firstDate: 2026-06-16

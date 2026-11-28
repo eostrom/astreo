@@ -1,5 +1,5 @@
 ---
-when: September 22
+when: Tuesday, September 22
 where: The Others Workshop Collective
 whereUrl: https://www.instagram.com/theothers.mpls/
 firstDate: 2026-09-22
