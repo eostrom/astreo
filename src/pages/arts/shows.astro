@@ -48,48 +48,70 @@ const comingUp = [...futureShows].sort(
 <ArtsGrid title="shows">
   <h1>shows</h1>
 
-  <table class="show-table">
-    <thead>
-      <tr>
-        <td colspan="3"><h2>coming up</h2></td>
-      </tr>
+  <section>
+    <h2>coming up</h2>
+    {comingUp.length > 0 ? (
+      <table class="show-table">
+        <thead>
+          <tr>
+            <th scope="col">
+              <span class="column-heading">when</span>
+            </th>
+            <th scope="col">
+              <span class="column-heading">where</span>
+            </th>
+            <th scope="col">
+              <span class="column-heading">what</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ShowRows shows={comingUp} />
+        </tbody>
+      </table>
+    ) : (
+      <p>Nothing right now.</p>
+    )}
+  </section>
 
-      <tr>
-        <th><h3>when</h3></th>
-        <th><h3>where</h3></th>
-        <th><h3>what</h3></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <ShowRows shows={comingUp} />
-    </tbody>
-
-    <thead>
-      <tr>
-        <td colspan="3"><h2>gone down</h2></td>
-      </tr>
-
-      <tr>
-        <th><h3>when</h3></th>
-        <th><h3>where</h3></th>
-        <th><h3>what</h3></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <ShowRows shows={goneDown} />
-    </tbody>
-  </table>
+  <section>
+    <h2>gone down</h2>
+    <table class="show-table">
+      <thead>
+        <tr>
+          <th scope="col">
+            <span class="column-heading">when</span>
+          </th>
+          <th scope="col">
+            <span class="column-heading">where</span>
+          </th>
+          <th scope="col">
+            <span class="column-heading">what</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ShowRows shows={goneDown} />
+      </tbody>
+    </table>
+  </section>
 </ArtsGrid>
 
 <style>
+  section {
+    margin-block-start: 1em;
+  }
+
+  section + section {
+    margin-block-start: 1.5em;
+  }
+
+  section > h2 + p {
+    margin-block-start: 0.5em;
+  }
+
   .show-table {
     width: 100%;
-
-    :global(h3) {
-      padding: 0;
-    }
 
     :global(td),
     :global(th) {
@@ -108,6 +130,16 @@ const comingUp = [...futureShows].sort(
     }
   }
 
+  .show-table :global(th:first-child),
+  .show-table :global(td:first-child) {
+    width: 16ch;
+  }
+
+  .show-table :global(th:nth-child(2)),
+  .show-table :global(td:nth-child(2)) {
+    width: 16ch;
+  }
+
   .show-table :global(td),
   .show-table :global(th) {
     padding: 0.5em 1em;
@@ -123,7 +155,13 @@ const comingUp = [...futureShows].sort(
     padding-right: 0;
   }
 
-  .show-table :global(h3) {
-    padding: 0;
+  .column-heading {
+    display: block;
+    font-family: var(--display-font-family);
+    font-style: var(--display-font-style);
+    color: var(--display-color);
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    padding-block: calc((var(--lh-1) - var(--fs-1)) / 2);
   }
 </style>
